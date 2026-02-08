@@ -1,3 +1,5 @@
+
+
 CREATE DATABASE CapstoneDB;
 
 Use CapstoneDB;
@@ -25,6 +27,10 @@ Question Varchar(255),
 Answer Varchar(1028),
 Time_Stamp Time
 );
+
+#Import Data from the CSV using SQL Data Import Wizard in SQL WorkBench
+
+
 
 
 
