@@ -1,8 +1,9 @@
 from flask import Flask, request
 from twilio.twiml.voice_response import VoiceResponse, Gather
 import openai
+import os
 import string
-openai.api_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 app = Flask(__name__)
@@ -20,16 +21,16 @@ def Response():
 # #Back and Forth conversation between the user and the bot
 @app.route("/bothumaninteraction", methods = ['POST'])
 def conversation():
-    userStatement = request.form['SpeechResult'].lower()
+    userStatement = request.form.get('SpeechResult', '').lower()
     wordDivided = userStatement.split()
     for i in range(len(wordDivided)):
         wordDivided[i] = wordDivided[i].strip(string.punctuation)
     if any(word in ["no", 'not','nope','none'] for word in wordDivided):
         answer = VoiceResponse()
-        answer.say("Thank you for using the Northeastern University AI Admission Service) Goodbye!")
+        answer.say("Thank you for using the Northeastern University AI Admission Service Goodbye!")
         answer.hangup()
         return str(answer)
-    AIresponse = openai.ChatCompletion.create(
+    AIresponse = openai.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "An assistant for Northeastern University Admissions. Answer the user's questions about the university and the admissions process."},
@@ -52,5 +53,5 @@ def conversation():
 
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 
