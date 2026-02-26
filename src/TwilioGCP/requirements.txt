@@ -1,0 +1,5 @@
+twilio
+openai >= 1.0.0
+fastapi
+uvicorn[standard]
+python-multipart
