@@ -1,18 +1,21 @@
 
-import mysql.connector as mysql
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 import os
-from baml_client.sync_client import b
+
+import mysql.connector as mysql
 from fastapi import FastAPI, Form
 from fastapi.responses import Response
 
+from baml_client.sync_client import b
+from google.cloud import storage
+
 load_dotenv()
-app = FastAPI()
-
-LOG_FILE = "log.txt"
+back_app = FastAPI()
 
 
-def get_universityInfo(question: str) -> str:
+def query_university_context(question: str) -> tuple[str, str]:
     
     #LOCAL OPTION for DB connection 
     # conn = mysql.connect(
@@ -23,13 +26,15 @@ def get_universityInfo(question: str) -> str:
     #     port = 3306 
     # )
 
+    # DB is retired, but this was used before
     conn = mysql.connect(
-    host="34.56.124.244", # capstonedb2 
-    port = 3306, # default MySQL port
-    user= os.getenv("DB_USERNAME"),
-    password = os.getenv("DB_PASSWORD"),
-    database = os.getenv("DB_NAME"),
-    charset="utf8mb4" 
+    unix_socket="/cloudsql/ds5500-487815:us-central1:capstonedb2", # for Cloud Run, use the unix socket path
+    #host="34.56.124.244", # capstonedb2 instance on GCP
+    #port = 3306, # default MySQL port
+    user="root", 
+    password="", # password actually needed
+    database="capstonedb2",
+    charset="utf8mb4" # maybe dont need
     )
 
     conn.set_charset_collation("utf8mb4", "utf8mb4_0900_ai_ci")
@@ -62,25 +67,26 @@ def get_universityInfo(question: str) -> str:
     cursor.close()
     conn.close()
 
-    stringVariable = "\n".join(Information)
+    contextString = "\n".join(Information)
+    return contextString, key
 
-    answer = b.AnswerQuery(question, stringVariable)
-    with open(LOG_FILE, 'a') as f:
-        f.write(f"Question: {question}\n")
-        f.write(f"Key constructed for DB query: {key}\n")
-        f.write(f"Retrieved Information from DB: {Information}\n")
-        f.write(f"LLM response: {answer}\n\n")
-    
-    return answer
 
-if __name__ == "__main__":
-    load_dotenv()
+@back_app.get("/")
+def root():
+    return {"status": "ok", "service": "Backend Testing for Admissions Agent: Is working. "}
 
-    
-    with open(LOG_FILE, 'w') as f:
-        f.write("=== Experiments For DB Retrieval ON CLOUD DB===\n")
+@back_app.post("/single-query-response")
+def single_query_response(question: str = Form(...)):
+    context, _ = query_university_context(question)
+    answer = b.AnswerQuery(question, context)
+    return Response(content=answer, media_type="text/plain")
 
-    question = "What GPA does Northeastern require for admissions?"
+@back_app.post("/run-multiple-queries-test")
+def run_multiple_queries_test():
+    now_et = datetime.now(ZoneInfo("America/New_York"))
+    LOG_FILE = f"/tmp/multiple_queries_test_{now_et.strftime('%Y%m%d_%H%M%S')}.txt"
+
+
     questions = [
         "What is the general ranking of Northeastern University?",
         "How does Northeastern's CS program rank nationally?",
@@ -97,9 +103,31 @@ if __name__ == "__main__":
         #"What is the contact information for the admissions office?",
         "If admitted students need support, what type of services can they contact?"
     ]
+
+    test_count = len(questions)
+    fail_count = 0
+
+    with open(LOG_FILE, 'w') as f:
+        f.write("=== Experiments For DB Retrieval ON CLOUD RUN===\n")
+
     for q in questions:
-        answer = get_universityInfo(q)
+        context, key = query_university_context(q)
+        if context == "":
+            fail_count += 1
+        
+        answer = b.AnswerQuery(q, context)
+        with open(LOG_FILE, 'a') as f:
+            f.write(f"Question: {q}\n")
+            f.write(f"Context retrieved from DB: {context}\n")
+            f.write(f"Key used: {key}\n")
+            f.write(f"LLM response: {answer}\n\n")
 
+        # write to GCP bucket
+    client = storage.Client()
+    bucket = client.bucket("agent-app-metadata")
+    blob = bucket.blob(os.path.basename(LOG_FILE))
+    blob.upload_from_filename(LOG_FILE)
 
+    summary = f"Test completed. Total questions: {test_count}, Failed retrievals: {fail_count}."
+    return Response(content=summary, media_type="text/plain")
 
-    #answer = get_universityInfo(question)
