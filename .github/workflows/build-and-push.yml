@@ -1,33 +1,33 @@
-name: Build and Push Docker Image
+name: Automated Docker FIle Push
 
 on:
   push:
     branches:
-      - main   # Runs on pushes to main
+      - main 
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Examine the Repository in the Github
       uses: actions/checkout@v3
 
-    - name: Authenticate to Google Cloud
+    - name: Login into the Google Cloud
       uses: google-github-actions/auth@v1
       with:
         credentials_json: ${{ secrets.GCP_SA_KEY }}
 
-    - name: Configure Docker for Artifact Registry
+    - name: Modifying the Docker in the Artifact Registry in Google Cloud
       run: gcloud auth configure-docker us-central1-docker.pkg.dev
 
-    - name: Build Docker image
+    - name: Docker Image Build
       run: |
         docker build -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:${GITHUB_SHA} \
                      -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:latest \
                      ./src
 
-    - name: Push Docker image
+    - name: Pushing the Docker Image into GCP
       run: |
         docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:${GITHUB_SHA}
         docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:latest
