@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - main   # Runs on pushes to main
 
 jobs:
   build:
@@ -23,11 +23,11 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/Admissions-Customer-Service-AI-Agent:${GITHUB_SHA} \
-                     -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/Admissions-Customer-Service-AI-Agent:latest \
+        docker build -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:${GITHUB_SHA} \
+                     -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:latest \
                      ./src
 
     - name: Push Docker image
       run: |
-        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/Admissions-Customer-Service-AI-Agent:${GITHUB_SHA}
-        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/Admissions-Customer-Service-AI-Agent:latest
+        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:${GITHUB_SHA}
+        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:latest
