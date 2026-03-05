@@ -23,11 +23,11 @@ jobs:
 
     - name: Docker Image Build
       run: |
-        docker build -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:${GITHUB_SHA} \
-                     -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:latest \
+        docker build -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/updateddockerfile:${GITHUB_SHA} \
+                     -t us-central1-docker.pkg.dev/ds5500-487815/test-repo/updateddockerfile:latest \
                      ./src
 
     - name: Pushing the Docker Image into GCP
       run: |
-        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:${GITHUB_SHA}
-        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/admissions-customer-service-ai-agent:latest
+        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/updateddockerfile:${GITHUB_SHA}
+        docker push us-central1-docker.pkg.dev/ds5500-487815/test-repo/updateddockerfile:latest
