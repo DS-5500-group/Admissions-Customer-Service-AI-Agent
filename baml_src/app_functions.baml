@@ -18,23 +18,22 @@ class UniQuery {
 // NURSING 
 // PHARMACY}
 enum FinancialSubgroup {
-HOUSING
-TUITION
-OTHER
+Housing
+Tuition
+Other
 }
 enum LocationSubgroup {
-BOSTON
-OAKLAND
-NEW_YORK
+Boston
+Oakland
+NewYork
 }
 enum CareerSubgroup {
-COOP_INTERNSHIPS
-OUTCOMES
-LONG_TERM
+Employment
+Coop
 }
 enum ApplicationSubgroup {
-DATES
-FEES
+Dates
+Fees
 ED
 EA
 }
@@ -50,13 +49,13 @@ ACT
 LANGUAGE
 }
 enum ContactSubgroup {
-ADMISSIONS
-HEALTH_COUNSELING
-DISABILITY
+Admissions
+StudentServices
+Disability
 }
 
 class RankingQuestion {
-    Ranking_Subgroup "Overall" | "CS" | "HealthScience" | "Math" | "Engineering" | "Business"
+    Ranking "Overall" | "CS" | "HealthScience" | "Math" | "Engineering" | "Business"
 }
 
 // class RankingQuestion {
@@ -64,31 +63,31 @@ class RankingQuestion {
 // }
 
 class FinancialQuestion {
-    Financial_Subgroup FinancialSubgroup
+    Financial FinancialSubgroup
 }
 
 class LocationQuestion {
-    Location_Subgroup LocationSubgroup
+    LocationInformation LocationSubgroup
 }
 
 class CareerQuestion {
-    Career_Subgroup CareerSubgroup
+    CareerOutcomes CareerSubgroup
 }
 
 class ApplicationQuestion {
-    Application_Subgroup ApplicationSubgroup
+    ApplicationQuestions ApplicationSubgroup
 }
 
 class AdmissionDomesticQuestion {
-    AdmissionDomestic_Subgroup AdmissionDomesticSubgroup
+    AdmissionRequirementsDomestic AdmissionDomesticSubgroup
 }
 
 class AdmissionInternationalQuestion {
-    AdmissionInternational_Subgroup AdmissionInternationalSubgroup
+    AdmissionRequirementsInternational AdmissionInternationalSubgroup
 }
 
 class ContactQuestion {
-    Contact_Subgroup ContactSubgroup
+    ContactandExternalResources ContactSubgroup
 }
 
 class OtherQuestion {
