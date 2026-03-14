@@ -1,0 +1,381 @@
+=== Experiments For DB Retrieval LOCALLY===
+Question: Where can I eat on campus?
+Predicted key: Dining_food_Food_Options
+Expected key: Dining_food_Dining_Halls
+Match: False
+LLM response: On campus, you can eat at traditional buffet-style dining halls, on-campus cafés, and grab-and-go options.
+
+Question: What retail restaurants are in Curry Student Center?
+Predicted key: Dining_food_Retail_Dining
+Expected key: Dining_food_Retail_Dining
+Match: True
+LLM response: The retail restaurants in Curry Student Center are:
+
+- Choolaah
+- D’Angelo’s
+- The Halal Shack
+- Kigo Kitchen
+- the Market at Curry Student Center
+- Popeyes
+- Sal’s Pizza
+- Starbucks
+
+Question: I have a peanut allergy, how do I let dining know?
+Predicted key: Dining_food_Allergy_Info
+Expected key: Dining_food_Allergy_Info
+Match: True
+LLM response: To inform Dining about your peanut allergy, you should disclose this to a Northeastern Dining Administrator prior to each term. For further assistance or questions regarding your allergy, you can contact the campus Registered Dietician team at nudietitians@northeastern.edu.
+
+Question: What is the phone number for the Husky Card office?
+Predicted key: Student_Support_Contact_Info
+Expected key: Dining_food_Contact_Info
+Match: False
+LLM response: The phone number for the Husky Card office is not provided in the context. Please check the university's official website or contact another office for assistance.
+
+Question: How much does the unlimited meal plan cost?
+Predicted key: Dining_food_Plan_Cost
+Expected key: Dining_food_Plan_Cost
+Match: True
+LLM response: The unlimited meal plan costs $4,450 per semester, which includes $400 in Dining Dollars and 10 guest passes.
+
+Question: Are there grab-and-go food options on campus?
+Predicted key: Dining_food_Food_Options
+Expected key: Dining_food_Food_Options
+Match: True
+LLM response: Yes, there are grab-and-go food options available on campus.
+
+Question: How much is a single room for first-year housing?
+Predicted key: Housing_Housing_Cost
+Expected key: Housing_Housing_Cost
+Match: True
+LLM response: A single room for first-year housing in traditional-style halls costs $6,510 per semester, while in Kerr Hall it costs $5,680 per semester. In suite-style housing, a single room costs $7,275.
+
+Question: What furniture comes with my dorm room?
+Predicted key: Housing_Layout_Info
+Expected key: Housing_Layout_Info
+Match: True
+LLM response: Your dorm room comes with a bed frame, a twin XL mattress, a desk, a desk chair, and a dresser.
+
+Question: What resources does Northeastern have for students living off campus?
+Predicted key: Housing_Off_Campus
+Expected key: Housing_Off_Campus
+Match: True
+LLM response: Northeastern offers resources through Off Campus Engagement and Support (OCES) for students living off campus, including educational programming, community connection, campus engagement opportunities, and various supportive resources for navigating life in Boston's neighborhoods.
+
+Question: What is the email for the housing office?
+Predicted key: Housing_Contact_Info
+Expected key: Housing_Contact_Info
+Match: True
+LLM response: The email for the housing office is housing@northeastern.edu.
+
+Question: What gym facilities does Northeastern have?
+Predicted key: Student_Amenities_Activities_Gym
+Expected key: Student_Amenities_Activities_Gym
+Match: True
+LLM response: Northeastern University has several gym facilities, including the Marino Recreation Center and the SquashBusters Center. Additional recreational facilities include the Cabot Center (with a swimming pool, indoor cage, and racquetball courts), Matthews Arena (for open skate and intramural sports), Carter Field (for intramural sports), a Wiffleball Field, and a Sand Volleyball Court.
+
+Question: How much is the rec center fee per semester?
+Predicted key: Student_Amenities_Activities_Gym
+Expected key: Student_Amenities_Activities_Student_Activities_Fees
+Match: False
+LLM response: The rec center fee per semester at Northeastern University is not specified in the provided context. For the exact fee, please check the university's official website or contact the recreation center directly.
+
+Question: How many student clubs does Northeastern have?
+Predicted key: Student_Amenities_Activities_Clubs
+Expected key: Student_Amenities_Activities_Clubs
+Match: True
+LLM response: Northeastern has more than 600 student clubs and organizations.
+
+Question: What is NU Engage?
+Predicted key: UnAnswerable_NoSubgroup
+Expected key: Student_Amenities_Activities_Clubs
+Match: False
+LLM response: ERROR: No answer generated because answerable, try again or be more specific.
+
+Question: Where is the game room on campus?
+Predicted key: Student_Amenities_Activities_Game_Rooms
+Expected key: Student_Amenities_Activities_Game_Rooms
+Match: True
+LLM response: The Paws Play Game Room is located on the 4th floor of the Curry Student Center.
+
+Question: How much is the student activities fee per semester?
+Predicted key: Student_Amenities_Activities_Student_Activities_Fees
+Expected key: Student_Amenities_Activities_Student_Activities_Fees
+Match: True
+LLM response: The student activities fee per semester is $30 at Northeastern's Boston campus.
+
+Question: How can I volunteer through Northeastern?
+Predicted key: Student_Amenities_Activities_Volunteering
+Expected key: Student_Amenities_Activities_Volunteering
+Match: True
+LLM response: To volunteer through Northeastern, you can help plan events, host gatherings, mentor students, or engage through social or digital channels. Reach out to the university to discuss your availability and skills so they can align you with suitable opportunities.
+
+Question: How do I contact University Recreation?
+Predicted key: Student_Amenities_Activities_Contact_Info
+Expected key: Student_Amenities_Activities_Contact_Info
+Match: True
+LLM response: You can contact University Recreation by emailing recreation@northeastern.edu.
+
+Question: What is the RedEye shuttle?
+Predicted key: Safety_Redeye
+Expected key: Safety_Redeye
+Match: True
+LLM response: The RedEye shuttle is an on-demand ride-sharing service for Northeastern University students living off-campus within a 1.5-mile radius of Snell Library. The service allows eligible students to request rides from campus, view estimated pickup times, track drivers in real time, and receive live trip updates for a safer commuting experience.
+
+Question: What is the SafeZone app?
+Predicted key: Safety_Security_App
+Expected key: Safety_Security_App
+Match: True
+LLM response: The SafeZone app is a free smartphone application for students and staff at Northeastern University that connects users directly to the Northeastern University Police Department for assistance or emergency support while on campus.
+
+Question: Can I get a campus escort at night?
+Predicted key: Safety_Campus_Escort
+Expected key: Safety_Campus_Escort
+Match: True
+LLM response: Yes, you can get a campus escort at night. The Northeastern University Police Department offers personal safety escorts at any time, and there is also a nighttime off-campus escort service called the RedEye that operates from dusk to dawn. You can book a RedEye ride in advance using the app or at the dispatch center.
+
+Question: What is the Husky Card used for besides ID?
+Predicted key: UnAnswerable_NoSubgroup
+Expected key: Safety_Card_Entry
+Match: False
+LLM response: ERROR: No answer generated because answerable, try again or be more specific.
+
+Question: What is the Northeastern emergency phone number?
+Predicted key: Safety_Contact_Info
+Expected key: Safety_Contact_Info
+Match: True
+LLM response: The Northeastern emergency phone number is 617-373-3333.
+
+Question: What Division I sports does Northeastern have?
+Predicted key: Athletics_Varsity_Sports
+Expected key: Athletics_Varsity_Sports
+Match: True
+LLM response: Northeastern has the following Division I sports:
+
+- Baseball
+- Men’s Basketball
+- Women’s Basketball
+- Men’s Cross Country
+- Women’s Cross Country
+- Field Hockey
+- Men’s Ice Hockey
+- Women’s Ice Hockey
+- Men’s Rowing
+- Women’s Rowing
+- Men’s Soccer
+- Women’s Soccer
+- Swimming & Diving
+- Men’s Track and Field
+- Women’s Track and Field
+- Volleyball
+
+Question: Does Northeastern have a men's hockey team?
+Predicted key: Athletics_Varsity_Sports
+Expected key: Athletics_Varsity_Sports
+Match: True
+LLM response: Yes, Northeastern has a men’s hockey team.
+
+Question: Can I play intramural sports?
+Predicted key: Athletics_Intramural
+Expected key: Athletics_Intramural
+Match: True
+LLM response: Yes, you can play intramural sports at the university. The programs offer a variety of tournaments and leagues for both team and individual sports, accommodating different skill levels and recreational playstyles. You can participate in leagues such as Open Leagues and All Gender Leagues. For registration and more information, visit IMLeagues at https://www.imleagues.com/Northeastern.
+
+Question: What is the Beanpot?
+Predicted key: Dining_food_Food_Options
+Expected key: Athletics_Signature_Events
+Match: False
+LLM response: The Beanpot is a college hockey tournament held annually in Boston, featuring teams from four local universities: Boston University, Boston College, Northeastern University, and Harvard University.
+
+Question: How do I contact the athletic department?
+Predicted key: Athletics_Contact_Info
+Expected key: Athletics_Contact_Info
+Match: True
+LLM response: You can contact the athletic department by calling (617) 373-2672.
+
+Question: What is Early Decision and how does it work?
+Predicted key: Admission_Application_Decision_Types_Outcomes
+Expected key: Admission_Application_Decision_Types_Outcomes
+Match: True
+LLM response: Early Decision (ED) is an admissions program for students who are certain that a particular college, like Northeastern, is their top choice and are committed to attending if admitted. Students apply early, with two deadlines: Early Decision I by November 1 and Early Decision II by January 1. If accepted, they must enroll in their first-choice program. However, if admitted to a program that isn’t their first choice, they are not bound by this commitment. ED is for those confident in their fit with the school academically, socially, and financially.
+
+Question: When is the Early Decision I deadline?
+Predicted key: Admission_Application_Dates_Deadlines
+Expected key: Admission_Application_Dates_Deadlines
+Match: True
+LLM response: The Early Decision I application deadline is November 1.
+
+Question: Does Northeastern accept the Common App?
+Predicted key: Admission_Application_Application_Materials
+Expected key: Admission_Application_Portal_Info
+Match: False
+LLM response: Yes, Northeastern University accepts both the Common Application and the Coalition Application.
+
+Question: What materials do I need to submit with my application?
+Predicted key: Admission_Application_Application_Materials
+Expected key: Admission_Application_Application_Materials
+Match: True
+LLM response: To submit your application to Northeastern University, you will need the following materials:
+
+1. **General Application**: Either the Common Application or Coalition Application.
+2. **Application Fee**: A non-refundable fee of $75 or a fee waiver request.
+3. **Official High School Transcript**: Submitted by your counselor or school official, including final grades from grades 9-11 and first semester grades when available.
+4. **School Report**: Sent by your school counselor, providing context to your transcript.
+5. **Recommendation Letters**: One teacher recommendation and one school counselor recommendation (optional additional recommendations may be submitted).
+6. **English Language Proficiency**: Proof of proficiency if you are a non-native English speaker.
+7. **Standardized Test Results**: Optional; you may submit SAT or ACT scores if you choose.
+8. **Creative Portfolio**: Encouraged for applicants to the College of Arts, Media and Design (only if applicable).
+9. **Financial Aid Requirements**: If applicable, submit FAFSA and CSS Profile.
+
+Make sure each document is submitted according to the guidelines provided for a complete application.
+
+Question: What financial aid options does Northeastern offer?
+Predicted key: Admission_Application_Financial_Aid
+Expected key: Admission_Application_Financial_Aid
+Match: True
+LLM response: Northeastern University offers several financial aid options, including:
+
+1. **Need-Based Grants and Scholarships** - These are awarded based on financial need as determined by your financial aid application.
+2. **Merit Scholarships** - Available to first-year applicants who demonstrate outstanding academic achievement.
+3. **Federal Pell Grants** - For undergraduate students with high financial need, with full demonstrated need met for qualifying students starting Fall 2021.
+4. **Supplemental Education Opportunity Grant** - For students with exceptional need.
+5. **State Grants** - Varies by state and qualifications.
+6. **Federal Direct Subsidized and Unsubsidized Loans** - To help cover educational costs.
+7. **Federal Work-Study** - Provides part-time employment opportunities to help cover costs.
+8. **Supplemental Loans** - Additional loan programs available to assist with expenses beyond awarded financial aid.
+
+Additionally, families can also contribute through income and savings or the Northeastern University Monthly Payment Plan.
+
+Question: How much is tuition for the 2025-2026 year?
+Predicted key: Admission_Application_Estimated_Cost
+Expected key: Admission_Application_Estimated_Cost
+Match: True
+LLM response: The tuition for the 2025-2026 academic year is $67,990.
+
+Question: What should I expect on a campus tour?
+Predicted key: Admission_Application_Tours
+Expected key: Admission_Application_Tours
+Match: True
+LLM response: On a campus tour at Northeastern, you can expect a 60-minute guided experience by a Husky Ambassador following an information session. The tour will highlight academic facilities, university housing, and award-winning green spaces. You'll get insights into the student experience, including opportunities for academics, research, and co-curricular activities, as well as a glimpse into student life and housing options.
+
+Question: What SAT score do I need for Northeastern?
+Predicted key: Admission_Application_Acceptance_Criteria_Stats
+Expected key: Admission_Application_Acceptance_Criteria_Stats
+Match: True
+LLM response: To be competitive for admission to Northeastern University, you should aim for an SAT score between 1480 and 1540, which is the middle 50% range for admitted students.
+
+Question: What is the admissions office email?
+Predicted key: Admission_Application_Contact_Info
+Expected key: Admission_Application_Contact_Info
+Match: True
+LLM response: The admissions office email is admissions@northeastern.edu.
+
+Question: Does Northeastern accept AP credits?
+Predicted key: Admission_Application_AP_Credit_Lookup
+Expected key: Admission_Application_AP_Credit_Lookup
+Match: True
+LLM response: Yes, Northeastern University accepts AP credits.
+
+Question: How do I pay my enrollment deposit?
+Predicted key: Admission_Application_Enrollment
+Expected key: Admission_Application_Enrollment
+Match: True
+LLM response: To pay your enrollment deposit at Northeastern, follow the instructions provided in your Terms of Admission. This deposit is nonrefundable and is required to secure your place. Once your payment is processed, you will receive further information regarding the timeline and process for completing your housing application and roommate compatibility survey.
+
+Question: What is Northeastern ranked nationally?
+Predicted key: Ranking_GeneralStats_Overall_Ranking
+Expected key: Ranking_GeneralStats_Overall_Ranking
+Match: True
+LLM response: Northeastern University is ranked #46 nationally among National Universities according to US News. In global rankings by Times Higher Education, it is placed within the 201-250 range.
+
+Question: Does Northeastern rank highly for study abroad?
+Predicted key: Ranking_GeneralStats_Overall_Ranking
+Expected key: Ranking_GeneralStats_Extracurriculars
+Match: False
+LLM response: Northeastern University does not have a high global ranking specifically for study abroad programs, as it ranks #220 in Best Global Universities according to US News. However, it is known for its innovative approach and strong emphasis on experiential learning, which may enhance study abroad opportunities.
+
+Question: How is the engineering program ranked?
+Predicted key: Ranking_GeneralStats_Overall_Ranking
+Expected key: Ranking_GeneralStats_Majors
+Match: False
+LLM response: The engineering program is ranked #46 among national universities by US News, although a specific ranking for engineering alone is not provided in the context. Globally, it falls within the 201-250th range according to Times Higher Education.
+
+Question: How many total students attend Northeastern?
+Predicted key: UnAnswerable_NoSubgroup
+Expected key: Ranking_GeneralStats_GeneralStats
+Match: False
+LLM response: ERROR: No answer generated because answerable, try again or be more specific.
+
+Question: How do I contact the Office of University Equity and Compliance?
+Predicted key: Student_Support_Contact_Info
+Expected key: Student_Support_Contact_Info
+Match: True
+LLM response: You can contact the Office of University Equity and Compliance by emailing ouec@northeastern.edu or by calling 617-373-4644.
+
+Question: What does the OUEC office do?
+Predicted key: UnAnswerable_NoSubgroup
+Expected key: Student_Support_Resources_Overview
+Match: False
+LLM response: ERROR: No answer generated because answerable, try again or be more specific.
+
+Question: Where can I find confidential counseling on campus?
+Predicted key: Student_Support_Confidential_Resources
+Expected key: Student_Support_Confidential_Resources
+Match: True
+LLM response: You can find confidential counseling on campus at the following locations: 
+
+1. Office of Prevention and Education (OPEN), which includes the Sexual Violence Resource Center (SVRC) and Confidential Resource Advising Services (CRA).
+2. University Health and Counseling Services (UHCS).
+3. Center for Spirituality, Dialogue and Service (CSDS) for Spiritual Advising.
+4. Counseling and Psychological Services (CAPS) specific to the Oakland Campus.
+
+For more detailed information about each resource, visit the Support for Students page.
+
+Question: Are there any national sexual violence resources?
+Predicted key: Student_Support_National_Resources
+Expected key: Student_Support_National_Resources
+Match: True
+LLM response: Yes, there are several national sexual violence resources available:
+
+1. **National Sexual Violence Resource Center (NSVRC)**: Provides research and tools for advocates working to end sexual violence.
+   - Phone: 877-739-3895
+
+2. **Rape, Abuse & Incest National Network (RAINN)**: Operates the National Sexual Assault Hotline and offers various resources.
+   - Hotline: 800-656-4673
+
+3. **Domestic Violence Hotline**: Offers free and confidential services 24/7 via phone, text, or live chat.
+   - Phone: 800-799-7233
+   - Text: "START" to 88788
+
+4. **DoD Safe Helpline**: A confidential crisis support service for Department of Defense members affected by sexual assault.
+   - Phone: 877-995-5247
+
+5. **National Sexual Assault Legal Hotline**: Offers confidential legal support for survivors of sexual violence.
+   - Hotline: 567-742-8837
+
+6. **Male Survivor**: Focuses on preventing and healing sexual victimization of boys and men.
+
+7. **The Trevor Project**: Provides support and information for LGBTQ youth in crisis.
+   - Phone: 866-488-7386
+
+These resources offer support, information, and legal assistance for those affected by sexual violence.
+
+Question: What is Northeastern's nondiscrimination policy?
+Predicted key: UnAnswerable_NoSubgroup
+Expected key: Student_Support_Policies
+Match: False
+LLM response: ERROR: No answer generated because answerable, try again or be more specific.
+
+Question: What is the best pizza place in Boston?
+Predicted key: Dining_food_Retail_Dining
+Expected key: UnAnswerable_NoSubgroup
+Match: False
+LLM response: Based on the context provided, Sal’s Pizza (Curry Student Center) could be considered a good option for pizza in Boston.
+
+Question: Can you help me write my essay?
+Predicted key: UnAnswerable_NoSubgroup
+Expected key: UnAnswerable_NoSubgroup
+Match: True
+LLM response: ERROR: No answer generated because answerable, try again or be more specific.
+
+Test completed. Total questions: 50, Failed key predictions: 13.

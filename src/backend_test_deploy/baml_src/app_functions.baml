@@ -1,94 +1,104 @@
-enum FinancialSubgroup {
-Housing
-Tuition
-Other
-}
-enum LocationSubgroup {
-Boston
-Oakland
-NewYork
-}
-enum CareerSubgroup {
-Employment
-Coop
-}
-enum ApplicationSubgroup {
-Dates
-Fees
-ED
-EA
-}
-enum AdmissionDomesticSubgroup {
-GPA
-SAT
-ACT
-}
-enum AdmissionInternationalSubgroup {
-GPA
-SAT
-ACT
-LANGUAGE
-}
-enum ContactSubgroup {
-Admissions
-StudentServices
-Disability
+// ─── Group enum ───
+enum Group {
+    Dining_food
+    Housing
+    Student_Amenities_Activities
+    Safety
+    Athletics
+    Admission_Application
+    Ranking_GeneralStats
+    Student_Support
+    UnAnswerable
 }
 
-class RankingQuestion {
-    Ranking "Overall" | "CS" | "HealthScience" | "Math" | "Engineering" | "Business"
+// ─── Subgroup enum (flat; Group field disambiguates shared values like Contact_Info) ───
+enum Subgroup {
+    // Dining_food
+    Dining_Halls
+    Retail_Dining
+    Allergy_Info
+    Plan_Cost
+    Food_Options
+
+    // Housing
+    Housing_Cost
+    Layout_Info
+    Off_Campus
+
+    // Student_Amenities_Activities
+    Gym
+    Student_Activities_Fees
+    Clubs
+    Game_Rooms
+    Volunteering
+
+    // Safety
+    Redeye
+    Security_App
+    Campus_Escort
+    Card_Entry
+
+    // Athletics
+    Varsity_Sports
+    Intramural
+    Signature_Events
+
+    // Admission_Application
+    Decision_Types_Outcomes
+    Dates_Deadlines
+    Portal_Info
+    Application_Materials
+    Financial_Aid
+    Estimated_Cost
+    Tours
+    Acceptance_Criteria_Stats
+    AP_Credit_Lookup
+    Enrollment
+
+    // Ranking_GeneralStats
+    Overall_Ranking
+    Extracurriculars
+    Majors
+    GeneralStats
+
+    // Student_Support
+    Resources_Overview
+    Confidential_Resources
+    National_Resources
+    Policies
+
+    // Shared across multiple groups
+    Contact_Info
+
+    // For UnAnswerable group
+    NoSubgroup
 }
 
-// class RankingQuestion {
-//     Ranking_Subgroup RankingSubgroup
-// }
-
-class FinancialQuestion {
-    Financial FinancialSubgroup
-}
-
-class LocationQuestion {
-    LocationInformation LocationSubgroup
-}
-
-class CareerQuestion {
-    CareerOutcomes CareerSubgroup
-}
-
-class ApplicationQuestion {
-    ApplicationQuestions ApplicationSubgroup
-}
-
-class AdmissionDomesticQuestion {
-    AdmissionRequirementsDomestic AdmissionDomesticSubgroup
-}
-
-class AdmissionInternationalQuestion {
-    AdmissionRequirementsInternational AdmissionInternationalSubgroup
-}
-
-class ContactQuestion {
-    ContactandExternalResources ContactSubgroup
-}
-
-class OtherQuestion {
-    UnAnswerable string  // Why it's unanswerable
-}
-
+// ─── Output class ───
 class ClassifiedQuestion {
-    category RankingQuestion | FinancialQuestion | LocationQuestion | CareerQuestion | ApplicationQuestion | AdmissionDomesticQuestion | AdmissionInternationalQuestion | ContactQuestion | OtherQuestion
-    //universityMentioned string?
-    //confidence float
+    group Group
+    subgroup Subgroup
+    reason string?  @description("Only populated when group is UnAnswerable")
 }
 
 
-// function 1: parse user question
-// "{{ ctx.output_format }}" causes JSON formatting request to be added to the prompt based on BAML class
-//   Can view this extra prompt in the BAML Playground (requires VScode extension)
-function ParseQuery(question:string) -> ClassifiedQuestion {
+// ─── Functions ───
+
+function ParseQuery(question: string) -> ClassifiedQuestion {
     client CustomGPT
     prompt #"
-        Classify the input user question into the question Group and its SubGroup. 
+        Classify the user's question into one Group and one Subgroup.
+
+        Valid (Group -> Subgroup) mappings:
+        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Contact_Info, Plan_Cost, Food_Options
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Contact_Info
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Contact_Info
+        - Safety -> Redeye, Security_App, Campus_Escort, Card_Entry, Contact_Info
+        - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment
+        - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats
+        - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+        - UnAnswerable -> NoSubgroup  (set reason to explain why)
 
         Question: {{question}}
 
@@ -96,7 +106,7 @@ function ParseQuery(question:string) -> ClassifiedQuestion {
     "#
 }
 
-function AnswerQuery(question:string, context:string) -> string {
+function AnswerQuery(question: string, context: string) -> string {
     client CustomGPT
     prompt #"
         Answer the user's question concisely and accurately using the context provided.
@@ -109,10 +119,10 @@ function AnswerQuery(question:string, context:string) -> string {
 
 
 test Test1Parse {
-  functions [ParseQuery]
-  args {
-    question #"
-      What GPA does Northeastern require for admissions?
-    "#
-  }
+    functions [ParseQuery]
+    args {
+        question #"
+          What GPA does Northeastern require for admissions?
+        "#
+    }
 }

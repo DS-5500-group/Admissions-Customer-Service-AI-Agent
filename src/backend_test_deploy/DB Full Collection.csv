@@ -1,0 +1,730 @@
+﻿Group,SubGroup,Information Text,Source(url),Source_Type,Lookup_Key
+Dining/food,Dining_Halls,"Campus Roots at 60 Belvidere
+Outtakes at Stetson West (10 points/meal)
+The Eatery at Stetson East
+The Market at 60 Belvidere Street ($14/meal swipe)
+United Table at International Village",https://huskycard.northeastern.edu/dining-halls/,Official,Dining_food_Dining_Halls
+Dining/food,Retail_Dining,"Choolaah (Curry Student Center)
+D’Angelo’s (Curry Student Center)
+Dunkin’ (Hayden Hall, Shillman Hall)
+Equator Coffees at Snell Library
+Faculty Club (EXP)
+The Halal Shack (Curry Student Center)
+Juicygreens (International Village South)
+Kigo Kitchen (Curry Student Center)
+the Market at Curry Student Center
+Modern Market (Churchill Hall)
+Popeyes (Curry Student Center)
+Sal’s Pizza (Curry Student Center)
+Starbucks (Curry Student Center, Churchill Hall)
+Subway (Ryder Hall)Anna’s Taqueria (Marino Center)
+Fuel America (ISEC)
+Saxbys (EXP)
+Tatte Bakery and Cafe (Marino Center)
+Wollaston’s Market (Marino Center, West Village B)",https://huskycard.northeastern.edu/dining-halls/,Official,Dining_food_Retail_Dining
+Dining/food,Allergy_Info,"Dining locations strive to suit every student’s needs. All food allergies and special food requests should be disclosed to a Northeastern Dining Administrator prior to each term. Please contact the campus Registered Dietician team at nudietitians@northeastern.edu for questions or concerns regarding menus, allergies, or for information on navigating resources.
+Medical concerns regarding dining and meal plan requirements must be registered through the Disability Access Services in Boston or Oakland for review. Religious concerns must be submitted to the Center for Spirituality, Dialogue, & Service for review.
+For religious-related dietary restrictions, please reach out to the Center for Spirituality, Dialogue, and Service at csdsaccommodations@northeastern.edu to initiate their review process. Once submitted through CSDS, conversations with Northeastern Dining’s Dietitian team and CSDS Spiritual Advisors and staff will be scheduled.  ",https://huskycard.northeastern.edu/meal-plan-policies-2024/?utm_source=chatgpt.com,Official,Dining_food_Allergy_Info
+Dining/food,Contact_Info,"Boston
+4 Speare Commons - Lower Level
+Mon-Fri 8:30 AM — 4:30 PM
+617.373.8740 (EST)
+huskycard@northeastern.edu
+mealplan@northeastern.edu nudietitians@northeastern.edu",https://huskycard.northeastern.edu/on-campus-vendors/,Official,Dining_food_Contact_Info
+Dining/food,Plan_Cost,"Boston traditional meal plan options range from unlimited meals per semester for maximum coverage, to fixed numbers of meals for added flexibility and value. Traditional meal plans are designed for students living in meal plan-required housing, but are open to any student who plans to eat the majority of their meals at our Residential Dining locations. Your meals can be used at any time and during any meal period based on your schedule. NU – Unlimited includes unlimited meals per semester for $4,450, along with $400 in Dining Dollars and 10 guest passes. NU – 225 includes 225 meals for $4,450 with $600 in Dining Dollars and 10 guest passes. NU – 180 includes 180 meals for $3,935 with $300 in Dining Dollars and 10 guest passes. NU – 150 includes 150 meals for $3,465 with $200 in Dining Dollars and 10 guest passes. NU – 100 includes 100 meals for $2,800 with $200 in Dining Dollars and 10 guest passes.",https://huskycard.northeastern.edu/traditional-meal-plans/,Official,Dining_food_Plan_Cost
+Dining/food,Food_Options,"In Boston and Oakland, dining locations include traditional buffet-style dining halls, on-campus cafés, and grab-and-go options.",https://admissions.northeastern.edu/student-life/dining-on-campus/,Official,Dining_food_Food_Options
+Housing,Housing_Cost,"First-year housing costs vary depending on building style and room type. For traditional-style halls, single rooms are the most expensive at $6,510 per semester (or $5,680 in Kerr Hall), while double rooms run $5,680, triples around $5,205–$5,315, and economy options (economy doubles, triples, and quads) range from $4,220 to $4,555 — making them the most affordable choices.
+For suite-style housing, International Village and East Village charge $7,275 for a single bedroom (the highest rate available), $6,220 for double bedrooms, and $5,315 for triple bedrooms. East Village single bedrooms are reserved exclusively for students with documented housing accommodations.
+153 Hemenway stands out as offering some of the widest range of options, from a $5,680 double room down to a $4,220 economy quad. Hastings Hall only offers single and double rooms at $6,510 and $5,680 respectively.
+All rates are charged per semester, and all first-year housing is meal plan required. Students in traditional halls (no kitchens) must have at least the 180 Meal Plan, while those in apartment-style buildings need at least the 150 Meal Plan. Room assignments, buildings, and pricing are all subject to change at the university's discretion. For Upperclassmen, Apartment-Style Housing is the most common option and spans three tiers. Enhanced apartments (typically featuring living rooms, central air, and elevator access) run $7,475 for a single bedroom and $6,315 for a double. Standard apartments (with living rooms but fewer amenities) are $6,840 for a single and $5,480 for a double. Economy apartments (no living room) come in at $5,815 for a single. Studio apartments — where the bedroom and living area are combined — range from $9,075–$9,295 for a single studio and around $6,840 for a double studio, though some studio singles are reserved exclusively for students with documented housing accommodations.
+Suite-Style Housing includes Enhanced and Standard options. Enhanced suites at buildings like Davenport Commons, West Village, and East Village are the priciest non-studio option at $8,855 for a single bedroom and $7,720 for a double. Standard suites (International Village, East Village) run $7,275 for a single down to $5,315 for a triple bedroom.
+Traditional-Style Housing (shared floor bathrooms, meal plan required) is the most affordable upperclassman option, with Hastings Hall offering singles at $6,510 and doubles at $5,680. The Fairwoods offers the lowest rate on the entire chart at $4,725 for a triple bedroom.
+Leased Properties (LP) function like university-owned buildings for billing purposes but lack Husky Card access and require students to arrange their own internet. They span all price tiers depending on the specific property.
+Continuing students in meal-plan-required buildings need at least the 100 Meal Plan, while first-year students in those buildings need the 180 Meal Plan minimum.                                                                                                                                                  ",https://housing.northeastern.edu/rates/,Official,Housing_Housing_Cost
+Housing,Layout_Info,"Each room comes with a bed frame, mattress (twin XL), desk, desk chair and dresser
+Since each room is unique, we are unable to provide square footage/measurements of individual rooms
+All Northeastern University housing is smoke-free
+Common community spaces, in most halls, can be used for studying, group projects or student activities Traditional Style accommodations are corridor rooms with shared communal bathrooms. These accommodations are historically filled with traditional First Year Boston students. Suite Style accommodations are bedrooms that share or are adjoined by a private bath. While some of our first year students live in suite-style housing accommodations, suite style housing makes up a large portion of our continuing student housing stock. Apartment Style accommodations have kitchens and in unit bathrooms. Many continuing students live in apartment style housing, as well as some returning NUin students. ",https://housing.northeastern.edu/university-housing/,Official,Housing_Layout_Info
+Housing,Off_Campus,"Off Campus Engagement and Support (OCES) at Northeastern provides educational programming and engagement opportunities to learners living off campus in Boston and throughout Northeastern’s network. We are dedicated to connecting students to their community, fostering campus engagement, and providing education and resources to support students in Boston’s neighborhoods.  ",https://offcampus.housing.northeastern.edu/get-involved/about/,Official,Housing_Off_Campus
+Housing ,Contact_Info,"housing@northeastern.edu
+617-373-2814",https://housing.northeastern.edu/,Official,Housing_Contact_Info
+Student_Amenities/Activities,Gym,"The Marino Recreation Center and the SquashBusters Center are the main recreational facilities at Northeastern University.  Additionally the following shared facilities are also for recreational use:
+
+The Cabot Center, which houses the swimming pool, indoor cage, and raquetball courts
+Matthews Arena, for open skate and Intramural Sports use
+Carter Field, for Intramural Sports
+Wiffleball Field
+Sand Volleyball Court",https://recreation.northeastern.edu/facilities-hours/,Official,Student_Amenities_Activities_Gym
+Student_Amenities/Activities,Student_Activities_Fees,"An $30 fee will be assessed per semester for all students enrolled at Northeastern’s Boston campus. The fee covers admission to home athletic events, use of the Marino Fitness Center, SquashBusters athletic facility, and the Cabot Gym. This fee also supports the future construction of athletic fields and facilities.",https://bachelors-completion.northeastern.edu/tuition-financial-aid/tuition-fees/,Official,Student_Amenities_Activities_Student_Activities_Fees
+Student_Amenities/Activities,Clubs,"Northeastern is home to more than 600 student clubs and organizations across our undergraduate campus network. Meet new people, find a new hobby, and be a part of something great.
+
+Student clubs and organizations, including the Student Government Association, provide a venue for you to develop your leadership potential. Academic and professional societies connect you to a network of accomplished professionals in your field. You’ll also find athletic clubs, performing arts groups, cultural organizations, and more at Northeastern.
+
+A current list of clubs to lookup can be found at: engage.northeatern.edu/club_signup",https://admissions.northeastern.edu/student-life/student-clubs-and-organizations/|https://engage.northeastern.edu/club_signup,Official,Student_Amenities_Activities_Clubs
+Student_Amenities/Activities,Game_Rooms,"The Paws Play Game Room is the perfect place to take a break between classes or hang out on the weekends. The Paws Play Game Room is located on the 4th floor of the Curry Student Center. It features 6 pool tables, 2 table tennis tables, 3 video game stations(2 PS5s, XBOX and Switch 2) and a board gaming table.",https://curry.sites.northeastern.edu/paws-play-game-room/,Official,Student_Amenities_Activities_Game_Rooms
+Student_Amenities/Activities,Volunteering  ,"Volunteering is an exceptional opportunity for members of the Northeastern community to show their support for the university. The opportunities to volunteer are virtually endless. You can help plan an event, host a gathering, mentor a student, or simply engage with us through social or digital channels.
+
+Whatever shape your involvement takes and regardless of how much time you have to offer, rest assured that your contribution will significantly impact those around you. We will work with you to align the best opportunities with your skills and ideas.",https://alumni.northeastern.edu/about/about-us/volunteer/,Official,Student_Amenities_Activities_Volunteering
+Student_Amenities/Activities,Contact_Info,"If you have a University Recreation policy related question or a situation specific to your needs that requires further inquiry, please contact us at recreation@northeastern.edu and the appropriate team member will contact you.
+
+Center of Student Involvement contacts:
+General inbox: nucsi@northeastern.edu
+617-373-2642
+CSI Office hours:
+Monday 1-5pm
+Tuesday 10am-3pm 
+Thursday 3-7pm
+Friday 10am-3pm
+Virtual or In-Person – walk-ins welcome!
+Student Organization Suites CSC240
+Tue and Thu 12-1pm no staff present",https://recreation.northeastern.edu/policies/|https://csi.studentlife.northeastern.edu/,Official,Student_Amenities_Activities_Contact_Info
+Safety,Redeye  ,"On-demand ride-sharing service created specifically for Northeastern University students who live off-campus within a 1.5-mile radius of Snell Library. Using this app, eligible students can easily request a ride from campus, view estimated pickup times, track their driver’s location in real time, and receive live trip updates for a safer, more reliable commuting experience.",https://play.google.com/store/apps/details?id=com.liftango.northeastern&hl=en_US,Unofficial,Safety_Redeye
+Safety,Security_App,SafeZone is a smart phone app that any student or staff member can download and use for free. This App will connect you directly to the Northeastern University Police Department should you need our assistance or emergency support while you are on campus.,https://nupd.northeastern.edu/safezone/,Official,Safety_Security_App
+Safety,Campus_Escort,"The Public Safety Division is committed to working with Northeastern University faculty, students, staff, and neighbors to build relationships and keep
+our campus thriving. Our work extends far beyond Boston, as we support learners in their academic and experiential endeavors around the world. The
+Public Safety Division is comprised of three sections: Police Department, Emergency Management, and International Safety.
+The Northeastern University Police Department (https://nupd.northeastern.edu/) is a full-service and accredited police agency that comprises patrol
+and investigative divisions providing 24-hour service. NUPD has developed robust crime-detection and prevention strategies centered on technology
+and campus community engagement. Our well-trained officers are ready and willing to assist all members of our community.
+A personal safety escort (https://nupd.northeastern.edu/our-services/safety-escort-services/) can be provided from one Boston on-campus location
+to another, any time of day, whenever personal safety is a concern. You'll need to provide your name, Northeastern ID number, and location.  Safety
+escorts usually arrive in 10 to 15 minutes. A special, nighttime off-campus escort service, called the RedEye, runs from dusk to dawn to transport
+students to their residence within two miles from the center of the Boston campus. Every night from 5 p.m. until 6 a.m., the RedEye van will pick
+students up at Egan Access Road, behind Snell Library. In order to use this escort, you must book a ride in advance using the RedEye app, or you can
+book a ride at the RedEye dispatch center located at the Northeast Security office in the Ruggles Substation.",https://catalog.northeastern.edu/professional-studies/information-entering-students/public-safety/public-safety.pdf,Official,Safety_Campus_Escort
+Safety,Card_Entry,"Along with identification, the Husky Card is also used for building/residence hall access, parking, printing, vending, dining services, library book check-out, discounts and more. The Husky Card can also be used as a pre-paid payment card. When you add money to your Husky Dollar account, you will be able to pay for food and services at many locations in and around the University. Please note that no cash withdrawals are permitted with a Husky Card.",https://huskycard.northeastern.edu/,Official,Safety_Card_Entry
+Safety,Contact_Info,Emergency: 617-373-3333 Non-Emergenc: 617-373-2121,https://nupd.northeastern.edu/,Official,Safety_Contact_Info
+Athletics,Varsity_Sports,"Our students work tremendously hard—and our 19 Division I athletic teams in Boston play even harder. Cheer on Northeastern’s men’s and women’s ice hockey as they go for the Beanpot or catch a basketball game at historic Matthews Arena. Our teams are among the most successful in New England and host some of the biggest collegiate events each year. #HowlinHuskies!
+
+List of Varsity Sports:
+Baseball
+Men’s Basketball
+Women’s Basketball
+Men’s Cross Country
+Women’s Cross Country
+Field Hockey
+Men’s Ice Hockey
+Women’s Ice Hockey
+Men’s Rowing
+Women’s Rowing
+Men’s Soccer
+Women’s Soccer
+Swimming & Diving
+Men’s Track and Field
+Women’s Track and Field
+Volleyball",https://admissions.northeastern.edu/student-life/athletics-and-fitness/|https://nuhuskies.com/#:~:text=McDermid%20Earns%20Hockey%20East%20Rookie,Official,Athletics_Varsity_Sports
+Athletics,Intramural ,"University Recreation Intramural Sports programs allow the campus community to participate in a variety of different tournaments and leagues. With both team and individual sports like flag football, softball, soccer, broomball, badminton, floor hockey, and volleyball, there really is something for everybody.  Within each sport, leagues will be offered to accommodate the recreational playstyles and skill levels of all student participants.
+
+Intramural Sports offers several different types of league play. The two most featured are Open Leagues and All Gender Leagues. Open leagues have no set parameters for who can participate on the field or court, and are often our most competitive leagues. All Gender leagues (formerly known as “Co-Rec”) have sport-specific parameters that require a ratio of different gender-identifying participants competing at once. Please consult the handbook of each sport for further guidance and clarification. All rules and registration information can be found on IMLeagues at https://www.imleagues.com/Northeastern
+
+Our events give students opportunities to improve and enhance leadership and social skills in a fast-paced, competitive, and fun environment. In providing these tournaments and leagues, the University Recreation Intramural Sports programs continue to promote healthy lifestyles and wellness, provide an environment that allows for competition amongst peers, and ensures fun experiences for the entire campus community.",https://recreation.northeastern.edu/intramural-sports/,Official,Athletics_Intramural
+Athletics,Signature_Events,Cheer on Northeastern’s men’s and women’s ice hockey as they go for the Beanpot or catch a basketball game at historic Matthews Arena. Our teams are among the most successful in New England and host some of the biggest collegiate events each year. #HowlinHuskies!,https://admissions.northeastern.edu/student-life/athletics-and-fitness/,Official,Athletics_Signature_Events
+Athletics,Contact_Info,"Athletic Department
+360 Huntington Avenue
+219 Cabot Center
+Boston, Mass. 02115
+
+Athletic Department Phone: (617) 373-2672
+Athletic Department Fax: (617) 373-8988
+Ticket Office: (617) 373-6785
+Howlin' Huskies Fund: (617) 373-2523
+",https://nuhuskies.com/staff-directory,Official,Athletics_Contact_Info
+Admission/Application,Decision_Types/Outcomes,"Early Decision I and II:If Northeastern is your number one college choice, and you are committed to attending if admitted, Early Decision is the admissions program that is right for you. Early Decision is ideal for students who are confident that we are the right fit—academically, socially, and financially. Early Decision (ED) applicants will be bound to their top preference if admitted into that program. This policy is true for any of our five first-year enrollment opportunities and if students select open to all opportunities. ED applicants will not be bound to an enrollment program if admitted into a program that was not their first-choice preference—a non-binding decision would be issued. All applicants are asked for their program preferences in the institution specific section of the application. You will have two opportunities to apply for Early Decision consideration: by November 1 for Early Decision I or by January 1 for Early Decision II. Early Decision II allows students who realize that Northeastern is their first choice later in the application process to demonstrate that interest.
+
+Early Action: Choose Early Action if Northeastern is a top choice—and you feel you can put your best foot forward at this earlier date since the Admissions Committee will not see your senior year grades or late fall standardized testing. Early Action is non-binding.  
+
+Regular Decision: Choose Regular Decision if you would like to have additional time to put the finishing touches on your application and for the Admissions Committee to review information from the first semester of your senior year in your application. Regular Decision is non-binding.
+
+Decision Outcomes: For first-year applicants, once you submit your application, you will receive one of the following admissions decisions:
+Starting at Northeastern’s Boston campus  ,Starting at Northeastern’s Oakland campus  ,Admission to The N.U.in Program: first semester at a global partner institution, Admission to London Scholars: first year at Northeastern's London campus, Admission to New York City Scholars: first year at the Marymount Manhattan College campus , Admission to NU Immerse: a yearlong program for English language acquisition, Admission to Foundation Year: a yearlong program for selected students from the City of Boston, Defer, Waitlist, Deny",https://admissions.northeastern.edu/application-information/admissions-deadlines-decisions/,Official,Admission_Application_Decision_Types_Outcomes
+Admission/Application,Dates/Deadlines,"Early Decision: Early Decision I Application Deadline: November 1  , Early Decision I Decision Notification: By January 1, Early Decision II Application Deadline: January 1  , Early Decision II Decision Notification: By March 1
+
+Early Action: Application Deadline: November 1 ,Decision Notification: By February 15 
+
+Regular Decision: Application Deadline: January 1 , Decision Notification: By April 1
+
+FAFSA/CSS Submission Deadlines: Early Decision I: November 15 , Early Action: December 1 , Early Decision II: January 15 , Regular Decision: February 15 ,Fall Transfer: April 15 , Spring Transfer: October 15",https://admissions.northeastern.edu/application-information/admissions-deadlines-decisions/,Official,Admission_Application_Dates_Deadlines
+Admission/Application,Portal_Info,"Create your application through The Common Application or the Coalition Application (we accept both). Once you have created your application, please select Northeastern University to directly submit your application to us.",https://admissions.northeastern.edu/,Official,Admission_Application_Portal_Info
+Admission/Application,Application_Materials,"General Application: You may submit either the Common Application or Coalition Application. Your application must be submitted by the deadline, along with either the non-refundable application fee ($75) or a fee waiver request.
+
+Transcripts:Your Official High School Transcript must be submitted to Northeastern by your counselor or another school official. Transcripts should include any final grades from grades 9, 10, and 11; first trimester or first semester grades should be sent when they become available. Your high school should submit the Mid-Year Report if you were deferred to Regular Decision. If you are applying from a high school with non-traditional grading policies or narrative evaluations instead of traditional grades, you are required to submit your narrative reports in order for your application to be complete.If you have been out of high school for more than one year, you are still required to submit your most recent transcript.
+If you earned your GED, you must submit an official GED score report, along with your high school transcript through the final year you completed.
+
+Advanced Credits: Freshman are eligible to receive credit from Advanced Placement (AP) or International Baccalaureate (IB) examinations, or from certain international maturity certificate examinations. If you received credit for any courses completed at a college or university, you must request for an official college or university transcript to be sent directly to Northeastern.
+
+School Report: The School Report, which is sent by your school counselor, highlights what is offered by your school academically and provides context to the high school transcript. A School Report will detail class rank, GPA scaling, curriculum, and unique opportunities or extra-curricular activities offered by the high school. Some schools have their own version of the form, which we also accept, but most schools use the NACAC or Common Application school report forms.
+
+Recommendation Letters: We require one teacher recommendation and one school counselor recommendation. If someone else has written on your behalf and offers a different viewpoint, you may submit 1-2 additional recommendations if you would like, but please know that due to the number of applications we receive we may not be able to consider all of them as part of our evaluation. 
+
+English Language Proficency: All first-year and transfer applicants, regardless of citizenship, must demonstrate proficiency in English to be considered for admission to Northeastern. You can complete the requirement in the following ways: 1-You are a native English speaker. 2-You are a non-native English speaker, and you submit official results from a valid English Language Test. Northeastern will accept the following: -C1 Advanced or C2 Proficiency (Cambridge English) -Duolingo English Test (DET)-IELTS Academic -PTE Academic-TOEFL Internet-based Test (Northeastern will accept either the in-person iBT completed in a test center, or the online iBT Home Edition. Northeastern’s TOEFL Code is 3667.)
+3-You are a non-native English speaker, and immediately before enrolling at Northeastern, you will complete 4 consecutive, full-time academic years in high schools and universities where native English was the primary instructional language for all courses except foreign language acquisition courses.
+
+Standardized Test Results (Optional): All complete applications will be fully considered for admission to Northeastern. Northeastern University is test-optional and does not require applicants to submit standardized testing to be considered for admission. If you choose to apply without standardized testing, you will not be penalized or disadvantaged. If you choose to submit standardized testing, you may submit the SAT (CEEB Code 3667) ACT (College Code 1880) or both. Northeastern super-scores and will only consider your best score between the two types of tests.
+
+Creative Portfolio (Encouraged for CAMD applicants): If you are applying to the College of Arts, Media and Design, you are encouraged to submit a portfolio under your Application Status Check after applying to Northeastern. Applicants are encouraged to complete all forms, including Academic Profile, Media Uploads, and Personal Statement (500-word limit). Please only submit one portfolio. Additional submissions will not be reviewed. 
+
+Financial Aid Requirements: If you are a U.S. Citizen, U.S. Permanent Resident or eligible noncitizen applying for need-based financial aid, you must submit the FAFSA and CSS Profile.",https://admissions.northeastern.edu/application-information/required-materials/,Official,Admission_Application_Application_Materials
+Admission/Application,Financial_Aid,"Four methods of meeting the cost of your education: Paying from your family income and savings, The Northeastern University Monthly Payment Plan, administered by Flywire, Financial aid, Supplemental loans.
+
+Determining Award Amounts: Your offer of financial assistance is based on a number of factors. We begin with the estimated cost of education. From this, we subtract the Expected Family Contribution (EFC), which is calculated from information you submitted on the FAFSA and CSS Profile forms, to arrive at your financial need. We are dedicated to meeting the full demonstrated need for each incoming domestic financial aid applicant. Information reported on your financial aid application materials, including the FAFSA and CSS Profile, is used to determine a student's eligibility for available forms of financial assistance. Financial aid offers for first-year students are released in coordination with their offer of admission, provided all required financial aid application materials have been received. In some cases, additional documents may be requested in addition to the FAFSA and CSS Profile. If necessary, we will review and recalculate your aid eligibility using the correct data. In the event there is a change in your financial aid award, a revised offer of financial assistance will be sent to you.
+
+Merit Scholarships:In addition to its generous need-based financial aid program, Northeastern University awards merit scholarships to select students. All first-year applicants who apply for undergraduate admission to Northeastern no later than the Regular Decision deadline of January 1 are considered for merit scholarships, which range in amount. All fall first-year students admitted to Northeastern University London are considered for the Achievement Award in recognition of outstanding academic achievement and our expectation of superior performance.
+
+Need-based grants and scholarships: They are awarded by the university based on information submitted in a student's financial aid application. Most grants and non-merit scholarships funded by Northeastern require that a student demonstrate financial need.
+
+Federal Pell Grants: Federal Pell Grants are available to undergraduate students who have not yet earned a bachelor’s or professional degree. As a program targeted to high need students, eligibility for the Federal Pell Grant depends upon your Expected Family Contribution (EFC). Your EFC is calculated utilizing a formula established by Congress when your Free Application for Federal Student Aid (FAFSA) is processed. Beginning with the Fall 2021 entering class, undergraduate day students who qualify for a federal Pell Grant will have their full demonstrated need met through a combination of grants, scholarships, and work-study from federal, state, and institutional resources. Financial aid awards for eligible Pell Grant recipients will not include Federal Direct loans. In place of Federal Direct Loans, qualifying students will be awarded a Northeastern University Access Grant.* Students who enroll for the Fall 2021 class and qualify for the Federal Pell Grant during future undergraduate academic years, will continue to receive the Northeastern University Access Grant, in place of Federal Direct Loans. Please note that eligibility for the Federal Pell Grant is determined each academic year, based upon established financial and academic criteria. Federal Pell Grant eligibility is determined by your enrollment status ((full-time, 3/4 time, 1/2 time, less than 1/2 time). The maximum a student may receive for the 2024-2025 academic year was $7,395.
+
+Supplemental Education Opportunity Grant:This grant is awarded directly from Student Financial Services to students who demonstrate exceptional need.
+
+State Grants: Many states offer support to students who meet specific qualifications. If we have added a state grant to your award, it reflects our best estimate of your eligibility.
+
+Federal Direct Subsidized and Unsubsidized Loans: These may be subsidized, unsubsidized, or a combination of both. With a need-based subsidized loan, the federal government pays the interest that accrues while you are in school. On a non-need-based unsubsidized loan, interest accrues while you are in school.
+
+
+Supplemental Financing: There are a number of educational loan programs available to assist you in covering your expenses over and above any financial aid that may be awarded to you. Talk to Student Financial Services if you have questions about these options.
+
+Federal Work-Study: This program assists students in securing part-time employment on campus, or at an approved off-campus agency, to help pay for incidental expenses during the year.",https://admissions.northeastern.edu/cost-financial-aid/financial-aid-for-admitted-students/,Official,Admission_Application_Financial_Aid
+Admission/Application,Estimated_Cost,"Below are costs for the 2025-2026 academic year by enrollment program. We encourage you visit studentfinance.northeastern.edu to use one of our financial calculators to understand your estimated costs better.
+
+For first-year students on our Boston and Oakland campuses.
+Estimated Annual Direct and Indirect Costs: $94,137 (Boston), $94,582 (Oakland)
+Tuition - $67,990 
+Fees - $1,299 (Boston), $1,744 (Oakland) 
+Housing* - $13,148 
+Food* - $8,900
+Books and course materials** - $1,000
+Personal expenses** - $900
+Transportation** - $900
+* - These figures vary based on selected housing and dining options.
+** - These figures are estimated and not billed directly by Northeastern.
+
+General Statistics related to aid to consider: 
+-70%+ of first-year students receive financial aid, including merit scholarships and grants.
+-$470M in institutional aid will be awarded to undergraduate students in the 2024-2025 academic year.
+-50%of Northeastern students graduate with no debt.
+
+Links to financial calculators:
+https://studentfinance.northeastern.edu/myintuition/?_gl=1*147gd5t*_gcl_au*MjA0NzI1MDMzNC4xNzcyNjYyNDMy
+https://npc.collegeboard.org/app/northeastern",https://admissions.northeastern.edu/cost-financial-aid/,Official,Admission_Application_Estimated_Cost
+Admission/Application,Tours,"What to Expect For the Main Tours:
+1-Information Sessions: This session will offer a high-level overview of Northeastern’s experienced-powered approach to education, the student experience, and the admissions and financial aid process.
+2-Campus Tours:Following the information session is a Husky Ambassador-led tour of our Boston or Oakland campus. These 60-minute tours showcase our academic facilities, university housing, and award-winning green spaces.
+
+Virtual College and Program Sessions:
+Interested in a closer look at the student experience at Northeastern? Join one of our upcoming virtual sessions hosted by our Admissions team and representatives from across the university! These sessions are a great way to learn more about Northeastern's rigorous academics, expansive global network, experiential learning opportunities, and vibrant student life.
+
+Interactive Virtual Tour: Take a stroll through our Boston campus with our interactive virtual tour. Explore our academic facilities, student housing, and award-winning green spaces, guided by a Husky Ambassador.
+
+Campus Tour Video Collection: Experience a tour of the Boston campus hosted by two of Northeastern’s Husky Ambassadors. Learn about academic, research, and co-op opportunities available to our students. Hear about student experiences such as joining one of our 500+ student clubs and organizations in Boston, capturing photos of everyday life in Cuba, or living in Australia. During our residence hall tour, you will see an example of a student’s room, hear about our Living Learning Communities, and learn more about the various dining options on and off campus.",https://admissions.northeastern.edu/visit/virtual-visit-experience/|https://apply.northeastern.edu/portal/campus-visit?utm_source=ugadmissionswebsite&utm_medium=web&utm_campaign=campusvisit&utm_term=fa24&utm_content=Visit&_gl=1*1bvuhvy*_gcl_au*MjA0NzI1MDMzNC4xNzcyNjYyNDMy,Official,Admission_Application_Tours
+Admission/Application,Acceptance_Criteria_Stats,"Middle 50% range ACT score of admitted students: 33-35
+Middle 50% range SAT score of admitted students: 1480-1540
+Middle 50% range GPA of admitted students: 4.2-4.5
+
+General Guidance: Students are recommended, at minimum, to complete four years of English, two years of history, two years of the same foreign language, three years of science, and three years of math. Our most competitive applicants will have completed four years of all five major subjects, or perhaps dropped one subject as a senior to double up on equally rigorous courses in another subject. Applicants to the College of Engineering must have taken physics, chemistry, and precalculus.
+
+That being said, the Admissions Committee evaluates the student within the context of their school and what their school offers — this means that if a school has different graduation requirements, it’s fine if the number of courses does not match the recommended courses above.",https://admissions.northeastern.edu/application-information/,Official,Admission_Application_Acceptance_Criteria_Stats
+Admission/Application,Contact_Info,"Tours: visitorcenter@northeastern.edu
+
+Admissions General: admissions@northeastern.edu
+617.373.2200
+
+Financial Aid: 617.373.3190
+
+Mailing Adress:
+Transcripts and recommendations that cannot be sent electronically should be sent to:
+Northeastern University
+Application Processing Center
+P.O. Box 8210
+Portsmouth, NH 03802
+
+Application fees, application fee waiver requests, FedEx, UPS, or Priority mail packages, and Declaration and Certification of Finances Forms should be sent to:
+The Office of Undergraduate Admissions
+101 Belvidere, 3rd Floor
+Northeastern University
+Boston, MA 02115-5000 USA
+
+Test scores should be submitted electronically.",https://studentfinance.northeastern.edu/contact-us/|https://admissions.northeastern.edu/visit/visit-campus/|https://admissions.northeastern.edu/visit/contact/|https://admissions.northeastern.edu/about-northeastern/the-northeastern-advantage/,Official,Admission_Application_Contact_Info
+Admission/Application,AP_Credit_Lookup,See attached pdf link,https://admissions.northeastern.edu/wp-content/uploads/2025/05/FA26-AP-Transfer-Credit.pdf,Official,Admission_Application_AP_Credit_Lookup
+Admission/Application,Enrollment,"First Pay your nonrefundable enrollment deposit as stated by your Terms of Admission must be paid to reserve a place at Northeastern. This secures your enrollment and transition activities. There is not a separate deposit for housing. Once your enrollment deposit has been received, you will receive information about the timeline and process to complete your housing application and roommate compatibility survey.
+
+After you submit your deposit, please send the following information through your Application Status Check as soon as possible:
+Final high school transcript (required)
+Advanced Placement test results(if applicable)
+International Baccalaureate exam results(if applicable)
+New or updated SAT/ACT scores (if applicable)
+National Merit Finalist, National Achievement or
+National Hispanic documentation (if applicable)
+Official secondary-school national exam results(if applicable)
+Updated TOEFL/IELTS results (if applicable)
+
+Overall steps after deciding to enroll:Without exception, all students must successfully complete their current academic program and submit all final transcripts. High school students must also submit proof of graduation, which is typically found on the final high school transcript. Failure to submit your final high school transcript may impact your financial aid or scholarship award. Failure to successfully complete your current academic program in good standing could result in a decision to rescind your offer of admission. Disciplinary issues that have occurred since admission, at Northeastern’s New Student Orientation programs, during Move-In, or prior to the official start of the semester, must be fully disclosed as part of the terms of admissions. Northeastern reserves the right to rescind your offer of admission or engage in any appropriate disciplinary action related to these issues.
+
+Student requesting deferment: In general, students who have paid their enrollment deposit may request to defer their enrollment one time for a maximum of one year for reasons such as travel, medical conditions, military obligations, or work. Students may not take any classes for academic credit during the deferral period. Requests are reviewed and granted on a case-by-case basis. Students who are granted a deferral must submit a nonrefundable deferral deposit to secure their place for the future term. Deferral requests must be submitted by June 1 for students admitted to the N.U.in, London Scholars, or New York City Scholars Programs and by July 1 for students admitted to the Boston or Oakland campuses. All requests can be submitted through the request link on your Application Status Check. Students admitted to the NU Immerse or Foundation Year programs are not eligible to defer their enrollment.",https://admissions.northeastern.edu/application-information/frequently-asked-admissions-questions/,Official,Admission_Application_Enrollment
+Ranking/GeneralStats,Overall_Ranking,"Domestic Ranking Figures (US News)
+#46(of 436) in National Universities (tie)
+#102 in Best Value Schools
+#51 in Best Undergraduate Teaching (tie)
+#5 in Most Innovative Schools
+#136 in Top Performers on Social Mobility (tie)
+#220 in Best Global Universities
+
+Global Ranking Figures ( Times Higher Education): 201-250th",https://www.usnews.com/best-colleges/northeastern-university-2199/overall-rankings|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_Overall_Ranking
+Ranking/GeneralStats,Extracurriculars ,"Domestric Ranking Figures (US News)
+#21 in Study Abroad
+#53 in Undergraduate Research/Creative Projects (tie)
+#14 in Service Learning
+#18 in Senior Capstone (tie)
+#1 in Co-ops/Internships",https://www.usnews.com/best-colleges/northeastern-university-2199/overall-rankings,Unofficial ,Ranking_GeneralStats_Extracurriculars
+Ranking/GeneralStats,Majors,"Domestric Ranking Figures (US News)
+#35 in Best Undergraduate Engineering Programs (tie)
+#9 in International Business
+#28 in Nursing (tie)
+#87 in Economics (tie)
+
+Global Ranking Figures (Times Higher Education):
+Arts and Humanities 2026 :  301 - 400th
+Business and Economics 2026: 176-200th
+Medical and Health 2026: 251-300th
+Computer Science 2026: 98th
+Engineering 2026: 201-250th
+Law 2026: 101-125th
+Life Sciences 2026: 176-200th
+Physical Sciences 2026: 201-250th
+Psychology 2026: 98th
+Social Sciences 2026: 201-250th",https://www.usnews.com/best-colleges/northeastern-university-2199/overall-rankings|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_Majors
+Ranking/GeneralStats,GeneralStats,"From US News: 
+Total number of students: 29,623
+Number of international students: 11,732
+Total number of academic staff: 1,876
+Number of international staff: 371
+Number of undergraduate degrees awarded: 4,547
+Number of doctoral degrees awarded: 619
+Number of research only staff: 299
+Number of new undergraduate students: 2,519
+Number of new doctoral students: 592
+
+From Times Higher Education:
+Student gender ratio: 53 F : 47 M 
+Students per staff: 15.8
+International student percentage: 40%",https://www.usnews.com/education/best-global-universities/northeastern-university-167358|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_GeneralStats
+Student_Support,Contact_Info,"Office of  University Equity and Compliance:
+Email us: ouec@northeastern.edu
+Call us: 617-373-4644
+
+Office of Student Conduct and Conflict Resolution (OSCCR):
+Phone: 617-373-4390
+Email: osccr@neu.edu
+Location: 204 Ell Hall
+
+University Health and Counseling Services (UHCS):
+Phone: 617-373-2772
+Email: uhcs@northeastern.edu
+Location: Forsyth Building, Suite 135
+
+Find@Northeastern:
+US Phone:  +1 877-233-9477
+Canada Phone: +1 855-229-8797
+Outside of the US Phone: +1 781-457-7777
+
+WeCare:
+Email: wecare@northeastern.edu
+Phone: 617-373-4384
+Location: 104 Ell Hall
+
+The Office of Belonging:
+Email: belonging@northeastern.edu
+
+Disability Access Services (DAS):
+Phone: 617-373-2675
+Email: DRC@northeastern.edu",https://ouec.northeastern.edu/|https://ouec.northeastern.edu/resources/,Official,Student_Support_Contact_Info
+Student_Support,Resources_Overview,"The Office for University Equity and Compliance (OUEC): The OUEC office leads efforts to maintain the university’s compliance with all federal, state, and local laws pertaining to anti-discrimination, the Americans with Disabilities Act, and Title IX.
+The OUEC office is not a confidential resource. Information reported to OUEC will be shared only with individuals who “need to know” in order to assist in the assessment, investigation, and resolution of the reported incident.
+
+Title IX Coordinator: Mark Jannoni is the Title IX Coordinator for Northeastern University. The role of the Title IX Coordinator is to:
+Coordinate the university’s compliance with Title IX policies and procedures
+Coordinate responses to reports of Prohibited Conduct including thorough, fair, and impartial investigations and remedies or interim measures designed to protect the university community
+Provide leadership for Title IX education and training for all students, faculty, and staff
+Be a private resource, not a confidential resource. Information reported to the Title IX Coordinator will be shared only with individuals who “need to know” in order to assist in the assessment, investigation, and resolution of the reported incident.
+
+Office of Student Conduct and Conflict Resolution (OSCCR): OSCCR receives formal reports of Code of Student Conduct violations and oversees the Student Conduct hearing process. OSCCR staff can administer no contact orders through the disciplinary process.
+Confidentiality
+OSCCR is not a confidential resource. OSCCR administrators are required to report and disclose all allegations of discrimination, sexual violence, or any related incidents of Prohibited Offenses to OUEC.
+
+University Health and Counseling Services (UHCS): UHCS provides assessment and treatment of physical injuries, psychological support, therapy referrals and advocacy options.
+Confidentiality
+UHCS is a confidential resource. This means that they are not required to disclose information about Prohibited Offenses. You can seek out UHCS for medical treatment, emotional support, and counseling services. Anything you share will be kept in confidence.
+
+Find@Northeastern:
+Find@Northeastern provides free, confidential supports that are available from any location including:
+
+Uwill: A 24/7 mental health support phone line where you will be connected with a licensed counselor. Uwill also has an online space that students can register with.
+Headspace: A mindfulness and meditation app to help with stress, sleep, focus, and more. Students can register with their NUID.
+Togetherall: A safe and anonymous community for discussions around mental health topics to encourage bonding over shared experiences. This platform is monitored 24/7 by licensed mental health clinicians.
+Confidentiality
+Find@Northeastern and all included services are confidential resources. The mental health clinicians are not required to document or report any information you share with the university or team members of the OUEC.
+
+Office of Prevention and Education at Northeastern (OPEN):
+OPEN provides confidential prevention and education services on the topics of alcohol and other drugs, sexual violence, and sexual health. They seek to provide supportive, accessible and non-judgmental services to students as well as to engage our community on wellness-related topics. 
+
+WeCare:We Care is an extended network of support services that provides help and encouragement to Northeastern students who are experiencing unexpected challenges in their personal or academic life, to embolden them so they can succeed. We Care is available to all Northeastern University students, wherever they are studying.
+Confidentiality
+We Care is not a confidential resource. All We Care staff members are required to report and disclose all allegations of discrimination, sexual violence, or any related incidents of Prohibited Offenses to OUEC.
+
+The Office of Belonging:
+The Office of Belonging focuses on creating an inclusive environment within the NU community. This is enacted through the creation of affinity groups, sharing of university and community initiatives, opportunities for learning and development, and distribution of resources.
+Confidentiality
+The Office of Belonging is not a confidential resource. Staff are required to report and disclose all allegations of discrimination, sexual violence, or any related incidents of Prohibited Offenses to OUEC.
+
+Disability Access Services (DAS):
+DAS is dedicated to partnering with the diverse population of students, staff, and faculty who we serve at Northeastern and in the surrounding community.
+Confidentiality
+DAS is not a confidential resource. DAS staff are required to report and disclose all allegations of discrimination, sexual violence, or any related incidents of Prohibited Offenses to OUEC.
+If you are an incoming student or a current student that is not registered with DAS, visit the Incoming and Unregistered Students page. This will give you access to the student disclosure form and your DAS portal through the Student Hub. If you are already registered with DAS, visit the Registered Students page for access to accommodation guidelines and supports as well as your DAS portal through the Student Hub.
+",https://ouec.northeastern.edu/resources/,Official,Student_Support_Resources_Overview
+Student_Support,Confidential_Resources,"Northeastern has several spaces for confidential supports:
+
+Office of Prevention and Education (OPEN), which includes the Sexual Violence Resource Center (SVRC), Confidential Resource Advising Services (CRA), and Community Consultation
+University Health and Counseling Services (UHCS)
+Center for Spirituality, Dialogue and Service (CSDS) – Spiritual Advising
+Counseling and Psychological Services (CAPS) — *Oakland Campus specific
+Find out more about each resource on the Support for Students page.",https://ouec.northeastern.edu/resources/,Official,Student_Support_Confidential_Resources
+Student_Support,National_Resources,"National Resources
+National Sexual Violence Resource Center
+NSVRC provides research & tools to advocates working on the frontlines to end sexual harassment, assault, and abuse with the understanding that ending sexual violence also means ending racism, sexism, and all forms of oppression.
+Phone: 877-739-3895
+
+Domestic Violence Hotline
+The Domestic Violence Hotline offers free and confidential services 24/7 via phone, text, or live chat.
+Phone: 800-799-7233
+Text: Text “START” to 88788
+
+Rape, Abuse & Incest National Network (RAINN)
+RAINN is the nation’s largest anti-sexual organization. RAINN created and operates the National Sexual Assault Hotline, and offers an abundance of broad statistics and resources
+24hr Hotline: 800-656-4673
+Phone: 800-656-4673
+
+DoD Safe Helpline
+DoD Safe Helpline is the sole secure, confidential, and anonymous crisis support service specially designed for members of the Department of Defense community affected by sexual assault.
+Phone: 877-995-5247
+
+National Suicide & Crisis Lifeline
+The Suicide & Crisis Lifeline provides 24/7, free and confidential support for people in distress and prevention and crisis resources for you or your loved ones. Call 988 or chat online.
+
+National Sexual Assault Legal Hotline
+The Take Back the Night Foundation’s mission is “to end sexual assault, domestic violence, dating violence, sexual abuse and all other forms of sexual violence. We serve to create safe communities and respectful relationships through awareness events and initiatives.” This hotline provides confidential, judgment-free, trauma informed legal support for survivors of sexual harassment, sexual assault, rape or other sexual violence.
+24/7 Hotline: 567-742-8837
+Or complete the online form (inquiries will be answered in 1-2 business days) on the bottom of the webpage.
+
+Male Survivor
+MaleSurvivor is a 501(c)(3), non-profit, public benefit organization committed to preventing, healing, and eliminating all forms of sexual victimization of boys and men through support, treatment, research, education, advocacy, and activism.
+
+The Trevor Project
+The Trevor Project is here so that you can reach out to a counselor if you’re struggling, find answers and information, and get the tools you need to help someone else.
+Phone:  866-488-7386",https://ouec.northeastern.edu/resources/,Official,Student_Support_National_Resources
+Student_Support,Policies,"Notice of Nondiscrimination
+Northeastern University complies with federal, state, and provincial civil rights laws and prohibits discrimination within any of its programs, activities, and services in accordance with Title VI of the Civil Rights Act of 1964, Section 504 of the Rehabilitation Act of 1973, Title IX of the Education Amendments Act of 1972, Age Discrimination Act of 1975, U.S. Department of Homeland Security Regulation 6 C.F.F. Part 19, and other applicable civil rights laws and regulations.
+
+Sexual and Gender-Based Harassment and Title IX
+Policy on Sexual and Gender-Based Harassment and Title IX
+Informal Resolution Procedures
+Formal Resolution Procedures for Title IX Prohibited Offenses involving Student Respondents
+Formal Resolution Procedures for Title IX Prohibited Offenses involving Employee Respondents 
+Formal Resolution Procedures for SGBH Prohibited Offenses 
+Protocols for Emergency Removals
+This Policy and these Procedures apply to all campuses in the US and Canada.
+Consistent with the February 4, 2025 Dear Colleague Letter, the Department of Education’s Office for Civil Rights will enforce Title IX under the provisions of the 2020 Title IX Regulations (2020 Title IX Final Rule). Northeastern’s Policy on Sexual and Gender-Based Harassment and Title IX is currently in compliance with the 2020 Title IX Regulations, and the University will continue to monitor any legal developments in this area and update the Northeastern community accordingly.
+
+Nondiscrimination and Equal Opportunity
+The Policies on Equal Opportunity prohibit discrimination or harassment on the basis of protected categories.
+
+Policy on Nondiscrimination and Equal Opportunity (US)
+This Policy applies to all US campuses.
+In the US, protected categories include race/color, religion/religious creed, genetic information, sex (including pregnancy or pregnancy related condition), gender, gender identity, sexual orientation, age, national origin, ancestry, ethnicity, disability status, or veteran and military status. The US Policy applies to all US-based university community members, including current and prospective students, faculty, staff and volunteers in connection with university activities.
+
+Policy on Nondiscrimination and Equal Opportunity (CAN)
+This Policy applies to all Canadian campuses.
+In Canada, protected categories include ancestry, place of origin, colour, ethnic origin, citizenship, creed, sex, sexual orientation, gender identity or expression, age, record of offences, marital status, family status or disability or any other characteristic protected by applicable federal or provincial law. The Canadian Policy applies to Canada-based university community members, including current and prospective students, faculty, staff and volunteers in connection with university activities.
+
+Nondiscrimination and Equal Opportunity Complaint Procedures (US + CAN)
+These Procedures apply to all campuses in the US and Canada.
+The Nondiscrimination and Equal Opportunity Complaint Procedures set forth the options and steps for reporting allegations of discrimination and harassment and/or retaliation.
+
+Non-Fraternization
+Policy on Non-Fraternization
+This Policy applies to all campuses in the US and Canada.
+This Policy prohibits romantic or sexual relationships where there is supervision, direction or control between the parties.
+
+Northeastern Policies
+For any other Northeastern Policies, visit the NU Policies webpage.
+There were many hyperlinks on this page that should be referenced if furthter information is requested. ",https://ouec.northeastern.edu/services/,Official,Student_Support_Policies
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
