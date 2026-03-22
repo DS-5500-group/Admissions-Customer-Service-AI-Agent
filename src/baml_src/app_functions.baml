@@ -9,6 +9,7 @@ enum Group {
     Ranking_GeneralStats
     Student_Support
     UnAnswerable
+    End_Call
 }
 
 // ─── Subgroup enum (flat; Group field disambiguates shared values like Contact_Info) ───
@@ -72,6 +73,9 @@ enum Subgroup {
 
     // For UnAnswerable group
     NoSubgroup
+
+    //End_Call
+    EndCall_Intention
 }
 
 // ─── Output class ───
@@ -99,6 +103,7 @@ function ParseQuery(question: string) -> ClassifiedQuestion {
         - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats
         - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
         - UnAnswerable -> NoSubgroup  (set reason to explain why)
+        - End_Call -> EndCall_Intention (user is done, satisfied, or no longer needs help; examples: "I am done", "No more questions", "All set, thanks", "That’s it for now")
 
         Question: {{question}}
 
@@ -106,16 +111,28 @@ function ParseQuery(question: string) -> ClassifiedQuestion {
     "#
 }
 
-function AnswerQuery(question: string, context: string) -> string {
+function LanguageDetection(response: string) -> string {
+    client CustomGPT
+    prompt #"
+        Extract the language name from user's response. If no language is mentioned, default to English.
+
+        User response: {{response}}
+    "#
+}
+
+
+function AnswerQuery(question: string, context: string, language: string) -> string {
     client CustomGPT
     prompt #"
         Answer the user's question concisely and accurately using the context provided.
-
+        Respond in {{language}}.
         User question: {{question}}
 
         University info context: {{context}}
     "#
 }
+
+
 
 
 test Test1Parse {
