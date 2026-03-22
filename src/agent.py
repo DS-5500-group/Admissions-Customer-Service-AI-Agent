@@ -19,7 +19,17 @@ stream_sid = "" # probably not needed now
 
 # async_lock = asyncio.Lock() #  supposedly to ensure only one LLM response at a time (see below), not sure if need
 db = pd.read_csv("DB Full Collection.csv")
+language_code_mapping = {
+    "English": "en-US",
+    "Spanish": "es-ES",
+    "Chinese": "zh"
+}
 
+language_greeting = {
+    "English": "What question can I help you with?",
+    "Spanish": "¿Qué pregunta puedo ayudarte con?",
+    "Chinese": "有什么问题我可以帮助你吗?",
+}
 def query_university_context(question: str) -> str:
     
 
@@ -44,15 +54,20 @@ def query_university_context(question: str) -> str:
         return "", predicted_key
     
 # maybe need to make async later, it may blocking all other requests (if we simulate multi user)
-def process_question(question: str) -> str:
+def process_question(question: str, language: str) -> str:
     
     context, predicted_key = query_university_context(question) # prob would also need to make async
     print(f"The asked question was: {question}")
     print(f"The Predicted Key was: {predicted_key}")
     if context == "":
         return "Unable to process question since I am unable to retrieve context"
-    answer = b.AnswerQuery(question, context)
+    answer = b.AnswerQuery(question, context, language=language)
     return answer
+
+async def interruptible_process(question,l, websocket): 
+    answer =  await asyncio.to_thread(process_question, question, l)
+    print(f"LLM answer w/ context: {answer}")
+    await websocket.send_json({"type": "text", "token": answer, "last": True}) 
 
 @web_app.get("/")
 async def root():
@@ -69,11 +84,26 @@ async def twillio_webhook(request: Request):
     response.say("Welcome to the Northeastern University AI Admission Chat Service.")
 
     connect = Connect()
-    base_url = "https://prominently-acidimetrical-season.ngrok-free.dev"
+    base_url = "https://uncriticisably-quavery-louvenia.ngrok-free.dev"
     base_url = base_url.replace('https://', 'wss://')
     websocket_url = f"{base_url}/ws/{caller_number}"
 
-    conversation_relay = ConversationRelay(url = websocket_url) 
+    conversation_relay = ConversationRelay(url = websocket_url, language = "en-US")
+    conversation_relay.language(
+        code="es-ES",
+        tts_provider="google",
+        voice="es-ES-Standard-A",
+        transcription_provider="google",
+        speech_model="long"
+    ) 
+    conversation_relay.language(
+        code="zh",
+        tts_provider="ElevenLabs",
+        voice="ZL9dtgFhmkTzAHUUtQL8", 
+        transcription_provider="deepgram",
+        speech_model="nova-2")
+    
+
     connect.append(conversation_relay)
     response.append(connect)
 
@@ -95,11 +125,29 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str):
     #     break
 
     msg = await websocket.receive_json()
+    language = 'English'
     if msg.get("type") == "setup":
         print(f"ConversationRelay connected, call from {msg.get('from')}")
-
-    utterance_buffer = ""  # may not get full user input at once
+        await websocket.send_json({"type": "text", "token": "What language do you prefer? The available options are English, Spanish, and Chinese.", "last": True})
+        while True: 
+            #Language Set Up for AI Agent
+            msg = await websocket.receive_json()
+            if msg.get('type') != 'prompt':
+                continue
+            if not msg.get('last', False):
+                continue
+            userResponse = msg.get("voicePrompt","English")
+            language = b.LanguageDetection(userResponse)
+            if language not in language_code_mapping:
+                await websocket.send_json({"type": "text", "token": "Sorry, I didn't detect a supported language. Defaulting to English.", "last": True})
+                continue
+            language_code = language_code_mapping[language]
+            print(f"Detected language: {language} (code: {language_code}) from user response: {userResponse}")
+            await websocket.send_json({"type": "language", "transcriptionLanguage": language_code, "ttsLanguage": language_code})
+            await websocket.send_json({"type": "text", "token": language_greeting[language], "last": True})
+            break
     try:
+        current = None
         while True: # main call loop
             msg = await websocket.receive_json()
             
@@ -107,6 +155,10 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str):
 
                 if not msg.get("last", False): # last: True when have full user message
                     continue  # ignore partials
+
+                if current:
+                    current.cancel()
+                    await websocket.send_json({"type": "clear"})
                 
                 #### SHOULDN"T NEED TO BUILD UP PARTIAL, CONVERSATION RELAY IS CUMULATIVE
                 # text = msg.get("voicePrompt", "")   
@@ -122,10 +174,16 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str):
                 final_question = msg.get("voicePrompt", "")
                 print(f"The 'final question' buffered is {final_question}. (Before passing to parse function")
 
-                answer = process_question(final_question)
-                print(f"LLM answer w/ context: {answer}")
-                await websocket.send_json({"type": "text", "token": answer, "last": True}) # last : False if streaming 
-
+                parsedInfo = b.ParseQuery(final_question)
+                print(f"Parsed info from BAML: Group - {parsedInfo.group}")
+                if parsedInfo.group == "End_Call":
+                    print(f"End_Call intention has been found, ending call for {caller_number})")
+                    goodbye_message = b.AnswerQuery("Say goodbye and end the call", "", language=language)
+                    await websocket.send_json({"type": "text", "token": goodbye_message, "last": True})
+                    await asyncio.sleep(5)
+                    await websocket.send_json({"type": "end"})
+                    break
+                current = asyncio.create_task(interruptible_process(final_question, language, websocket))
                 
                 #### POTENTIALLY async version of code: KEY: note sure if an async.Lock() is really necessary here
 
@@ -138,6 +196,10 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str):
 
     except WebSocketDisconnect:
         print("Caller hung up — WebSocket closed")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("agent:web_app", host="0.0.0.0", port=8000, reload=True)
 
 
 
