@@ -12,9 +12,9 @@ from baml_client.types import ClassifiedQuestion
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, Response
 from twilio.twiml.voice_response import VoiceResponse, Connect, ConversationRelay
 
-load_dotenv()
+load_dotenv() # only for local 
 resend.api_key = os.getenv("RESEND_API_KEY")
-print(f"Resend API: Key is: {resend.api_key}.")
+#print(f"Resend API: Key is: {resend.api_key}.")
 
 web_app = FastAPI(title="Admissions Agent")
 # callSid = ""
@@ -180,9 +180,8 @@ async def twillio_webhook(request: Request):
     response.say("Welcome to the Northeastern University AI Admission Chat Service.")
 
     connect = Connect()
-    base_url = "https://prominently-acidimetrical-season.ngrok-free.dev"
-    base_url = base_url.replace('https://', 'wss://')
-    websocket_url = f"{base_url}/ws/{caller_number}"
+    base_url = os.getenv("BASE_URL", "https://prominently-acidimetrical-season.ngrok-free.dev")
+    websocket_url = f"{base_url.replace('https://', 'wss://')}/ws/{caller_number}"
 
     conversation_relay = ConversationRelay(url = websocket_url, language = "en-US")
     conversation_relay.language(
