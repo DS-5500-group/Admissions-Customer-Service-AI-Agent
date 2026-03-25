@@ -2,20 +2,30 @@ import os
 from dotenv import load_dotenv
 import requests
 import asyncio
-import pandas as pd
+from dataclasses import dataclass, field
 
-from baml_client.sync_client import b
-# from baml_client.async_client import b # using async, there is option for both
+import pandas as pd
+import resend
+# from baml_client.sync_client import b
+from baml_client.async_client import b 
 from baml_client.types import ClassifiedQuestion
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, Response
 from twilio.twiml.voice_response import VoiceResponse, Connect, ConversationRelay
 
 load_dotenv()
+resend.api_key = os.getenv("RESEND_API_KEY")
+print(f"Resend API: Key is: {resend.api_key}.")
 
 web_app = FastAPI(title="Admissions Agent")
-callSid = ""
+# callSid = ""
 caller_phone = ""
-stream_sid = "" # probably not needed now
+# stream_sid = "" # probably not needed now
+
+@dataclass
+class CallState:
+    transcript: list = field(default_factory=list)
+    ending_state: bool = False
+    language: str = "English"
 
 # async_lock = asyncio.Lock() #  supposedly to ensure only one LLM response at a time (see below), not sure if need
 db = pd.read_csv("DB_Full_Collection.csv")
@@ -30,7 +40,7 @@ language_greeting = {
     "Spanish": "¿Qué pregunta puedo ayudarte con?",
     "Chinese": "有什么问题我可以帮助你吗?",
 }
-def query_university_context(question: str) -> str:
+def query_university_context(parsed: ClassifiedQuestion) -> str:
     
 
     #### OLD: USED structure where GROUP and SUBGROUP were forced to have 
@@ -44,8 +54,6 @@ def query_university_context(question: str) -> str:
     # groupName = list(parsed_dict.keys())[0]
     # subgroup = list(parsed_dict.values())[0].split('.')[-1]
 
-    parsed = b.ParseQuery(question) # sync version for now (check import at top)
-
     predicted_key = parsed.group + "_" + parsed.subgroup
     try:
         context = db.loc[db["Lookup_Key"]==predicted_key, "Information Text"].item() # .item() should return the single entry, "scalor" value
@@ -53,21 +61,109 @@ def query_university_context(question: str) -> str:
     except ValueError: # 0 or multiple matches for when Lookup_Key==predicted_key, .item() only allows for single row
         return "", predicted_key
     
-# maybe need to make async later, it may blocking all other requests (if we simulate multi user)
-def process_question(question: str, language: str) -> str:
-    
-    context, predicted_key = query_university_context(question) # prob would also need to make async
-    print(f"The asked question was: {question}")
-    print(f"The Predicted Key was: {predicted_key}")
-    if context == "":
-        return "Unable to process question since I am unable to retrieve context"
-    answer = b.AnswerQuery(question, context, language=language)
-    return answer
 
-async def interruptible_process(question,l, websocket): 
-    answer =  await asyncio.to_thread(process_question, question, l)
-    print(f"LLM answer w/ context: {answer}")
-    await websocket.send_json({"type": "text", "token": answer, "last": True}) 
+async def end_call(user_input: str , call: CallState, websocket: WebSocket):
+    print(f"End_Call intention has been found.")
+    # Maybe better to actually include transcript to have a more personalized end message?
+    # Maybe better to have specialized end call BAML function. 
+    goodbye_message = await b.AnswerQuery(question="Say a goodbye message to end the call", context="", transcript="", language=call.language)
+
+    await websocket.send_json({"type": "text", "token": goodbye_message, "last": True})
+    call.transcript.append({"speaker": "User", "text":user_input})
+    call.transcript.append({"speaker": "Agent", "text":goodbye_message})
+    await asyncio.sleep(5)
+    await websocket.send_json({"type": "end"})
+
+async def end_call_set_condition(user_input: str, call: CallState, websocket: WebSocket):
+    print("\nEnd_Call intention has been found (SET CONDITION VERSION).")
+    call.ending_state = True
+    ask_email = "What is your email address? I can send info from this call."
+    await websocket.send_json({"type": "text", "token": ask_email, "last": True})
+    
+    call.transcript.append({"speaker": "User", "text":user_input})
+    call.transcript.append({"speaker": "Agent", "text":ask_email})
+
+def email_transcript(email: str, call: CallState, language: str): # maybe think to make it async
+    if call.transcript is None or len(call.transcript) == 0:
+        print("No conversation history to email.")
+        return
+    else:
+        print(f"Emailing conversation for caller: {email}")
+        # document = ""
+        # for entry in conversation_history:
+        #     document += f" - {entry}\n"
+        transcript_str = "\n".join(f"{entry['speaker']}: {entry['text']}" for entry in call.transcript)
+        email_content = f"Conversation history for caller {email} (Language: {language}):\n\n{transcript_str}"
+        
+        resend.Emails.send({
+            "from": "onboarding@resend.dev",
+            "to": [email],
+            "subject": f"Conversation Transcript for Caller {email}",
+            "text": email_content
+        })
+
+async def process_input_states(user_input: str, call: CallState, websocket: WebSocket):
+    
+    try:
+        # Build redable string transcript from list of dicts
+        if len(call.transcript) > 5:
+            recent_transcript = call.transcript[-5:]
+            transcript_str = "\n".join(f"{entry['speaker']}: {entry['text']}" for entry in recent_transcript)
+
+        else: 
+            transcript_str = "\n".join(f"{entry['speaker']}: {entry['text']}" for entry in call.transcript)
+        
+        # START state, will decide next action/state
+        parsed = await b.ClassifyInput(user_input, transcript_str) #can't just pass transcript 
+        
+        if parsed.overall_classification == "Out_Of_Scope":
+            print("\nOUT OF SCOPE INPUT DETECTED")
+            out_scope_msg = "Sorry, I can only respond to Northeastern University related inquiries, ask something else."
+            await websocket.send_json({"type": "text", "token": out_scope_msg, "last": True})
+            call.transcript.append({"speaker": "User", "text":user_input})
+            call.transcript.append({"speaker": "Agent", "text":out_scope_msg})
+        
+        elif parsed.overall_classification == "End_Call":  
+            #### Want to change back later: ask email and store it at some other part of the program, maybe begining or maybe anytime.         
+            #await end_call(user_input, call, websocket) 
+            await end_call_set_condition(user_input, call, websocket) 
+        elif parsed.confidence <= 0.5 or parsed.group == "UnAnswerable": # agent initiates clarification
+            
+            await websocket.send_json({"type": "text", "token": parsed.clarification, "last": True})
+            call.transcript.append({"speaker": "User", "text":user_input})
+            call.transcript.append({"speaker": "Agent", "text":parsed.clarification})
+
+        else: # Normal reply STATE
+
+            context, predicted_key = query_university_context(parsed) # happens fast, dont worry about async
+            print(f"The asked question was: {user_input}")
+            print(f"The Predicted Key was: {predicted_key}")
+            if context == "":
+                # should never happen, understand how this happens. 
+                answer =  "Unable to process question since I failed to retrieve context. Please clarify or ask a different question" 
+            else:
+                answer = await b.AnswerQuery(user_input, context, transcript_str, language=call.language)
+            
+            await websocket.send_json({"type": "text", "token": answer, "last": True})
+            call.transcript.append({"speaker": "User", "text":user_input})
+            call.transcript.append({"speaker": "Agent", "text":answer})
+    
+    except asyncio.CancelledError:
+        print("Either interrupt or somehow second task created")
+        raise # raise caught when "await task" after doing "task.cancel()"" 
+
+# async def interruptible_process(question,l, websocket): 
+#     answer =  await asyncio.to_thread(process_question, question, l)
+#     print(f"LLM answer w/ context: {answer}")
+#     await websocket.send_json({"type": "text", "token": answer, "last": True}) 
+
+async def cancel_task_if_running(task: asyncio.Task | None) -> None:
+    if task and not task.done():
+        task.cancel()       # Only requests cancellation - doesn't wait
+        try:
+            await task      # Wait for task to actually finish cancelling
+        except asyncio.CancelledError:
+            pass            # Expected - task was cancelled
 
 @web_app.get("/")
 async def root():
@@ -116,11 +212,14 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str):
     print(f"WebSocket connected for call: {caller_number}")
 
     msg = await websocket.receive_json()
-    language = 'English'
+    
+    callSession = CallState()
     
     if msg.get("type") == "setup":
         print(f"ConversationRelay connected, call from {msg.get('from')}")
+        callSession.transcript.append({"speaker": "Agent", "text": "What language do you prefer? The available options are English, Spanish, and Chinese."})
         await websocket.send_json({"type": "text", "token": "What language do you prefer? The available options are English, Spanish, and Chinese.", "last": True})
+        
         while True: 
             #Language Set Up for AI Agent
             msg = await websocket.receive_json()
@@ -128,50 +227,73 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str):
                 continue
             if not msg.get('last', False):
                 continue
+            
             userResponse = msg.get("voicePrompt","English")
-            language = b.LanguageDetection(userResponse)
-            if language not in language_code_mapping:
+            callSession.transcript.append({"speaker": "User", "text": userResponse})
+            callSession.language = await b.LanguageDetection(userResponse)
+            
+            if callSession.language not in language_code_mapping:
                 await websocket.send_json({"type": "text", "token": "Sorry, I didn't detect a supported language. Defaulting to English.", "last": True})
-                continue
-            language_code = language_code_mapping[language]
-            print(f"Detected language: {language} (code: {language_code}) from user response: {userResponse}")
+                callSession.language = "English"
+                #continue
+            
+            language_code = language_code_mapping[callSession.language]
+            print(f"Detected language: {callSession.language} (code: {language_code}) from user response: {userResponse}")
             await websocket.send_json({"type": "language", "transcriptionLanguage": language_code, "ttsLanguage": language_code})
-            await websocket.send_json({"type": "text", "token": language_greeting[language], "last": True})
+            await websocket.send_json({"type": "text", "token": language_greeting[callSession.language], "last": True})
+            callSession.transcript.append({"speaker": "Agent", "text": language_greeting[callSession.language]})
             break
     try:
-        current = None
+        current_task = None
         while True: # main call loop
+            # if not callSession.ending_state:
             msg = await websocket.receive_json()
+
+            if msg.get("type") == "interrupt" and not callSession.ending_state: # ignore interrupt in ending state
+                # cancel created Current task (should only ever be one)
+                await cancel_task_if_running(current_task)
+                current_task = None 
+                # maybe update state here 
+                continue 
             
             if msg.get("type") == "prompt":
-
                 if not msg.get("last", False): # last: True when have full user message
                     continue  # ignore partials
 
-                if current: # will edit this, not 100% safe
-                    current.cancel()
-                    await websocket.send_json({"type": "clear"}) # not valid type for ConversationRelay
-                
+                full_input = msg.get("voicePrompt", "") # only adding to transcript after get response to avoid double passing user questions   
+                print(f"The current user input is '{full_input}'. (Before passing to parse function")
 
-                final_question = msg.get("voicePrompt", "")
-                print(f"The user input buffered is {final_question}. (Before passing to parse function")
+                if callSession.ending_state:
+                    print("\nINSIDE END STATE LOOP")
+                    email = (await b.EmailRetrieval(full_input)).lower()
+                    print(email)
+                    if email == "Unable to parse email":
+                        await websocket.send_json({"type": "text", "token": "Sorry, I couldn't get the email address. Please try again.", "last": True})
+                        continue
 
-                parsedInfo = b.ParseQuery(final_question)
-                print(f"Parsed info from BAML: Group - {parsedInfo.group}")
-                
-                if parsedInfo.group == "End_Call":
-                    print(f"End_Call intention has been found, ending call for {caller_number})")
-                    goodbye_message = b.AnswerQuery(question="Say goodbye and end the call", context="", language=language)
+                    try:
+                        await asyncio.to_thread(email_transcript, email, callSession, callSession.language)
+                        await websocket.send_json({"type": "text", "token": "Email has been sent.", "last": True})
+                    except Exception as e:
+                        print(f"Email send error: {type(e).__name__}: {e}")
+                        await websocket.send_json({"type": "text", "token": "Sorry, there was an error sending the email.", "last": True})
+
+                    goodbye_message = await b.AnswerQuery("Say goodbye and end the call.", "", "", language=callSession.language)
                     await websocket.send_json({"type": "text", "token": goodbye_message, "last": True})
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(10)
                     await websocket.send_json({"type": "end"})
-                    break
-                current = asyncio.create_task(interruptible_process(final_question, language, websocket))
-                
+                    break  
+                else:
+                    #normal flow              
+                    await cancel_task_if_running(current_task) # do not want second task already running before creating another
+
+                    current_task = asyncio.create_task(process_input_states(full_input, callSession, websocket))
+
 
     except WebSocketDisconnect:
         print("Caller hung up — WebSocket closed")
 
+# For local dev: won't exe on Cloud
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("agent:web_app", host="0.0.0.0", port=8000, reload=True)
