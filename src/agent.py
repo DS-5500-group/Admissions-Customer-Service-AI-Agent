@@ -17,9 +17,6 @@ resend.api_key = os.getenv("RESEND_API_KEY")
 #print(f"Resend API: Key is: {resend.api_key}.")
 
 web_app = FastAPI(title="Admissions Agent")
-# callSid = ""
-caller_phone = ""
-# stream_sid = "" # probably not needed now
 
 @dataclass
 class CallState:
