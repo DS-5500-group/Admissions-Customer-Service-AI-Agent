@@ -149,11 +149,6 @@ async def process_input_states(user_input: str, call: CallState, websocket: WebS
         print("Either interrupt or somehow second task created")
         raise # raise caught when "await task" after doing "task.cancel()"" 
 
-# async def interruptible_process(question,l, websocket): 
-#     answer =  await asyncio.to_thread(process_question, question, l)
-#     print(f"LLM answer w/ context: {answer}")
-#     await websocket.send_json({"type": "text", "token": answer, "last": True}) 
-
 async def cancel_task_if_running(task: asyncio.Task | None) -> None:
     if task and not task.done():
         task.cancel()       # Only requests cancellation - doesn't wait
