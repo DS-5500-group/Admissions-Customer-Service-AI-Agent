@@ -163,7 +163,7 @@ async def root():
 
 @web_app.post("/webhook")
 async def twillio_webhook(request: Request):
-     
+    
     form_data = await request.form()
     #callSid = str(form_data["CallSid"])  #not needed for now
     caller_number= str(form_data["From"]).lstrip("+") # get rid of + char in front of phone numbers 
