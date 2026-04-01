@@ -159,7 +159,7 @@ async def cancel_task_if_running(task: asyncio.Task | None) -> None:
 
 @web_app.get("/")
 async def root():
-    return {"status": "ok", "service": "Admissions Agent Northeastern"}
+    return {"status": "ok", "service": "Admissions Agent Northeastern"} 
 
 @web_app.post("/webhook")
 async def twillio_webhook(request: Request):
