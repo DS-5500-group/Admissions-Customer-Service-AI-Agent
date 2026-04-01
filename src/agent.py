@@ -170,7 +170,7 @@ async def twillio_webhook(request: Request):
     response = VoiceResponse()
     response.say("Welcome to the Northeastern University AI Admission Chat Service.")
 
-    connect = Connect()
+    connect = Connect() 
     base_url = os.getenv("BASE_URL", "https://prominently-acidimetrical-season.ngrok-free.dev")
     websocket_url = f"{base_url.replace('https://', 'wss://')}/ws/{caller_number}"
 
