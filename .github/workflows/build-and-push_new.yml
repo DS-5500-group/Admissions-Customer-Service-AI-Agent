@@ -42,5 +42,5 @@ jobs:
             --project ${{ secrets.PROJ_ID }} \
             --allow-unauthenticated \
             --timeout=3600 \
-            --set-secrets "OPENAI_API_KEY= OPENAI_API_KEY_NICHOLAI:latest"
+            --set-secrets "OPENAI_API_KEY=OPENAI_API_KEY_NICHOLAI:latest"
             --set-env-vars "BASE_URL=${{ secrets.BASE_URL }},RESEND_API_KEY=${{ secrets.RESEND }}"
