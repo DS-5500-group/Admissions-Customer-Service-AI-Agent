@@ -42,4 +42,4 @@ jobs:
             --project ${{ secrets.PROJ_ID }} \
             --allow-unauthenticated \
             --timeout=3600 \
-            --set-env-vars "BASE_URL=${{ secrets.BASE_URL }},OPENAI_API_KEY=${{ secrets.OPEN_AI_NP }},RESEND_API_KEY=${{ secrets.RESEND }}"
+            --set-env-vars BASE_URL=${{ secrets.BASE_URL }},RESEND_API_KEY=${{ secrets.RESEND }},TWILIO_ACCOUNT_SID=${{ secrets.TWILIO_ACCOUNT_SID }},TWILIO_AUTH_TOKEN=${{ secrets.TWILIO_AUTH_TOKEN }},FORWARDING_PHONE_NUMBER=${{ secrets.FORWARDING_PHONE_NUMBER }}
