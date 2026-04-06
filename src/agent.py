@@ -262,7 +262,7 @@ async def twillio_webhook(request: Request):
     connect = Connect()
     base_url = os.getenv("BASE_URL", "https://uncriticisably-quavery-louvenia.ngrok-free.dev")
     websocket_url = f"{base_url.replace('https://', 'wss://')}/ws/{caller_number}/{callSid}"
-    conversation_relay = ConversationRelay(url = websocket_url, language = "en-US", interruptible = False)
+    conversation_relay = ConversationRelay(url = websocket_url, language = "en-US", interruptible = True)
     conversation_relay.language(
         code="es-ES",
         tts_provider="google",
