@@ -288,6 +288,7 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
 
     await websocket.accept()
     print(f"WebSocket connected for call: {caller_number}")
+    await websocket.send_json({"type": "config", "interruptible": False})
 
     msg = await websocket.receive_json()
     
