@@ -110,6 +110,7 @@ async def end_call(user_input: str , call: CallState, websocket: WebSocket):
     call.ending_state = True
 
 async def end_call_set_condition(user_input: str, call: CallState, websocket: WebSocket):
+    await websocket.send_json({"type": "config", "interruptible": False})
     print("\nEnd_Call intention has been found (SET CONDITION VERSION).")
     call.ending_state = True
     call.transcript.append({"speaker": "User", "text":user_input})
