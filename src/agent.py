@@ -263,7 +263,7 @@ async def twillio_webhook(request: Request):
     connect = Connect()
     base_url = os.getenv("BASE_URL", "https://uncriticisably-quavery-louvenia.ngrok-free.dev")
     websocket_url = f"{base_url.replace('https://', 'wss://')}/ws/{caller_number}/{callSid}"
-    conversation_relay = ConversationRelay(url = websocket_url, language = "en-US", interruptible = False)
+    conversation_relay = ConversationRelay(url = websocket_url, language = "en-US", interruptible = True)
     conversation_relay.language(
         code="es-ES",
         tts_provider="google",
@@ -296,6 +296,7 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
     callSession.caller_number = f"+{caller_number}" #need in order to call the transfer function
     callSession.call_sid = callSid
     if msg.get("type") == "setup":
+        await websocket.send_json({"type": "config", "interruptible": False})
         print(f"ConversationRelay connected, call from {msg.get('from')}")
         callSession.transcript.append({"speaker": "Agent", "text": "What is your preferred language—English, Spanish, or Chinese?"})
         await websocket.send_json({"type": "text", "token": "What is your preferred language—English, Spanish, or Chinese?", "last": True})
@@ -404,6 +405,8 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
 
             if msg.get("type") == "interrupt": # ignore interrupt in ending state
                 # cancel created Current task (should only ever be one)
+                if callSession.ending_state:
+                    continue
                 await cancel_task_if_running(current_task)
                 current_task = None 
                 # maybe update state here 
