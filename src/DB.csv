@@ -1,10 +1,12 @@
 ﻿Group,SubGroup,Information Text,Source(url),Source_Type,Lookup_Key
-Dining/food,Dining_Halls,"Campus Roots at 60 Belvidere
+Dining/food,Dining_Halls,"Dining Hall Locations:
+Campus Roots at 60 Belvidere
 Outtakes at Stetson West (10 points/meal)
 The Eatery at Stetson East
 The Market at 60 Belvidere Street ($14/meal swipe)
 United Table at International Village",https://huskycard.northeastern.edu/dining-halls/,Official,Dining_food_Dining_Halls
-Dining/food,Retail_Dining,"Choolaah (Curry Student Center)
+Dining/food,Retail_Dining,"Retail Dining Locations:
+Choolaah (Curry Student Center)
 D’Angelo’s (Curry Student Center)
 Dunkin’ (Hayden Hall, Shillman Hall)
 Equator Coffees at Snell Library
@@ -17,7 +19,8 @@ Modern Market (Churchill Hall)
 Popeyes (Curry Student Center)
 Sal’s Pizza (Curry Student Center)
 Starbucks (Curry Student Center, Churchill Hall)
-Subway (Ryder Hall)Anna’s Taqueria (Marino Center)
+Subway (Ryder Hall)
+Anna’s Taqueria (Marino Center)
 Fuel America (ISEC)
 Saxbys (EXP)
 Tatte Bakery and Cafe (Marino Center)
@@ -31,8 +34,18 @@ Mon-Fri 8:30 AM — 4:30 PM
 617.373.8740 (EST)
 huskycard@northeastern.edu
 mealplan@northeastern.edu nudietitians@northeastern.edu",https://huskycard.northeastern.edu/on-campus-vendors/,Official,Dining_food_Contact_Info
-Dining/food,Plan_Cost,"Boston traditional meal plan options range from unlimited meals per semester for maximum coverage, to fixed numbers of meals for added flexibility and value. Traditional meal plans are designed for students living in meal plan-required housing, but are open to any student who plans to eat the majority of their meals at our Residential Dining locations. Your meals can be used at any time and during any meal period based on your schedule. NU – Unlimited includes unlimited meals per semester for $4,450, along with $400 in Dining Dollars and 10 guest passes. NU – 225 includes 225 meals for $4,450 with $600 in Dining Dollars and 10 guest passes. NU – 180 includes 180 meals for $3,935 with $300 in Dining Dollars and 10 guest passes. NU – 150 includes 150 meals for $3,465 with $200 in Dining Dollars and 10 guest passes. NU – 100 includes 100 meals for $2,800 with $200 in Dining Dollars and 10 guest passes.",https://huskycard.northeastern.edu/traditional-meal-plans/,Official,Dining_food_Plan_Cost
-Dining/food,Food_Options,"In Boston and Oakland, dining locations include traditional buffet-style dining halls, on-campus cafés, and grab-and-go options.",https://admissions.northeastern.edu/student-life/dining-on-campus/,Official,Dining_food_Food_Options
+Dining/food,Plan_Options_And_Cost,"Northeastern University offers several meal plans aimed at suiting a variety of student needs. Experience the best of Northeastern Dining every day with the meal plan that works best for you! All first-year students living in University Housing are required to be enrolled in a traditional meal plan as well as continuing students (second-year and above) living in meal plan required housing.  All other full-time, actively enrolled students have the option to enroll in any of the Traditional Meal Plans or Community Meal Plans of their choosing.
+Meal Plan Rates Fall 2025 and Spring 2026 (per semester costs)
+Plan: NU – Unlimited | Cost: $4,450  | Dining Dollars:	$400  | Guest Passes: 10
+Plan: NU – 225  | Cost: $4,450  | Dining Dollars: $600 | Guest Passes: 10
+Plan: NU – 180 | Cost: $3,935  | Dining Dollars: $300  | Guest Passes: 10
+Plan: NU – 150 | Cost: $3,465  | Dining Dollars:: $200 | Guest Passes: 10
+Plan: NU – 100 | Cost: $2,800  | Dining Dollars: $200  | Guest Passes: 10
+Community Meal Plans: offer convenience with a cost-effective way to experience the best of dining – all for our continuing and graduate students who are no longer required to be on a meal plan. 
+Plan: CP – 80	| Cost: $1,460
+Plan: CP – 60	| Cost: $1,105
+Plan: CP – 40	| Cost: $740
+Plan: CP – 20	| Cost: $375",https://huskycard.northeastern.edu/meal-plan/|https://huskycard.northeastern.edu/traditional-meal-plans/|https://huskycard.northeastern.edu/boston-community-plans/,Official,Dining_food_Plan_Options_And_Cost
 Housing,Housing_Cost,"First-year housing costs vary depending on building style and room type. For traditional-style halls, single rooms are the most expensive at $6,510 per semester (or $5,680 in Kerr Hall), while double rooms run $5,680, triples around $5,205–$5,315, and economy options (economy doubles, triples, and quads) range from $4,220 to $4,555 — making them the most affordable choices.
 For suite-style housing, International Village and East Village charge $7,275 for a single bedroom (the highest rate available), $6,220 for double bedrooms, and $5,315 for triple bedrooms. East Village single bedrooms are reserved exclusively for students with documented housing accommodations.
 153 Hemenway stands out as offering some of the widest range of options, from a $5,680 double room down to a $4,220 economy quad. Hastings Hall only offers single and double rooms at $6,510 and $5,680 respectively.
@@ -60,7 +73,7 @@ Student_Amenities/Activities,Clubs,"Northeastern is home to more than 600 studen
 
 Student clubs and organizations, including the Student Government Association, provide a venue for you to develop your leadership potential. Academic and professional societies connect you to a network of accomplished professionals in your field. You’ll also find athletic clubs, performing arts groups, cultural organizations, and more at Northeastern.
 
-A current list of clubs to lookup can be found at: engage.northeatern.edu/club_signup",https://admissions.northeastern.edu/student-life/student-clubs-and-organizations/|https://engage.northeastern.edu/club_signup,Official,Student_Amenities_Activities_Clubs
+A current list of clubs to lookup can be found at: engage.northeastern.edu/club_signup",https://admissions.northeastern.edu/student-life/student-clubs-and-organizations/|https://engage.northeastern.edu/club_signup,Official,Student_Amenities_Activities_Clubs
 Student_Amenities/Activities,Game_Rooms,"The Paws Play Game Room is the perfect place to take a break between classes or hang out on the weekends. The Paws Play Game Room is located on the 4th floor of the Curry Student Center. It features 6 pool tables, 2 table tennis tables, 3 video game stations(2 PS5s, XBOX and Switch 2) and a board gaming table.",https://curry.sites.northeastern.edu/paws-play-game-room/,Official,Student_Amenities_Activities_Game_Rooms
 Student_Amenities/Activities,Volunteering  ,"Volunteering is an exceptional opportunity for members of the Northeastern community to show their support for the university. The opportunities to volunteer are virtually endless. You can help plan an event, host a gathering, mentor a student, or simply engage with us through social or digital channels.
 
@@ -78,7 +91,7 @@ Friday 10am-3pm
 Virtual or In-Person – walk-ins welcome!
 Student Organization Suites CSC240
 Tue and Thu 12-1pm no staff present",https://recreation.northeastern.edu/policies/|https://csi.studentlife.northeastern.edu/,Official,Student_Amenities_Activities_Contact_Info
-Safety,Redeye  ,"On-demand ride-sharing service created specifically for Northeastern University students who live off-campus within a 1.5-mile radius of Snell Library. Using this app, eligible students can easily request a ride from campus, view estimated pickup times, track their driver’s location in real time, and receive live trip updates for a safer, more reliable commuting experience.",https://play.google.com/store/apps/details?id=com.liftango.northeastern&hl=en_US,Unofficial,Safety_Redeye
+Safety,Redeye_Night_Shuttle,"On-demand ride-sharing service created specifically for Northeastern University students who live off-campus within a 1.5-mile radius of Snell Library. Using this app, eligible students can easily request a ride from campus, view estimated pickup times, track their driver’s location in real time, and receive live trip updates for a safer, more reliable commuting experience.",https://play.google.com/store/apps/details?id=com.liftango.northeastern&hl=en_US,Unofficial,Safety_Redeye_Night_Shuttle
 Safety,Security_App,SafeZone is a smart phone app that any student or staff member can download and use for free. This App will connect you directly to the Northeastern University Police Department should you need our assistance or emergency support while you are on campus.,https://nupd.northeastern.edu/safezone/,Official,Safety_Security_App
 Safety,Campus_Escort,"The Public Safety Division is committed to working with Northeastern University faculty, students, staff, and neighbors to build relationships and keep
 our campus thriving. Our work extends far beyond Boston, as we support learners in their academic and experiential endeavors around the world. The
@@ -93,7 +106,7 @@ students to their residence within two miles from the center of the Boston campu
 students up at Egan Access Road, behind Snell Library. In order to use this escort, you must book a ride in advance using the RedEye app, or you can
 book a ride at the RedEye dispatch center located at the Northeast Security office in the Ruggles Substation.",https://catalog.northeastern.edu/professional-studies/information-entering-students/public-safety/public-safety.pdf,Official,Safety_Campus_Escort
 Safety,Card_Entry,"Along with identification, the Husky Card is also used for building/residence hall access, parking, printing, vending, dining services, library book check-out, discounts and more. The Husky Card can also be used as a pre-paid payment card. When you add money to your Husky Dollar account, you will be able to pay for food and services at many locations in and around the University. Please note that no cash withdrawals are permitted with a Husky Card.",https://huskycard.northeastern.edu/,Official,Safety_Card_Entry
-Safety,Contact_Info,Emergency: 617-373-3333 Non-Emergenc: 617-373-2121,https://nupd.northeastern.edu/,Official,Safety_Contact_Info
+Safety,Contact_Info,Emergency: 617-373-3333 Non-Emergency: 617-373-2121,https://nupd.northeastern.edu/,Official,Safety_Contact_Info
 Athletics,Varsity_Sports,"Our students work tremendously hard—and our 19 Division I athletic teams in Boston play even harder. Cheer on Northeastern’s men’s and women’s ice hockey as they go for the Beanpot or catch a basketball game at historic Matthews Arena. Our teams are among the most successful in New England and host some of the biggest collegiate events each year. #HowlinHuskies!
 
 List of Varsity Sports:
@@ -136,14 +149,30 @@ Early Action: Choose Early Action if Northeastern is a top choice—and you feel
 Regular Decision: Choose Regular Decision if you would like to have additional time to put the finishing touches on your application and for the Admissions Committee to review information from the first semester of your senior year in your application. Regular Decision is non-binding.
 
 Decision Outcomes: For first-year applicants, once you submit your application, you will receive one of the following admissions decisions:
-Starting at Northeastern’s Boston campus  ,Starting at Northeastern’s Oakland campus  ,Admission to The N.U.in Program: first semester at a global partner institution, Admission to London Scholars: first year at Northeastern's London campus, Admission to New York City Scholars: first year at the Marymount Manhattan College campus , Admission to NU Immerse: a yearlong program for English language acquisition, Admission to Foundation Year: a yearlong program for selected students from the City of Boston, Defer, Waitlist, Deny",https://admissions.northeastern.edu/application-information/admissions-deadlines-decisions/,Official,Admission_Application_Decision_Types_Outcomes
-Admission/Application,Dates/Deadlines,"Early Decision: Early Decision I Application Deadline: November 1  , Early Decision I Decision Notification: By January 1, Early Decision II Application Deadline: January 1  , Early Decision II Decision Notification: By March 1
+-Starting at Northeastern’s Boston campus
+-Starting at Northeastern’s Oakland campus
+-Admission to The N.U.in Program: first semester at a global partner institution
+-Admission to London Scholars: first year at Northeastern's London campus
+-Admission to New York City Scholars: first year at the Marymount Manhattan College campus
+-Admission to NU Immerse: a yearlong program for English language acquisition
+-Admission to Foundation Year: a yearlong program for selected students from the City of Boston
+-Defer
+-Waitlist
+-Deny",https://admissions.northeastern.edu/application-information/admissions-deadlines-decisions/,Official,Admission_Application_Decision_Types_Outcomes
+Admission/Application,Dates/Deadlines,"Early Decision I Application Deadline: November 1 ,  Decision Notification by January 1
+Early Decision II Application Deadline: January 1,  Decision Notification by March 1
 
-Early Action: Application Deadline: November 1 ,Decision Notification: By February 15 
+Early Action: Application Deadline: November 1 ,Decision Notification by February 15 
 
-Regular Decision: Application Deadline: January 1 , Decision Notification: By April 1
+Regular Decision: Application Deadline: January 1 , Decision Notification by April 1
 
-FAFSA/CSS Submission Deadlines: Early Decision I: November 15 , Early Action: December 1 , Early Decision II: January 15 , Regular Decision: February 15 ,Fall Transfer: April 15 , Spring Transfer: October 15",https://admissions.northeastern.edu/application-information/admissions-deadlines-decisions/,Official,Admission_Application_Dates_Deadlines
+FAFSA/CSS Submission Deadlines:
+-Early Decision I: November 15 
+-Early Action: December 1 
+-Early Decision II: January 15
+-Regular Decision: February 15 
+-Fall Transfer: April 15 
+-Spring Transfer: October 15",https://admissions.northeastern.edu/application-information/admissions-deadlines-decisions/,Official,Admission_Application_Dates_Deadlines
 Admission/Application,Portal_Info,"Create your application through The Common Application or the Coalition Application (we accept both). Once you have created your application, please select Northeastern University to directly submit your application to us.",https://admissions.northeastern.edu/,Official,Admission_Application_Portal_Info
 Admission/Application,Application_Materials,"General Application: You may submit either the Common Application or Coalition Application. Your application must be submitted by the deadline, along with either the non-refundable application fee ($75) or a fee waiver request.
 
@@ -203,9 +232,7 @@ General Statistics related to aid to consider:
 -$470M in institutional aid will be awarded to undergraduate students in the 2024-2025 academic year.
 -50%of Northeastern students graduate with no debt.
 
-Links to financial calculators:
-https://studentfinance.northeastern.edu/myintuition/?_gl=1*147gd5t*_gcl_au*MjA0NzI1MDMzNC4xNzcyNjYyNDMy
-https://npc.collegeboard.org/app/northeastern",https://admissions.northeastern.edu/cost-financial-aid/,Official,Admission_Application_Estimated_Cost
+There is also two links to financial calculators that can be sent to the caller. ",https://admissions.northeastern.edu/cost-financial-aid/|https://studentfinance.northeastern.edu/myintuition/?_gl=1*147gd5t*_gcl_au*MjA0NzI1MDMzNC4xNzcyNjYyNDMy|https://npc.collegeboard.org/app/northeastern,Official,Admission_Application_Estimated_Cost
 Admission/Application,Tours,"What to Expect For the Main Tours:
 1-Information Sessions: This session will offer a high-level overview of Northeastern’s experienced-powered approach to education, the student experience, and the admissions and financial aid process.
 2-Campus Tours:Following the information session is a Husky Ambassador-led tour of our Boston or Oakland campus. These 60-minute tours showcase our academic facilities, university housing, and award-winning green spaces.
@@ -244,23 +271,25 @@ Northeastern University
 Boston, MA 02115-5000 USA
 
 Test scores should be submitted electronically.",https://studentfinance.northeastern.edu/contact-us/|https://admissions.northeastern.edu/visit/visit-campus/|https://admissions.northeastern.edu/visit/contact/|https://admissions.northeastern.edu/about-northeastern/the-northeastern-advantage/,Official,Admission_Application_Contact_Info
-Admission/Application,AP_Credit_Lookup,See attached pdf link,https://admissions.northeastern.edu/wp-content/uploads/2025/05/FA26-AP-Transfer-Credit.pdf,Official,Admission_Application_AP_Credit_Lookup
+Admission/Application,AP_Credit_Lookup,"Northeastern accepts scores of 4 or 5 for credit. 32 semester hours of advanced credit may count toward total program hours. Please 
+have AP scores sent to CEEB code 3667 via College Board if you wish to have your scores considered for credit. 
+Also, there is pdf lookup for each AP course. Notify the user that you will send them this pdf file. ",https://admissions.northeastern.edu/wp-content/uploads/2025/05/FA26-AP-Transfer-Credit.pdf,Official,Admission_Application_AP_Credit_Lookup
 Admission/Application,Enrollment,"First Pay your nonrefundable enrollment deposit as stated by your Terms of Admission must be paid to reserve a place at Northeastern. This secures your enrollment and transition activities. There is not a separate deposit for housing. Once your enrollment deposit has been received, you will receive information about the timeline and process to complete your housing application and roommate compatibility survey.
 
-After you submit your deposit, please send the following information through your Application Status Check as soon as possible:
+After you submit your deposit, please send  the following information through your Application Status Check as soon as possible:
 Final high school transcript (required)
-Advanced Placement test results(if applicable)
-International Baccalaureate exam results(if applicable)
+Advanced Placement test results (if applicable)
+International Baccalaureate exam results (if applicable)
 New or updated SAT/ACT scores (if applicable)
 National Merit Finalist, National Achievement or
 National Hispanic documentation (if applicable)
-Official secondary-school national exam results(if applicable)
+Official secondary-school national exam results (if applicable)
 Updated TOEFL/IELTS results (if applicable)
 
 Overall steps after deciding to enroll:Without exception, all students must successfully complete their current academic program and submit all final transcripts. High school students must also submit proof of graduation, which is typically found on the final high school transcript. Failure to submit your final high school transcript may impact your financial aid or scholarship award. Failure to successfully complete your current academic program in good standing could result in a decision to rescind your offer of admission. Disciplinary issues that have occurred since admission, at Northeastern’s New Student Orientation programs, during Move-In, or prior to the official start of the semester, must be fully disclosed as part of the terms of admissions. Northeastern reserves the right to rescind your offer of admission or engage in any appropriate disciplinary action related to these issues.
 
 Student requesting deferment: In general, students who have paid their enrollment deposit may request to defer their enrollment one time for a maximum of one year for reasons such as travel, medical conditions, military obligations, or work. Students may not take any classes for academic credit during the deferral period. Requests are reviewed and granted on a case-by-case basis. Students who are granted a deferral must submit a nonrefundable deferral deposit to secure their place for the future term. Deferral requests must be submitted by June 1 for students admitted to the N.U.in, London Scholars, or New York City Scholars Programs and by July 1 for students admitted to the Boston or Oakland campuses. All requests can be submitted through the request link on your Application Status Check. Students admitted to the NU Immerse or Foundation Year programs are not eligible to defer their enrollment.",https://admissions.northeastern.edu/application-information/frequently-asked-admissions-questions/,Official,Admission_Application_Enrollment
-Ranking/GeneralStats,Overall_Ranking,"Domestic Ranking Figures (US News)
+Ranking/GeneralStats,Overall_School_Ranking,"Domestic Ranking Figures (US News)
 #46(of 436) in National Universities (tie)
 #102 in Best Value Schools
 #51 in Best Undergraduate Teaching (tie)
@@ -268,7 +297,7 @@ Ranking/GeneralStats,Overall_Ranking,"Domestic Ranking Figures (US News)
 #136 in Top Performers on Social Mobility (tie)
 #220 in Best Global Universities
 
-Global Ranking Figures ( Times Higher Education): 201-250th",https://www.usnews.com/best-colleges/northeastern-university-2199/overall-rankings|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_Overall_Ranking
+Global Ranking Figures ( Times Higher Education): 201-250th",https://www.usnews.com/best-colleges/northeastern-university-2199/overall-rankings|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_Overall_School_Ranking
 Ranking/GeneralStats,Extracurriculars ,"Domestric Ranking Figures (US News)
 #21 in Study Abroad
 #53 in Undergraduate Research/Creative Projects (tie)
@@ -292,7 +321,7 @@ Life Sciences 2026: 176-200th
 Physical Sciences 2026: 201-250th
 Psychology 2026: 98th
 Social Sciences 2026: 201-250th",https://www.usnews.com/best-colleges/northeastern-university-2199/overall-rankings|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_Majors
-Ranking/GeneralStats,GeneralStats,"From US News: 
+Ranking/GeneralStats,Demographics,"From US News: 
 Total number of students: 29,623
 Number of international students: 11,732
 Total number of academic staff: 1,876
@@ -306,7 +335,7 @@ Number of new doctoral students: 592
 From Times Higher Education:
 Student gender ratio: 53 F : 47 M 
 Students per staff: 15.8
-International student percentage: 40%",https://www.usnews.com/education/best-global-universities/northeastern-university-167358|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_GeneralStats
+International student percentage: 40%",https://www.usnews.com/education/best-global-universities/northeastern-university-167358|https://www.timeshighereducation.com/world-university-rankings/northeastern-university-us,Unofficial ,Ranking_GeneralStats_Demographics
 Student_Support,Contact_Info,"Office of  University Equity and Compliance:
 Email us: ouec@northeastern.edu
 Call us: 617-373-4644
@@ -457,274 +486,198 @@ This Policy prohibits romantic or sexual relationships where there is supervisio
 Northeastern Policies
 For any other Northeastern Policies, visit the NU Policies webpage.
 There were many hyperlinks on this page that should be referenced if furthter information is requested. ",https://ouec.northeastern.edu/services/,Official,Student_Support_Policies
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+Experiential_Learning,Coop_Process,"1. Meet your co-op coordinator
+A co-op coordinator will be assigned to you as soon as you arrive at Northeastern. They will encourage you to connect with co-op peers and to meet mentors at welcome events, orientations, and co-op info sessions throughout your first year.  
+
+If your resume needs work, your coordinator will help you identify some experiences, like clubs, research, and summer internships, to build it out.   
+
+2. Enroll in your co-op prep course   
+This one-time course, taught by a co-op coordinator, meets weekly throughout one semester of your second year. As an undergrad, you’ll explore career paths, have your resume and cover letter reviewed, do practice interviews, learn job search strategies, and more.  If you’re a grad student, you can use this course to hone your resume and refresh interviewing skills.   
+
+3. Get 1:1 advice    
+We’ll help you define—and redefine—your career aspirations and connect you to resources.  Not sure what the difference is between a video game designer and a game developer? Can’t decide between a small life sciences startup or a global pharmaceutical company? We’ll help you sort it out. For graduate students, we’ll help you zero in on the best options to pivot into a career change and navigate visa requirements for international students.  
+
+4. Search and apply    
+You’ll apply for your first co-op during your second year (the same goes for graduate students doing just one co-op) using our online job search platform, NUWorks. Co-op cycles begin in either January or July.   
+
+Attend our employer recruitment events and career workshops for an overview of opportunities.      
+
+Once you’ve applied to a co-op, respond to interview requests promptly and professionally. (You can prep and practice interviewing with your coordinator). You can apply for any co-op, regardless of major or college, as long as you meet the job qualifications. Cast a wide net, explore, and keep your options open! 
+
+5. Accepting an offer   
+You should acknowledge all offers within 48 hours.  Work closely with your co-op coordinator to navigate offers and details, because once you accept a position, you’re committed. Connect with your employer to confirm start and end dates, and work schedule.    
+
+If you’re moving to a different city or country for your co-op, work with Northeastern to arrange logistics around transportation and housing. If you’re an international student, you’ll need to check for any visa requirements, too.       
+
+6. During your co-op  
+As you begin your co-op, continue working with your co-op coordinator to establish learning goals and objectives. Review those objectives with your work supervisor.   
+
+During your co-op, you’ll have regular meetings with your supervisors and mentors on the job, and a mid-point check-in with your coordinator.  You’ll also complete three reflective writing prompts at regular intervals. 
+
+7. Final performance assessment  
+Your grade will be based on assessments and reflections: You will complete a self-assessment after your co-op, and your employer will submit a final assessment of your performance. Review the assessments with your coordinator against the goals and objectives you set at the start.  
+
+Note: If you are an undergrad who will be doing more than one co-op, you’ll skip steps 1 and 2, next time, going straight to 1:1 advising and finishing with assessments. ",https://www.northeastern.edu/the-co-op-process-from-start-to-finish/,Official,Experiential_Learning_Coop_Process
+Experiential_Learning,Coop_Salary,"It typically does. In fact, the average pay is $20-plus an hour. Some research, service, arts, and nonprofit co-ops pay less. Know that we work with students to remove cost barriers wherever possible, and some stipends—from Northeastern and employers—are available. Northeastern also offers some scholarships for global co-ops and low-paying fields. Keep in mind that because co-op jobs are full-time, we discourage simultaneous work and study.",https://www.northeastern.edu/co-op/,Official,Experiential_Learning_Coop_Salary
+Experiential_Learning,Coop_Overview,"Co-op is our most immersive experiential program—a full-time, months-long professional work experience that positions you not just for a job, but for your future.  All sizes and all types. Company sizes vary from under 100 employees to more than 100,000. The majority of jobs are at organizations with between 1,000 and 100,000 employees. Job types include business, healthcare, finance and accounting, research, engineering, marketing and communications, software development, art, media, and design. Those are fields, not industries—meaning you can land a finance position at a healthcare company, or a software job at an engineering firm. The options are many! Your co-op coordinator will help you think through what makes the most sense for you.
+
+Experiential learning is at the heart of a Northeastern education, engaging you in meaningful work and teaching you to lead in some of the world’s most critical emerging fields.Over 2,000 employers across the globe 
+understand why Northeastern’s Cooperative 
+Education (co-op) program is ranked number 
+one by U.S. News & World Report. As a 
+co-op employer partner, you get access to 
+talented future engineers with a variety of 
+skillsets to address your hiring needs. You 
+will be supported by a dedicated co-op 
+coordinator throughout the entire co-op 
+process. Partnering with the College of 
+Engineering also provides employers access 
+to student talent from across the university. 
+Northeastern’s co-op program, the 
+cornerstone of the university’s experiential 
+learning model, provides students with 
+opportunities to alternate between 
+periods of academic study and periods 
+of full-time employment. Our co-op 
+program has successfully matched 
+employers with students for over 115 
+years. Now it is your turn to reap the 
+benefits of this successful program",https://www.northeastern.edu/co-op/,Official,Experiential_Learning_Coop_Overview
+Student_Amenities_Activities,Greek_Life,"Fraternity and Sorority (FSL) at Northeastern University provides a unique and diverse opportunity for students to experience a lifetime bond of brotherhood and sisterhood. The FSL community consists of 40+ organizations in four governing councils and over 3,600 students that focus on leadership, member development, community engagement, scholarship, and social opportunities. Fraternities and sororities at Northeastern are where students from all different backgrounds gather to challenge, encourage, and support one another. They are where lifelong friendships get formed, and professional networks are expanded. They are where passions are unlocked, and where civic engagement and community service is prioritized. They are where the demands and stresses of Northeastern student life are shared and cared for by the community. They are where all identities get celebrated, and the diversity of Northeastern’s students comes alive. Fraternity & Sorority Life is a home away from home for many of our members. Fraternity and Sorority Life fosters intentional development for affiliated undergraduates throughout their membership. Programs focus on four core tenets: health & wellness, identity & leadership exploration, membership expectations, and inclusive community building. Joining a fraternity or sorority provides an opportunity to gain a support group that will help transitioning to college significantly easier. Members cultivate friendships that will last a lifetime while deepening their connection to campus. You’ll receive access to resources to help encourage and achieve academic goals. Members can develop leadership skills with hands-on opportunities to practice and lead at many different levels within the FSL community. It is a way to maximize involvement on campus and in the community. Our students serve the community through active participation in service projects and philanthropy events. The network of alumni can help to develop priceless co-op and career opportunities. Overall, you’ll maximize the college experience while having a lot of fun! Fraternity and Sorority Life at Northeastern University is home to four governing councils, the Interfraternity Council (IFC), National Pan-Hellenic Council (NPHC), Multicultural Greek Council (MGC), and Panhellenic Council (Panhel). The joining process differs across councils (and sometimes across chapters). Explore the tabs below to learn more about how to join each council. The Interfraternity Council (IFC) hosts semi-structured recruitment (or rush). Recruitment kicks off with an IFC BBQ where potential new members have the opportunity to meet each chapter. Chapters participating in recruitment host a series of events to further meet potential new members and share information on their brotherhood. Potential new members are required to attend an IFC informational session hosted by the Council and Northeastern University’s Fraternity and Sorority Life staff. After the initial recruitment events, chapters will extend bids (invitation to membership) to potential new members. Please note that not all potential new members may receive a bid.
+
+Students that do not participate in fall recruitment or do not receive a bid have the opportunity to participate in informal recruitment in the late fall and spring semesters. However, not all chapters participate in informal recruitment. Students and families that are interested in learning more about the Interfraternity Council can find more information on the IFC website and Instagram The Multicultural Greek Council (MGC) chapters host intake events at the beginning of the fall and spring semesters. Every chapter has its own intake process based on its individual chapter requirements. The Council holds a kick-off event at the start of each semester for prospective new members to learn about the different organizations and what each chapter has to offer. Intake requirements may include attending chapter events and information sessions, interviews, and achieving a minimum GPA. 
+
+Students and families that are interested in learning more about the Multicultural Greek Council can find more information on the Council’s website and Instagram.The National Pan-Hellenic Council (NPHC) chapters host membership intake on a semesterly basis. Interested students (aspirants) can meet the chapters at information sessions at the beginning of each semester. Aspirants are invited by chapters to learn more about their organization and the application process. To be considered for membership, aspirants must have achieved certain requirements set by chapters such as standards in academics, community service, and leadership. 
+After an aspirant’s application is approved, they begin the membership intake process. The membership intake process varies by chapter as each organization holds its own guidelines and requirements. Please note that first years are not eligible to join an NPHC organization their first semester, as they must first obtain a collegiate GPA.  
+
+Students interested in joining the National Pan-Hellenic Council can learn more about the intake process through the Council’s Instagram and individual chapter websites.The financial obligations of joining a fraternity or sorority depend on the individual chapter. Costs of membership can range anywhere from around $30-$500 per semester. The semester you join often has a few one time costs, generally making your dues as a new member slightly higher than as an active member. Membership dues  include financial obligations such as inter/national membership fees, insurance, local dues to contribute to events and programming, and other assessments.  Additional costs throughout the year may occur such as purchasing t-shirts, attending social events, and contributing to philanthropies.
+
+We recommend having a conversation with your student about expectations related to who will be financially responsible for the costs of membership.Fraternity and Sorority organizations at Northeastern University do not have on or off-campus houses, with the exception of one local fraternity. Members of organizations are not required to live together, but many affiliated students often choose to be roommates with their sisters or brothers! Each chapter is self-supported through dues charged to all members. In the first year of membership, a few one-time expenses are assessed. After those initial payments are made, your student’s expenses will be their regular dues. Each chapter has a different dues structure and thus finances will vary between chapters.Northeastern University has no tolerance for hazing. Find out more information about hazing prevention through the Office of Student Conduct and Conflict Resolution. Please do not hesitate to contact the Fraternity and Sorority Life staff in the Center for Student Involvement at fsl@northeastern.edu if you have any questions about Fraternities and Sororities at Northeastern University, or to report concerns or policy violations. As a parent, we recommend that you support your student throughout the joining process. Joining a fraternity or sorority can be overwhelming, and we recommend that you serve as a sounding board for your student. It is important to be supportive and ask questions to your student about what they are looking for in a chapter, and allow them to determine where they feel most comfortable.
+
+Please remember to keep an open mind. Just because a parent or family member was affiliated or not affiliated, does not mean that your student needs to make the same decision.
+
+Please recognize that the chapters are different on every campus. Fraternities and sororities at Northeastern University may not have the same values or expectations as where you attended school. It is important that students choose the organization that feels right for them. Mike Sampson is the Associate Director of Fraternity and Sorority Life and serves as the primary council advisor for the Multicultural Greek Council (MGC). Contact Mike regarding community growth and expansion, external partnerships, data and reporting, policies, and strategic planning at m.sampson@northeastern.edu.
+Jennifer Mitchell is the Assistant Director of Fraternity and Sorority Life and serves as the primary council advisor for the Interfraternity Council (IFC) and the National Pan-Hellenic Council (NPHC). Contact Jennifer regarding harm prevention, hazing prevention, new member education, organization accountability, leadership programming, and marketing at je.mitchell@northeastern.edu.
+Abby Sylvester is the Fraternity and Sorority Life Specialist and serves as the primary council advisor for the Panhellenic Council (Panhel). Contact Abby regarding signature events, community building, the awards process, chapter services, volunteer engagement, re-registration, roster management, and important forms at ab.sylvester@northeastern.edu.",https://csi.studentlife.northeastern.edu/fraternity-sorority/,Official,Student_Amenities_Activities_Greek_Life
+Student_Amenities_Activities,Transportation,"The Massachusetts Bay Transit Authority (MBTA) is one of the largest public transit systems in the country, making it easy to get around.  Northeastern University’s Boston campus is directly served by the MBTA’s Orange and Green subway lines, and multiple bus lines.  The Green Line E train stops at Northeastern on Huntington Ave in front of the Marino Center.  The Orange Line stops at Ruggles.  The Franklin, Needham, and Providence/Stoughton Lines of the Commuter Rail also stop at Ruggles. Discounted Semester Pass Program
+Student Program
+Northeastern University participates in the MBTA semester pass program offered for the Fall and Spring Semesters.  Students receive an 11% discount on passes and must enroll through their Student Hub portal. Passes are distributed by the Husky Card Office.
+
+ IMPORTANT INFORMATION
+Pre-tax transit limit parking maximum limit is $300/month 
+$300 monthly pretax limit can be used for either transportation or parking
+Passes can be purchased through Student Hub – Resources – Benefits & Services 
+Ordering deadline is the first day of the month (approximately 30 days before the Pass Month)
+Purchases are made through automatic payroll deduction",https://pref.northeastern.edu/public-transportation/,Official,Student_Amenities_Activities_Transportation
+Housing,Moving_Information,"For Fall 2025, move-in is by assignment and move-out is by December 13, 2025 at 7:00 PM. Students returning from Winter Break move in on December 16, 2025.For Spring 2026, move-in is by assignment and move-out is by April 25, 2026 at 7:00 PM. Graduating seniors have until April 30, 2026 at 11:00 AM to move out. For Summer Session A, move-in is May 3, 2026 and move-out is by June 20, 2026 at 7:00 PM. For Summer Session B, move-in is June 28, 2026 and move-out is by August 15, 2026 at 7:00 PM. For specific parking locations by term, click on your Move-in/out Term above.
+
+Please note: Parking is not guaranteed and is based on a first come first serve basis. The parking pass provided is only valid on designated moving days.
+
+Cars should clearly display a completed parking pass hang tag on their mirror or dashboard; it is important that the contact number be included in order for Northeastern staff to be able to contact you during move-in should the need arise.
+
+Directions to Campus
+To facilitate the flow of traffic for Move-In Days we have developed these motor vehicle directions to the University unloading / parking facilities.  Depending on your assigned residence hall and where you are directed to park, you will either unload your motor vehicle at the parking location, or be asked to relocate the vehicle to a parking location after the vehicle has been unloaded.
+
+In the event that you are asked to relocate your vehicle to a University  parking facility, you will be provided with the directions to that facility upon your arrival. Please follow these directions when approaching the University.",https://housing.northeastern.edu/move-inout/,Official,Housing_Moving_Information
+Admission_Application,Honors_Program,"The John Martinson Honors Program offers Northeastern students the opportunity to engage with our values of challenge, curiosity, and community during their undergraduate career. Through innovative programming, robust funding, and dynamic support, Honors empowers students to make meaningful and lasting change in the world. The John Martinson Honors Program offers students the ability to explore their future at Northeastern and beyond through meaningful and intentional curated requirements. Having undergone an exciting reimagination process in Fall 2023, Honors currently oversees two distinct, enriching learning experiences for undergraduate students. Honors students additionally may have varying requirements depending on their entry term:
+
+Direct Admits are students who were admitted to the Honors Program prior to enrolling at Northeastern (i.e., during the Fall of their first year).
+
+Internal Admits are students who were admitted to the Honors Program after enrolling at Northeastern.",https://honors.northeastern.edu/about-us-2/,Official,Admission_Application_Honors_Program
+Ranking_GeneralStats,Career_Outcomes,"Northeastern graduates are in high demand. Within nine months of graduation, 96% of our graduates are employed or enrolled in graduate school.
+Of that group, the majority — 82.8% — are employed, while 13.3% have continued their education in graduate school. Only 3.8% are still seeking employment.58% are offered a job from a previous coop employer Overall a 33% higher starting salary over the national average. ",https://careeroutcomes.northeastern.edu/,Official,Ranking_GeneralStats_Career_Outcomes
+Safety,Crime_Statistics,"Violent & Sexual Offenses
+Northeastern recorded no murders or manslaughter incidents in any of the three years. Sexual offenses declined notably over the period — from 22 forcible sex offenses in 2022 (11 rapes, 11 fondling) down to 13 in 2023 and 13 in 2024 (10 rapes, 3 fondling). Robbery ticked up slightly from 3 incidents in 2023 to 5 in 2024, while aggravated assault rose from 4 in 2023 to 7 in 2024, though both remain lower than 2022's figures of 6 and 11 respectively.
+Property Crime
+Burglary dropped from 9 incidents in 2023 to 6 in 2024, and motor vehicle theft held steady at 5–6 incidents per year after a higher count of 14 in 2022. There was one arson incident in 2023 and none in 2022 or 2024.
+Violence Against Women Act (VAWA) Offenses
+VAWA-related totals improved significantly from 32 in 2022 to 26 in both 2023 and 2024. Stalking decreased from 15 in 2022 to 12 in 2024. Dating violence remained relatively steady at 8–10 incidents per year. Domestic violence fluctuated — dropping to just 3 in 2023 before rising back to 6 in 2024.
+Arrests & Disciplinary Referrals
+Drug violation arrests remained consistent at around 4–7 per year, while weapons violation arrests stayed low at 2–5. Liquor law disciplinary referrals remained the highest category by far, with 231 in 2023 and 218 in 2024, though most were on-campus referrals rather than arrests. Drug and weapons disciplinary referrals were minimal across all three years.
+Hate Crimes
+In 2024, two hate crimes were recorded — both on-campus student housing vandalism incidents, one motivated by religious bias and one by national origin bias. In 2023, four hate crimes occurred, including intimidation and simple assault incidents tied to sexual orientation, religious, and ethnicity bias.",https://nupd.northeastern.edu/wp-content/uploads/2025-Boston-ASR.pdf,Official,Safety_Crime_Statistics
+Student_Amenities_Activities,Study_Space,"Northeastern's Campus Planning and Design Team, led by Director Cory Berg, is dedicated to creating a wide range of study spaces that support student success and well-being. Berg emphasizes the team's commitment to inclusivity, finding opportunities to furnish lobbies, nooks, and former administrative offices to suit different students' needs — especially important given the ongoing Snell Library renovations and the need for comfortable spaces for commuters between classes.
+Snell Library serves as the primary study hub on campus, offering a café, multiple floors with varying noise levels, and spaces for both individual and group work. Once renovations are complete, students can expect more private rooms, single-person pods, and improved views. Curry Student Center is another versatile space, offering couches, tables, collaborative areas, a mezzanine, and a fourth-floor game room for study breaks, alongside food vendors including AfterHours and Starbucks.
+For quieter or more unique settings, Churchill Hall offers sunlit high-top seating near Churchill's Creations, while 300 Mass Ave provides spacious, high-ceilinged rooms with natural light and proximity to Newbury Street. The Law Library offers a classic, book-lined atmosphere with multiple floors and designated noise levels, ideal for students who prefer a more traditional library feel.
+Residence halls and academic buildings also offer solid options. West Village G has tables and nooks near classrooms, though it closes at 10pm. Shillman Hall's lobby offers tables and chairs alongside a Dunkin', and International Village provides study nooks adjacent to its dining hall. For outdoor studying on nice days, the Law Quad near Huntington and Forsyth and the Snell Quad offer seating under tree canopies in a quieter setting. Finally, the ISEC Café (Fuel America) on the first floor of ISEC features coffee, sandwiches, natural light, sound-cancelling chairs, and an outdoor patio — a great spot to recharge and get work done.",https://pref.northeastern.edu/top-10-study-spaces-for-students/,Official,Student_Amenities_Activities_Study_Space
+Admission_Application,Orientation,"No matter where your Northeastern journey begins, you'll start your first year with a new student orientation. Orientation connects you with classmates and your academic advising team, introduces you to student clubs and organizations, and helps you access the resources you need to begin charting your path at Northeastern. The experience includes online modules completed during the summer, as well as in-person events before or as you move to campus.
+For incoming undergraduate students on the Boston campus, orientation is coordinated through the Office of Boston Orientation and Family Programs. Students and their families will receive Husky Happenings email communications throughout the summer with critical information and next steps in the Husky 101 Boston Orientation process. More details can be found on the Boston Orientation Website.",https://admissions.northeastern.edu/visit/student-orientation/,Official,Admission_Application_Orientation
+Experiential_Learning,Research,"Northeastern research is organized as follows. The insititution focuses on three main themes: health, sustainability and security. Within these themes there are 8 subjects: Art and Design, Buisness, Computer Sciences, Engineering, Law and Policy, Life Sciences, Physical Sciences, and Social Sciences and Humanities. Most undergraduates do research through Research and Fellowships, although it is possible to lookup current research projects and contact professors. Research and creative endeavors are key components of Northeastern’s experiential learning model. Experiences can range from laboratory bench work to the analysis of big data to archival research to collaborative theatre productions. This work can take place in a variety of contexts and formats, including the following:
+
+Courses, which generally fulfill major elective requirements
+Labs or centers
+Research or creative-based co-ops or internships
+Community-based research or creative endeavor
+Research or creative-based activity as the option for work-study work
+Research or creative endeavor as a service activity
+Junior/senior honors projects
+Undergraduate Research and Fellowships, along with other offices and programs on campus, support students through workshops, mentoring, and consultation on applications for distinguished fellowships and advanced study; funding through the university-wide Project-Based Exploration for the Advancement of Knowledge, or PEAK Fellowships; and much more. Northeastern undergraduates are an important part of Northeastern’s research and creative culture, and they frequently present their findings at national and international conferences; in scholarly journals and other field appropriate venues; and at the university’s annual Research, Innovation, and Scholarship Expo (RISE). We believe that the best answers—and the best questions—are born out of bringing diverse perspectives, experiences, and knowledge into conversation with one another. Therefore, we believe that a diverse and inclusive community of researchers, creative practitioners, and fellowship applicants not only fosters innovation and creativity but is a precondition of the excellence for which we strive.
+
+To this end, URF supports undergraduate students throughout the process of developing research or creative endeavor projects, from connecting with mentors and securing funding through sharing results. The office also works closely with students to identify and apply for appropriate fellowships for advanced study in the United States and internationally and provides guidance for those looking to do advanced study more broadly. These research, creative, and fellowship processes guide students toward a fuller understanding and clearer narration of their ambitions, talents, and projects.",https://research.northeastern.edu/institutes-and-centers/|https://undergraduate.northeastern.edu/research/about/overview/,Official,Experiential_Learning_Research
+Experiential_Learning,NU_View,"NU VIEW (Virtual Integrated Experiential Workshop) lets students build their resume and skills before even starting their co-op experience by working closely with a project sponsor on a real-world project for their company. When students complete this 4-week program, they receive a digital badge that allows them to showcase their knowledge of the course topic and market themselves for future opportunities. NU VIEW is a great way to familiarize yourself with Northeastern’s experiential learning approach, the foundation of our educational philosophy. NU VIEW is a free and non-credit course.
+
+NU VIEW is fully virtual and the course runs for 4 weeks beginning on May 1.
+
+There are three possible course topics to choose from: Entrepreneurship & Innovation, Data Visualization, and Digital Marketing. Each course is partnered with a project sponsor who provides a project based on a real-world problem that their organization is working on. Students will complete four week-long modules where they research the topic, generate ideas and recommendations, and at the end of the four weeks present their findings to the project sponsor. Simultaneously, they receive professional development coaching from Northeastern’s Career Design staff.
+
+The NUVIEW program has been recognized by NACE (the National Association of Colleges and Employers) as “leading the way in career competency initiatives.”
+The course runs for 4 weeks, requiring a 15-20 hour commitment.  Below is a breakdown of the course schedule:
+
+Week 1: Review your sponsor’s project materials and create a project plan with team members.
+Week 2: Collect data, conduct research and analysis, and identify metrics.
+Week 3: Conduct cost/benefit analysis and develop recommendations.
+Week 4: Group presentation and report summarizing your findings.",https://careers.northeastern.edu/nu-view/,Official,Experiential_Learning_NU_View
+Experiential_Learning,Experiential_Projects,"Experiential Projects is a partnership branch of Northeastern University. We provide organizations the opportunity to work with talented students on projects embedded in selected courses with expert faculty oversight. This arrangement enables organizations to move forward on project-based work at no cost while giving students highly relevant work experience and real-world learning opportunities.
+
+Project work is completed inside selected courses for an average of six weeks (with some flexibility), with sponsor-mentors dedicating about an hour per week to providing feedback during class or outside meeting time. Projects are typically research based and conclude with an actionable deliverable that provides insight and recommendations to inform critical business decisions. ",https://experientialprojects.northeastern.edu/,Official,Experiential_Learning_Experiential_Projects
+Admission_Application,Transfer_Applicants,"Transfer applicants are students who:
+
+have completed at least 12 semester hours of college-level coursework (after high school graduation), or
+have attempted at least one semester of full-time coursework and maintained enrollment through the add/drop period, or
+have already received a bachelor’s degree from another college or university and are choosing to apply for a second bachelor’s degree.
+Programs not currently accepting transfer applications
+Bouvé College of Health Science, School of Nursing - We are not accepting applications for the Bachelor of Science in Nursing program, but are now offering a transfer track into the Accelerated Bachelor of Science in Nursing (ABSN) program. Learn more.
+D’Amore-Mckim School of Business - Business Administration and Law (major only)
+Explore Program for undeclared students
+College of Engineering- Undeclared (major only)
+Required Application Materials:
+Applicants must submit a completed Transfer Common Application or Coalition Application along with the application fee of $75.
+Transcripts:
+Official college transcript(s) for all institutions you have attended
+Final high school transcript or GED/HiSET score report
+College Report: The College Report (available through the Common Application) form must be completed by the Registrar's Office or Dean's Office of your current/previous school. 
+Academic Evaluation: Evaluation from an academic advisor, professor, or employer (submitted through the Common Application).
+Current Year Courses: The transfer list of current year courses is a document that details the courses you are currently taking this semester. Typically, this requirement is fulfilled by either an unofficial copy of your current transcript that shows the courses in progress or a PDF screenshot of your current course list. 
+Recommended/Optional Materials:Creative Portfolio - encouraged for students applying to the College of Arts, Media and Design. This may be submitted via the applicant's Application Status Check after applying to Northeastern. Applicants are encouraged to complete all forms, including Academic Profile, Media Uploads, and Personal Statement (500-word limit). Please only submit one portfolio. Additional submissions will not be reviewed. Click here for more information and deadlines.
+Joint Services Transcript (JST)/Community College of the Air Force transcript - for veterans or active duty military
+Mid-term Report - for students who are currently enrolled in courses. The form available online through the Common Application. 
+
+When does Northeastern accept transfer students.
+Northeastern accepts applications to transfer to Northeastern in the Fall semester (September) and the Spring semester (January). Please refer to our Deadlines and Decisions page for information on application due dates.
+
+Am I considered a freshman or a transfer student?
+Transfer applicants are students who have completed at least 12 semester hours of college-level coursework (after high school graduation) OR have attempted at least one semester of full-time coursework and maintained enrollment through the add/drop period (after high school graduation).
+
+I am receiving an Associate’s degree and high school diploma at the same time. Why can’t I be considered a transfer student?
+Northeastern’s definition of a transfer student is anyone who will have completed at least one full-time semester of college-level coursework after high school graduation. Students who do not have their high school diploma by the application deadline are not considered transfer applicants. Dual-enrollment courses can be considered for transfer credit.
+
+Do I need to submit all official college transcripts even if my transfer credit appears on a transcript?
+Yes, we require students to submit all official college transcripts.
+
+How does Northeastern review transfer applications?
+We review all applications holistically and are looking for students who are the best fit for Northeastern. We look closely at the student’s academic coursework and grades, along with extracurricular involvement, including work, clubs, community service, and internships. We value all information, and students should show how they are the best fit for NU and how they will take advantage of the opportunities here.
+
+Are there GPA requirements in order to transfer?
+While the most successful transfer applicants have earned a cumulative grade point average of 3.3 or higher, all applications are reviewed holistically. Our reviews take into account every aspect of an application, including academic performance, academic evaluations and recommendations, a personal statement, and performance on standardized tests (if applicable).
+
+Does the Office of Admission review applications differently for specific majors?
+Each program has recommended and required coursework that we take into account in the review process. Students can view this information in the ‘Program Requirements’ section on the Transfer Credit website.
+
+My application is complete. When will I receive my admission decision?
+Decisions are released on a rolling basis; the latest notification date is June 30.
+
+I applied as a transfer student for previous term and was not offered admission/didn’t attend. Do I need to submit a new application for the next Spring/Fall term?
+Students must submit a new transfer application through the Common Application for each academic term.
+
+When will I receive my degree audit?
+Students will receive their official degree audit within one week of admission. To learn more about transfer credit at Northeastern, visit the Transferring Credit website.",https://admissions.northeastern.edu/application-information/transfer-applicants/,Official,Admission_Application_Transfer_Applicants

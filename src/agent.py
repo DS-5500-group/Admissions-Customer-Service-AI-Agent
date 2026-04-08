@@ -33,8 +33,9 @@ class CallState:
     caller_number: str = ""
     call_sid: str = ""
 
-# async_lock = asyncio.Lock() #  supposedly to ensure only one LLM response at a time (see below), not sure if need
-db = pd.read_csv("DB_Full_Collection.csv")
+# latest DB (on our Teams EXCEL)
+db = pd.read_csv("DBcsv") 
+
 language_code_mapping = {
     "English": "en-US",
     "Spanish": "es-ES",
