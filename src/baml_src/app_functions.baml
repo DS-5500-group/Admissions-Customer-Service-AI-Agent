@@ -4,12 +4,14 @@ enum Overall{
     //User_Requests_Repeat  // handle later
     // User_Clarification   // handle later
     //User_Respond_Clarification
+    Transfer_To_Human
     End_Call
 }
 
 
 // ─── Group enum ───
 enum Group {
+    CoOp
     Dining_food
     Housing
     Student_Amenities_Activities
@@ -27,6 +29,11 @@ enum Group {
 
 // ─── Subgroup enum (flat; Group field disambiguates shared values like Contact_Info) ───
 enum Subgroup {
+    // CoOp
+    CoOp_Process
+    CoOp_Salary
+    CoOp_Overview
+
     // Dining_food
     Dining_Halls
     Retail_Dining
@@ -38,6 +45,7 @@ enum Subgroup {
     Housing_Cost
     Layout_Info
     Off_Campus
+    Moving_Information
 
     // Student_Amenities_Activities
     Gym
@@ -45,12 +53,16 @@ enum Subgroup {
     Clubs
     Game_Rooms
     Volunteering
+    Greek_Life
+    Transportation
+    Study_Space
 
     // Safety
     Redeye
     Security_App
     Campus_Escort
     Card_Entry
+    Crime_Statistics
 
     // Athletics
     Varsity_Sports
@@ -68,12 +80,15 @@ enum Subgroup {
     Acceptance_Criteria_Stats
     AP_Credit_Lookup
     Enrollment
+    Honors_Program
+    Orientation
 
     // Ranking_GeneralStats
     Overall_Ranking
     Extracurriculars
     Majors
     GeneralStats
+    Career_Outcomes
 
     // Student_Support
     Resources_Overview
@@ -130,13 +145,14 @@ function ParseQuery(question: string) -> ClassifiedQuestion {
         Classify the user's question into one Group and one Subgroup.
 
         Valid (Group -> Subgroup) mappings:
+        - CoOp -> CoOp_Process, CoOp_Salary, CoOp_Overview
         - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Contact_Info, Plan_Cost, Food_Options
-        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Contact_Info
-        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Contact_Info
-        - Safety -> Redeye, Security_App, Campus_Escort, Card_Entry, Contact_Info
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Contact_Info, Moving_Information
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Contact_Info, Greek_Life, Transportation, Study_Space
+        - Safety -> Redeye, Security_App, Campus_Escort, Card_Entry, Contact_Info, Crime_Statistics
         - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
-        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment
-        - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Honors_Program, Orientation
+        - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats, Career_Outcomes
         - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
         - No_Matching_Group -> NoSubgroup  (set reason to explain why)
   
@@ -158,21 +174,23 @@ function ClassifyInput(current_input: string, transcript: string) -> ClassifiedI
         - Out_Of_Scope: Questions not related to Northeastern University admissions or student life
         - In_Scope_Question: A question about Northeastern that can be answered.
         - End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+        - Transfer_To_Human: The user is requesting to speak to a human representative or indicates frustration (e.g., "I want to talk to a person", "This isn't helpful")
 
         ## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
         If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
 
         Valid (Group -> Subgroup) mappings:
+        - CoOp -> CoOp_Process, CoOp_Salary, CoOp_Overview
         - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Contact_Info, Plan_Cost, Food_Options
-        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Contact_Info
-        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Contact_Info
-        - Safety -> Redeye, Security_App, Campus_Escort, Card_Entry, Contact_Info
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Contact_Info, Moving_Information
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Contact_Info, Greek_Life, Transportation, Study_Space
+        - Safety -> Redeye, Security_App, Campus_Escort, Card_Entry, Contact_Info, Crime_Statistics
         - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
-        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment
-        - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Honors_Program, Orientation
+        - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats, Career_Outcomes
         - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
         - No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
-        - NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )
+        - NotApplicable -> NotApplicable (use when Out_Of_Scope, End_Call Overall, Transfer_To_Human classified )
 
         ## Confidence and Clarification Rules
         - confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
@@ -188,7 +206,6 @@ function ClassifyInput(current_input: string, transcript: string) -> ClassifiedI
         {{ ctx.output_format }}
     "#
 }
-
 function LanguageDetection(response: string) -> string {
     client CustomGPT
     prompt #"
