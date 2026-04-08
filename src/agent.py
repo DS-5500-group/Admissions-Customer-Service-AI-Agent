@@ -34,7 +34,7 @@ class CallState:
     call_sid: str = ""
 
 # latest DB (on our Teams EXCEL)
-db = pd.read_csv("DBcsv") 
+db = pd.read_csv("DB.csv") 
 
 language_code_mapping = {
     "English": "en-US",
