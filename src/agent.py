@@ -9,7 +9,7 @@ import pandas as pd
 import resend
 # from baml_client.sync_client import b
 from baml_client.async_client import b 
-from baml_client.types import ClassifiedQuestion
+from baml_client.types import ClassifiedInput
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, Response
 from twilio.twiml.voice_response import VoiceResponse, Connect, ConversationRelay, Dial
 from twilio.rest import Client as TwilioClient
@@ -65,7 +65,7 @@ agent_line = {
     "Chinese": "我将把你转接给人工客服。请保持通话。"
 }
 
-def query_university_context(parsed: ClassifiedQuestion) -> str:
+def query_university_context(parsed: ClassifiedInput) -> str:
     
 
     #### OLD: USED structure where GROUP and SUBGROUP were forced to have 

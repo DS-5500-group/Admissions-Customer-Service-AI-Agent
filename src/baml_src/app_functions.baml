@@ -20,6 +20,7 @@ enum Group {
     Admission_Application
     Ranking_GeneralStats
     Student_Support
+    Experiential_Learning
 
     No_Matching_Group
 
@@ -38,8 +39,7 @@ enum Subgroup {
     Dining_Halls
     Retail_Dining
     Allergy_Info
-    Plan_Cost
-    Food_Options
+    Plan_Options_And_Cost
 
     // Housing
     Housing_Cost
@@ -53,12 +53,12 @@ enum Subgroup {
     Clubs
     Game_Rooms
     Volunteering
-    Greek_Life
     Transportation
+    Greek_Life
     Study_Space
 
     // Safety
-    Redeye
+    RedEye_Night_Shuttle
     Security_App
     Campus_Escort
     Card_Entry
@@ -80,14 +80,16 @@ enum Subgroup {
     Acceptance_Criteria_Stats
     AP_Credit_Lookup
     Enrollment
-    Honors_Program
+    Transfer_Applicants
     Orientation
+    Honors_Program
+    
 
     // Ranking_GeneralStats
-    Overall_Ranking
+    Overall_School_Ranking
     Extracurriculars
     Majors
-    GeneralStats
+    Demographics
     Career_Outcomes
 
     // Student_Support
@@ -95,6 +97,14 @@ enum Subgroup {
     Confidential_Resources
     National_Resources
     Policies
+
+    //Experiential Learning
+    Coop_Process
+    Coop_Salary
+    Coop_Overview
+    Research
+    NU_View
+    Experiential_Projects
 
     // Shared across multiple groups
     Contact_Info
@@ -137,31 +147,6 @@ class ClassifiedInput {
 }
 
 
-// ─── Functions ───
-
-function ParseQuery(question: string) -> ClassifiedQuestion {
-    client CustomGPT
-    prompt #"
-        Classify the user's question into one Group and one Subgroup.
-
-        Valid (Group -> Subgroup) mappings:
-        - CoOp -> CoOp_Process, CoOp_Salary, CoOp_Overview
-        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Contact_Info, Plan_Cost, Food_Options
-        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Contact_Info, Moving_Information
-        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Contact_Info, Greek_Life, Transportation, Study_Space
-        - Safety -> Redeye, Security_App, Campus_Escort, Card_Entry, Contact_Info, Crime_Statistics
-        - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
-        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Honors_Program, Orientation
-        - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats, Career_Outcomes
-        - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
-        - No_Matching_Group -> NoSubgroup  (set reason to explain why)
-  
-
-        Question: {{question}}
-
-        {{ ctx.output_format }}
-    "#
-}
 
 function ClassifyInput(current_input: string, transcript: string) -> ClassifiedInput{
     client CustomGPT
@@ -180,15 +165,15 @@ function ClassifyInput(current_input: string, transcript: string) -> ClassifiedI
         If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
 
         Valid (Group -> Subgroup) mappings:
-        - CoOp -> CoOp_Process, CoOp_Salary, CoOp_Overview
-        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Contact_Info, Plan_Cost, Food_Options
-        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Contact_Info, Moving_Information
-        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Contact_Info, Greek_Life, Transportation, Study_Space
-        - Safety -> Redeye, Security_App, Campus_Escort, Card_Entry, Contact_Info, Crime_Statistics
+        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+        - Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
         - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
-        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Honors_Program, Orientation
-        - Ranking_GeneralStats -> Overall_Ranking, Extracurriculars, Majors, GeneralStats, Career_Outcomes
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+        - Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
         - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+        - Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
         - No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
         - NotApplicable -> NotApplicable (use when Out_Of_Scope, End_Call Overall, Transfer_To_Human classified )
 
@@ -261,17 +246,189 @@ function AnswerQuery(question: string, context: string, transcript: string, lang
     "#
 }
 
+function ClassifyInput_GPT4oMini(current_input: string, transcript: string) -> ClassifiedInput{
+    client CustomGPT
+    prompt #"
+        You are a classification component in a voice agent for prospective Northeastern University students.
 
+        ## Task 1: Overall Classification
+        Classify the user's input into one of these categories:
 
+        - Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+        - In_Scope_Question: A question about Northeastern that can be answered.
+        - End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
 
-test Test1Parse {
-    functions [ParseQuery]
-    args {
-        question #"
-          What GPA does Northeastern require for admissions?
-        "#
-    }
+        ## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+        If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+        Valid (Group -> Subgroup) mappings:
+        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+        - Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+        - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+        - Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+        - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+        - Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+        - No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+        - NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+        ## Confidence and Clarification Rules
+        - confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+        - Set confidence to 0.0 if Group is No_Matching_Group
+        - clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+          - This should be a follow-up question to narrow down the user's intent
+
+        ## Input
+        
+        Conversation History: {{transcript}}
+        Current User Input: {{current_input}}
+
+        {{ ctx.output_format }}
+    "#
 }
+
+function ClassifyInput_Haiku(current_input: string, transcript: string) -> ClassifiedInput{
+    client OpenRouterClaudeHaiku
+    prompt #"
+        You are a classification component in a voice agent for prospective Northeastern University students.
+
+        ## Task 1: Overall Classification
+        Classify the user's input into one of these categories:
+
+        - Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+        - In_Scope_Question: A question about Northeastern that can be answered.
+        - End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+        ## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+        If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+        Valid (Group -> Subgroup) mappings:
+        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+        - Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+        - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+        - Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+        - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+        - Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+        - No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+        - NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+        ## Confidence and Clarification Rules
+        - confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+        - Set confidence to 0.0 if Group is No_Matching_Group
+        - clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+          - This should be a follow-up question to narrow down the user's intent
+
+        ## Input
+        
+        Conversation History: {{transcript}}
+        Current User Input: {{current_input}}
+
+        {{ ctx.output_format }}
+    "#
+}
+function ClassifyInput_GeminiFlash(current_input: string, transcript: string) -> ClassifiedInput{
+    client OpenRouterGeminiFlash
+    prompt #"
+        You are a classification component in a voice agent for prospective Northeastern University students.
+
+        ## Task 1: Overall Classification
+        Classify the user's input into one of these categories:
+
+        - Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+        - In_Scope_Question: A question about Northeastern that can be answered.
+        - End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+        ## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+        If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+        Valid (Group -> Subgroup) mappings:
+        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+        - Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+        - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+        - Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+        - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+        - Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+        - No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+        - NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+        ## Confidence and Clarification Rules
+        - confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+        - Set confidence to 0.0 if Group is No_Matching_Group
+        - clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+          - This should be a follow-up question to narrow down the user's intent
+
+        ## Input
+        
+        Conversation History: {{transcript}}
+        Current User Input: {{current_input}}
+
+        {{ ctx.output_format }}
+    "#
+}
+
+function ClassifyInput_Llama8B(current_input: string, transcript: string) -> ClassifiedInput{
+    client OpenRouterLlama8B
+    prompt #"
+        You are a classification component in a voice agent for prospective Northeastern University students.
+
+        ## Task 1: Overall Classification
+        Classify the user's input into one of these categories:
+
+        - Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+        - In_Scope_Question: A question about Northeastern that can be answered.
+        - End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+        ## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+        If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+        Valid (Group -> Subgroup) mappings:
+        - Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+        - Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+        - Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+        - Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+        - Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+        - Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+        - Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+        - Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+        - Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+        - No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+        - NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+        ## Confidence and Clarification Rules
+        - confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+        - Set confidence to 0.0 if Group is No_Matching_Group
+        - clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+          - This should be a follow-up question to narrow down the user's intent
+
+        ## Input
+        
+        Conversation History: {{transcript}}
+        Current User Input: {{current_input}}
+
+        {{ ctx.output_format }}
+    "#
+}
+
+
+
+
+
+// test Test1Parse {
+//     functions [ParseQuery]
+//     args {
+//         question #"
+//           What GPA does Northeastern require for admissions?
+//         "#
+//     }
+// }
 
 test Test2Parse {
     functions [ClassifyInput]
@@ -284,3 +441,48 @@ test Test2Parse {
         "#
     }
 }
+
+
+
+// enum Group {
+//     Dining
+//     Admissions
+//     // For Out Of Scope General Classification
+//     NotApplicable
+// }
+
+// enum Subgroup {
+//     // Dining_food
+//     Dining_Halls
+//     Plan_Options_And_Cost
+
+//     // Admission_Application
+//     Decision_Types_Outcomes
+//     Dates_Deadlines
+//     Application_Materials
+    
+//     // For Out Of Scope General Classification
+//     NotApplicable
+// }
+
+
+// class ClassifiedInput {
+//     overall_classification Overall
+//     group Group
+//     subgroup Subgroup
+//     confidence float? 
+//     clarification string?  
+// }
+
+// function ClassifyInput_demo(current_input: string, transcript: string) -> ClassifiedInput{
+//     client CustomGPT
+//     prompt #"
+//         <Our Prompt Here to Help the LLM Classify the input>
+
+//         ## Input:
+//         Conversation History: {{transcript}}
+//         Current User Input: {{current_input}}
+
+//         {{ ctx.output_format }}
+//     "#
+// }

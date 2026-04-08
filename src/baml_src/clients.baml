@@ -36,6 +36,32 @@ client<llm> CustomGPT {
   
 }
 
+// api key is passed by default
+client<llm> OpenRouterClaudeHaiku {
+  provider openrouter
+  options {
+    model anthropic/claude-3.5-haiku
+  }
+  
+}
+
+client<llm> OpenRouterGeminiFlash {
+  provider openrouter
+  options {
+    model google/gemini-2.0-flash-001
+  }
+  
+}
+
+client<llm> OpenRouterLlama8B {
+  provider openrouter
+  options {
+    model meta-llama/llama-3.1-8b-instruct
+  }
+  
+}
+
+
 // Latest Anthropic Claude 4 models
 client<llm> CustomOpus4 {
   provider anthropic
