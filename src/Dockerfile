@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY DB_Full_Collection.csv . 
+COPY DB.csv . 
 
 COPY baml_src/ baml_src/
 RUN baml-cli generate
