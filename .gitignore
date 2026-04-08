@@ -1,3 +1,5 @@
 ds5500
 .env
 baml_client/
+.deepeval
+__pycache__/

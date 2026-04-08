@@ -1,0 +1,1364 @@
+--- Test 0 [Haiku] ---
+  Input: Where are the dining halls on campus?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Dining_Halls
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 1 [Haiku] ---
+  Input: What is the Eatery at Stetson East?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Dining_Halls
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 2 [Haiku] ---
+  Input: Is there a Dunkin on campus?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 3 [Haiku] ---
+  Input: What restaurants are in the Curry Student Center?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 4 [Haiku] ---
+  Input: Is there a Starbucks at Northeastern?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 5 [Haiku] ---
+  Input: I have a severe nut allergy, who do I contact about dining?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Allergy_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 6 [Haiku] ---
+  Input: How does Northeastern handle food allergies?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Allergy_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 7 [Haiku] ---
+  Input: How much does the unlimited meal plan cost?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 8 [Haiku] ---
+  Input: Are first-year students required to have a meal plan?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 9 [Haiku] ---
+  Input: What is the phone number for the Husky Card office?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 10 [Haiku] ---
+  Input: What is the email for meal plan questions?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 11 [Haiku] ---
+  Input: How much does a single dorm room cost per semester?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 12 [Haiku] ---
+  Input: What is the cheapest housing option for first-years?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 13 [Haiku] ---
+  Input: What furniture comes with the dorm rooms?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 14 [Haiku] ---
+  Input: What is the difference between traditional and suite style housing?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 15 [Haiku] ---
+  Input: Does Northeastern help students find off-campus apartments?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Off_Campus
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 16 [Haiku] ---
+  Input: What is OCES?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more context about OCES? Are you asking about a specific department, program, or office at Northeastern University?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 17 [Haiku] ---
+  Input: When is move-in day for fall 2025?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 18 [Haiku] ---
+  Input: When do I have to move out at the end of spring semester?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 19 [Haiku] ---
+  Input: What is the housing office email?
+  Expected: overall=In_Scope_Question  key=Housing_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 20 [Haiku] ---
+  Input: What gym facilities does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 21 [Haiku] ---
+  Input: Does Northeastern have a swimming pool?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.6
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 22 [Haiku] ---
+  Input: How much is the student activities fee?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 23 [Haiku] ---
+  Input: What does the thirty dollar semester fee cover?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 24 [Haiku] ---
+  Input: How many student clubs are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 25 [Haiku] ---
+  Input: How do I find a list of student organizations?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 26 [Haiku] ---
+  Input: Where is the game room on campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 27 [Haiku] ---
+  Input: Does the Curry Student Center have pool tables?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 28 [Haiku] ---
+  Input: How can I volunteer through Northeastern?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 29 [Haiku] ---
+  Input: What public transit options are near campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 30 [Haiku] ---
+  Input: Does Northeastern offer a discounted MBTA pass?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 31 [Haiku] ---
+  Input: Does Northeastern have fraternities and sororities?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 32 [Haiku] ---
+  Input: How many Greek organizations are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 33 [Haiku] ---
+  Input: Where can I study on campus besides the library?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 34 [Haiku] ---
+  Input: Is Snell Library being renovated?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Are you asking about library facilities, campus infrastructure, or current construction projects at Northeastern University?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 35 [Haiku] ---
+  Input: How do I contact University Recreation?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 36 [Haiku] ---
+  Input: What is the email for the Center of Student Involvement?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 37 [Haiku] ---
+  Input: What is the RedEye shuttle service?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall.In_Scope_Question  key=Safety_RedEye_Night_Shuttle
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 38 [Haiku] ---
+  Input: Can I get a ride home from campus late at night?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall.In_Scope_Question  key=Safety_RedEye_Night_Shuttle
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 39 [Haiku] ---
+  Input: What is the SafeZone app?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Security_App
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 40 [Haiku] ---
+  Input: Is there a safety app I can download?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Security_App
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 41 [Haiku] ---
+  Input: Can I request a campus police escort at night?
+  Expected: overall=In_Scope_Question  key=Safety_Campus_Escort
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Campus_Escort
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 42 [Haiku] ---
+  Input: What can I use my Husky Card for?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Card_Entry
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 43 [Haiku] ---
+  Input: Can I add money to my Husky Card?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 44 [Haiku] ---
+  Input: What are the campus crime statistics?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 45 [Haiku] ---
+  Input: How safe is Northeastern's campus?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 46 [Haiku] ---
+  Input: What is the campus emergency phone number?
+  Expected: overall=In_Scope_Question  key=Safety_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 47 [Haiku] ---
+  Input: What Division I sports does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 48 [Haiku] ---
+  Input: Does Northeastern have a women's hockey team?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 49 [Haiku] ---
+  Input: Can I play intramural flag football?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 50 [Haiku] ---
+  Input: What intramural sports are offered?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 51 [Haiku] ---
+  Input: What is the Beanpot tournament?
+  Expected: overall=In_Scope_Question  key=Athletics_Signature_Events
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Signature_Events
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 52 [Haiku] ---
+  Input: How do I contact the athletic department?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 53 [Haiku] ---
+  Input: What is the ticket office phone number?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.6
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 54 [Haiku] ---
+  Input: What is Early Decision and how does it work?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 55 [Haiku] ---
+  Input: Am I bound to attend if I apply Early Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 56 [Haiku] ---
+  Input: When is the Early Decision one application deadline?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 57 [Haiku] ---
+  Input: When is the FAFSA deadline for Regular Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.95
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 58 [Haiku] ---
+  Input: When do Regular Decision applicants hear back?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 59 [Haiku] ---
+  Input: Does Northeastern accept the Common App?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Portal_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 60 [Haiku] ---
+  Input: What materials do I need to submit with my application?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 61 [Haiku] ---
+  Input: Do I need to send letters of recommendation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 62 [Haiku] ---
+  Input: How much is the application fee?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 63 [Haiku] ---
+  Input: Does Northeastern offer need-based financial aid?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 64 [Haiku] ---
+  Input: How does Northeastern calculate my financial aid award?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 65 [Haiku] ---
+  Input: Are there federal loans available through Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 66 [Haiku] ---
+  Input: How much is tuition for the 2025-2026 year?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 67 [Haiku] ---
+  Input: What is the total estimated cost of attendance?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 68 [Haiku] ---
+  Input: What should I expect on a campus tour?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 69 [Haiku] ---
+  Input: Are there virtual tour options?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 70 [Haiku] ---
+  Input: What SAT score do I need for Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 71 [Haiku] ---
+  Input: What is the middle fifty percent GPA of admitted students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 72 [Haiku] ---
+  Input: What is the admissions office email address?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 73 [Haiku] ---
+  Input: Where do I mail my transcripts?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 74 [Haiku] ---
+  Input: Does Northeastern accept AP credits?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 75 [Haiku] ---
+  Input: What AP score do I need to get credit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 76 [Haiku] ---
+  Input: How do I pay my enrollment deposit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Enrollment
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 77 [Haiku] ---
+  Input: Is there a separate deposit for housing?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 78 [Haiku] ---
+  Input: Can I transfer to Northeastern from another college?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 79 [Haiku] ---
+  Input: What are the requirements for transfer applicants?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 80 [Haiku] ---
+  Input: What happens during new student orientation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 81 [Haiku] ---
+  Input: When is orientation for incoming students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 82 [Haiku] ---
+  Input: What is the Honors Program at Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.95
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 83 [Haiku] ---
+  Input: How do I get into the John Martinson Honors Program?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 84 [Haiku] ---
+  Input: What is Northeastern ranked nationally?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 85 [Haiku] ---
+  Input: Where does Northeastern rank for innovation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 86 [Haiku] ---
+  Input: Is Northeastern ranked highly for study abroad?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 87 [Haiku] ---
+  Input: How is Northeastern's co-op program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 88 [Haiku] ---
+  Input: How is the engineering program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 89 [Haiku] ---
+  Input: What are the global rankings for computer science?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 90 [Haiku] ---
+  Input: How many students attend Northeastern?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 91 [Haiku] ---
+  Input: What percentage of international students are there?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 92 [Haiku] ---
+  Input: What percentage of graduates get jobs within nine months?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 93 [Haiku] ---
+  Input: Do co-op employers hire students after graduation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 94 [Haiku] ---
+  Input: How do I contact the Office of University Equity and Compliance?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 95 [Haiku] ---
+  Input: What is the phone number for counseling services?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 96 [Haiku] ---
+  Input: What does the OUEC office do?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more context about the OUEC office? I'm not familiar with that specific acronym at Northeastern University. Are you asking about a specific office, department, or student support service?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 97 [Haiku] ---
+  Input: Who is the Title IX Coordinator?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 98 [Haiku] ---
+  Input: Where can I find confidential counseling on campus?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 99 [Haiku] ---
+  Input: What is the Sexual Violence Resource Center?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 100 [Haiku] ---
+  Input: Are there national hotlines for domestic violence?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 101 [Haiku] ---
+  Input: What is RAINN?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.6
+  Clarification: Are you asking about support resources related to sexual assault or confidential support services at Northeastern University?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 102 [Haiku] ---
+  Input: What is Northeastern's nondiscrimination policy?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Policies
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 103 [Haiku] ---
+  Input: Does Northeastern comply with Title IX?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Policies
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 104 [Haiku] ---
+  Input: What is co-op and how does it work?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 105 [Haiku] ---
+  Input: What kinds of companies offer co-ops?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 106 [Haiku] ---
+  Input: How long is a typical co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 107 [Haiku] ---
+  Input: What are the steps to get a co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 108 [Haiku] ---
+  Input: When do students start preparing for co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 109 [Haiku] ---
+  Input: Do co-ops pay?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 110 [Haiku] ---
+  Input: What is the average co-op hourly wage?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 111 [Haiku] ---
+  Input: Can I do undergraduate research at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Research
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 112 [Haiku] ---
+  Input: What research themes does Northeastern focus on?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Research
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 113 [Haiku] ---
+  Input: What is NU VIEW?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_NU_View
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 114 [Haiku] ---
+  Input: Can I get a digital badge from an experiential workshop?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 115 [Haiku] ---
+  Input: What is Experiential Projects at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 116 [Haiku] ---
+  Input: Can organizations partner with students on course projects?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 117 [Haiku] ---
+  Input: Tell me about something.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: The input is very vague. Could you please provide a specific question about Northeastern University? I can help you with information about admissions, student life, housing, dining, academics, or other university-related topics.
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 118 [Haiku] ---
+  Input: I have a question about my classes.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more details about what specifically you want to know about your classes? Are you asking about course registration, academic support, class schedules, or something else related to academics at Northeastern?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 119 [Haiku] ---
+  Input: What can you tell me about the campus?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.6
+  Clarification: Are you interested in specific details about the campus, such as its facilities, location, or overall academic environment?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 120 [Haiku] ---
+  Input: I want to know about student life.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.5
+  Clarification: Would you like to know more about specific student activities, clubs, or campus facilities? Could you provide more details about what aspects of student life you're interested in?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 121 [Haiku] ---
+  Input: How do I get help with something?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Resources_Overview
+  Confidence of Key Classification: 0.5
+  Clarification: Are you looking for specific types of student support resources, such as academic advising, counseling services, or help with personal challenges?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 122 [Haiku] ---
+  Input: What are my options?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please provide more specific details about what options you're interested in? Are you asking about academic programs, campus life, admissions, or something else related to Northeastern University?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 123 [Haiku] ---
+  Input: I heard Northeastern has good programs.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.6
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 124 [Haiku] ---
+  Input: Can you tell me about costs?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 125 [Haiku] ---
+  Input: I need some information.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more specific details about what kind of information you're looking for at Northeastern University? Are you interested in admissions, campus life, academics, or something else?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 126 [Haiku] ---
+  Input: Is there anything I should know?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Resources_Overview
+  Confidence of Key Classification: 0.4
+  Clarification: Are you looking for general information about Northeastern University's resources, campus life, or academic programs? Could you provide more specific details about what you'd like to know?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 127 [Haiku] ---
+  Input: What about money stuff?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.6
+  Clarification: Are you interested in specific financial aid options, tuition costs, or scholarships at Northeastern University?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 128 [Haiku] ---
+  Input: Tell me about the experience there.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.6
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 129 [Haiku] ---
+  Input: What is the best pizza place in Boston?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Are you looking for information specifically about dining options at Northeastern University? This question seems to be about Boston restaurants in general, which is not directly related to the university.
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 130 [Haiku] ---
+  Input: Can you help me with my calculus homework?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: It seems you're asking about calculus homework, which is not related to Northeastern University. Are you looking for information about academic support or resources at Northeastern?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 131 [Haiku] ---
+  Input: What is the weather like in Boston today?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: I noticed you asked about the weather. I'm an assistant focused on helping you with Northeastern University information. Would you like to ask a question about Northeastern's campus, admissions, or student life?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 132 [Haiku] ---
+  Input: Who won the Red Sox game last night?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 133 [Haiku] ---
+  Input: Can you write my admissions essay for me?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.7
+  Clarification: I cannot write an admissions essay for you, as that would be considered academic dishonesty. Are you looking for guidance on how to write a strong admissions essay?
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 134 [Haiku] ---
+  Input: What is the meaning of life?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 135 [Haiku] ---
+  Input: How do I apply to MIT?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: I see you're asking about MIT's application process. I'm an assistant for Northeastern University admissions. Would you like information about Northeastern's application instead?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 136 [Haiku] ---
+  Input: Tell me a joke.
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 137 [Haiku] ---
+  Input: What is Harvard's acceptance rate?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 138 [Haiku] ---
+  Input: Can you order me food?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.6
+  Clarification: Not Needed
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 139 [Haiku] ---
+  Input: Goodbye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 140 [Haiku] ---
+  Input: Thanks, that's all I needed.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 141 [Haiku] ---
+  Input: No more questions, bye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 142 [Haiku] ---
+  Input: I'm all set, thank you so much.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 143 [Haiku] ---
+  Input: Nope I'm done.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 144 [Haiku] ---
+  Input: Have a good day.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 145 [Haiku] ---
+  Input: That's everything, thanks for your help.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 146 [Haiku] ---
+  Input: Alright I think that covers it.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+
+Test results:
+
+GPT4oMini:
+  (Overall) Classifying Acc.: 93.88%
+  (Groups and SubGroups) Classifying Acc.: 76.19%
+  Num. Exceptions: 0
+  Failed rows:
+    Test: 9 Question: What is the phone number for the Husky Card office?
+    Test: 16 Question: What is OCES?
+    Test: 23 Question: What does the thirty dollar semester fee cover?
+    Test: 34 Question: Is Snell Library being renovated?
+    Test: 36 Question: What is the email for the Center of Student Involvement?
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 38 Question: Can I get a ride home from campus late at night?
+    Test: 39 Question: What is the SafeZone app?
+    Test: 42 Question: What can I use my Husky Card for?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 50 Question: What intramural sports are offered?
+    Test: 51 Question: What is the Beanpot tournament?
+    Test: 53 Question: What is the ticket office phone number?
+    Test: 59 Question: Does Northeastern accept the Common App?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 77 Question: Is there a separate deposit for housing?
+    Test: 86 Question: Is Northeastern ranked highly for study abroad?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 88 Question: How is the engineering program ranked?
+    Test: 89 Question: What are the global rankings for computer science?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 96 Question: What does the OUEC office do?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 100 Question: Are there national hotlines for domestic violence?
+    Test: 101 Question: What is RAINN?
+    Test: 103 Question: Does Northeastern comply with Title IX?
+    Test: 108 Question: When do students start preparing for co-op?
+    Test: 114 Question: Can I get a digital badge from an experiential workshop?
+    Test: 116 Question: Can organizations partner with students on course projects?
+    Test: 117 Question: Tell me about something.
+    Test: 120 Question: I want to know about student life.
+    Test: 121 Question: How do I get help with something?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 127 Question: What about money stuff?
+
+Haiku:
+  (Overall) Classifying Acc.: 97.28%
+  (Groups and SubGroups) Classifying Acc.: 76.87%
+  Num. Exceptions: 0
+  Failed rows:
+    Test: 9 Question: What is the phone number for the Husky Card office?
+    Test: 16 Question: What is OCES?
+    Test: 34 Question: Is Snell Library being renovated?
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 38 Question: Can I get a ride home from campus late at night?
+    Test: 42 Question: What can I use my Husky Card for?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 53 Question: What is the ticket office phone number?
+    Test: 59 Question: Does Northeastern accept the Common App?
+    Test: 62 Question: How much is the application fee?
+    Test: 71 Question: What is the middle fifty percent GPA of admitted students?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 77 Question: Is there a separate deposit for housing?
+    Test: 86 Question: Is Northeastern ranked highly for study abroad?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 89 Question: What are the global rankings for computer science?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 96 Question: What does the OUEC office do?
+    Test: 100 Question: Are there national hotlines for domestic violence?
+    Test: 101 Question: What is RAINN?
+    Test: 112 Question: What research themes does Northeastern focus on?
+    Test: 114 Question: Can I get a digital badge from an experiential workshop?
+    Test: 117 Question: Tell me about something.
+    Test: 119 Question: What can you tell me about the campus?
+    Test: 120 Question: I want to know about student life.
+    Test: 121 Question: How do I get help with something?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 126 Question: Is there anything I should know?
+    Test: 127 Question: What about money stuff?
+    Test: 128 Question: Tell me about the experience there.
+    Test: 133 Question: Can you write my admissions essay for me?
+    Test: 138 Question: Can you order me food?
+
+GeminiFlash:
+  (Overall) Classifying Acc.: 99.32%
+  (Groups and SubGroups) Classifying Acc.: 82.99%
+  Num. Exceptions: 0
+  Failed rows:
+    Test: 5 Question: I have a severe nut allergy, who do I contact about dining?
+    Test: 9 Question: What is the phone number for the Husky Card office?
+    Test: 16 Question: What is OCES?
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 38 Question: Can I get a ride home from campus late at night?
+    Test: 42 Question: What can I use my Husky Card for?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 53 Question: What is the ticket office phone number?
+    Test: 59 Question: Does Northeastern accept the Common App?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 77 Question: Is there a separate deposit for housing?
+    Test: 86 Question: Is Northeastern ranked highly for study abroad?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 88 Question: How is the engineering program ranked?
+    Test: 89 Question: What are the global rankings for computer science?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 96 Question: What does the OUEC office do?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 99 Question: What is the Sexual Violence Resource Center?
+    Test: 101 Question: What is RAINN?
+    Test: 120 Question: I want to know about student life.
+    Test: 121 Question: How do I get help with something?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 127 Question: What about money stuff?
+
+Llama8B:
+  (Overall) Classifying Acc.: 86.39%
+  (Groups and SubGroups) Classifying Acc.: 53.74%
+  Num. Exceptions: 18
+  Failed rows:
+    Test: 1 Question: What is the Eatery at Stetson East?
+    Test: 9 Question: What is the phone number for the Husky Card office?
+    Test: 10 Question: What is the email for meal plan questions?
+    Test: 16 Question: What is OCES?
+    Test: 17 Question: When is move-in day for fall 2025?
+    Test: 22 Question: How much is the student activities fee?
+    Test: 23 Question: What does the thirty dollar semester fee cover?
+    Test: 27 Question: Does the Curry Student Center have pool tables?
+    Test: 34 Question: Is Snell Library being renovated?
+    Test: 32 Question: How many Greek organizations are there?
+    Test: 35 Question: How do I contact University Recreation?
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 36 Question: What is the email for the Center of Student Involvement?
+    Test: 38 Question: Can I get a ride home from campus late at night?
+    Test: 42 Question: What can I use my Husky Card for?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 46 Question: What is the campus emergency phone number?
+    Test: 50 Question: What intramural sports are offered?
+    Test: 49 Question: Can I play intramural flag football?
+    Test: 51 Question: What is the Beanpot tournament?
+    Test: 53 Question: What is the ticket office phone number?
+    Test: 59 Question: Does Northeastern accept the Common App?
+    Test: 70 Question: What SAT score do I need for Northeastern?
+    Test: 71 Question: What is the middle fifty percent GPA of admitted students?
+    Test: 72 Question: What is the admissions office email address?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 76 Question: How do I pay my enrollment deposit?
+    Test: 77 Question: Is there a separate deposit for housing?
+    Test: 80 Question: What happens during new student orientation?
+    Test: 86 Question: Is Northeastern ranked highly for study abroad?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 88 Question: How is the engineering program ranked?
+    Test: 89 Question: What are the global rankings for computer science?
+    Test: 90 Question: How many students attend Northeastern?
+    Test: 91 Question: What percentage of international students are there?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 96 Question: What does the OUEC office do?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 101 Question: What is RAINN?
+    Test: 100 Question: Are there national hotlines for domestic violence?
+    Test: 103 Question: Does Northeastern comply with Title IX?
+    Test: 105 Question: What kinds of companies offer co-ops?
+    Test: 107 Question: What are the steps to get a co-op?
+    Test: 114 Question: Can I get a digital badge from an experiential workshop?
+    Test: 118 Question: I have a question about my classes.
+    Test: 117 Question: Tell me about something.
+    Test: 119 Question: What can you tell me about the campus?
+    Test: 121 Question: How do I get help with something?
+    Test: 120 Question: I want to know about student life.
+    Test: 122 Question: What are my options?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 126 Question: Is there anything I should know?
+    Test: 127 Question: What about money stuff?
+    Test: 125 Question: I need some information.
+    Test: 128 Question: Tell me about the experience there.
+    Test: 133 Question: Can you write my admissions essay for me?
+    Test: 134 Question: What is the meaning of life?
+    Test: 135 Question: How do I apply to MIT?
+    Test: 136 Question: Tell me a joke.
+    Test: 138 Question: Can you order me food?
+    Test: 139 Question: Goodbye!
+    Test: 140 Question: Thanks, that's all I needed.
+    Test: 141 Question: No more questions, bye!
+    Test: 143 Question: Nope I'm done.
+    Test: 144 Question: Have a good day.
+    Test: 146 Question: Alright I think that covers it.
+    Test: 145 Question: That's everything, thanks for your help.

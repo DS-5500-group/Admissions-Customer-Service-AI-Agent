@@ -1,0 +1,1326 @@
+--- Test 0 [GPT4oMini] ---
+  Input: Yes, where are they located?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Dining_Halls
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 1 [GPT4oMini] ---
+  Input: What is the Eatery at Stetson East?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Dining_Halls
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 2 [GPT4oMini] ---
+  Input: Yeah, is there a Dunkin?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 3 [GPT4oMini] ---
+  Input: What restaurants are in the Curry Student Center?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 4 [GPT4oMini] ---
+  Input: Yes, is there a Starbucks?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 5 [GPT4oMini] ---
+  Input: I have a severe nut allergy, who do I contact about dining?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Allergy_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 6 [GPT4oMini] ---
+  Input: How does Northeastern handle food allergies?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Allergy_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 7 [GPT4oMini] ---
+  Input: How much does the unlimited meal plan cost?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 8 [GPT4oMini] ---
+  Input: Yes, are first-year students required to have one?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 9 [GPT4oMini] ---
+  Input: What is the phone number for the Husky Card office?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 10 [GPT4oMini] ---
+  Input: What is the email for meal plan questions?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 11 [GPT4oMini] ---
+  Input: How much does a single dorm room cost per semester?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 12 [GPT4oMini] ---
+  Input: What is the cheapest housing option for first-years?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 13 [GPT4oMini] ---
+  Input: What furniture comes with the dorm rooms?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 14 [GPT4oMini] ---
+  Input: What is the difference between traditional and suite style?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 15 [GPT4oMini] ---
+  Input: Yes, specifically how does OCES help students find apartments?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Off_Campus
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 16 [GPT4oMini] ---
+  Input: What support does Northeastern offer for off-campus students?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Off_Campus
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 17 [GPT4oMini] ---
+  Input: When is move-in day for fall 2025?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 18 [GPT4oMini] ---
+  Input: When do I have to move out at the end of spring?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 19 [GPT4oMini] ---
+  Input: What is the housing office email?
+  Expected: overall=In_Scope_Question  key=Housing_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 20 [GPT4oMini] ---
+  Input: What gym facilities does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 21 [GPT4oMini] ---
+  Input: Does Northeastern have a swimming pool?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 22 [GPT4oMini] ---
+  Input: How much is the student activities fee?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 23 [GPT4oMini] ---
+  Input: What does the thirty dollar semester fee cover?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 24 [GPT4oMini] ---
+  Input: Yes, how many student clubs are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 25 [GPT4oMini] ---
+  Input: How do I find a list of student organizations?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 26 [GPT4oMini] ---
+  Input: Where is the game room on campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 27 [GPT4oMini] ---
+  Input: Does the Curry Student Center have pool tables?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 28 [GPT4oMini] ---
+  Input: How can I volunteer through Northeastern?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 29 [GPT4oMini] ---
+  Input: What public transit options are near campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 30 [GPT4oMini] ---
+  Input: Does Northeastern offer a discounted MBTA pass?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 31 [GPT4oMini] ---
+  Input: Does Northeastern have fraternities and sororities?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 32 [GPT4oMini] ---
+  Input: How many Greek organizations are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 33 [GPT4oMini] ---
+  Input: Where can I study on campus besides the library?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 34 [GPT4oMini] ---
+  Input: Is Snell Library being renovated?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please specify what kind of information you're looking for regarding Snell Library?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 35 [GPT4oMini] ---
+  Input: How do I contact University Recreation?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 36 [GPT4oMini] ---
+  Input: What is the email for the Center of Student Involvement?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 37 [GPT4oMini] ---
+  Input: What is the RedEye shuttle service?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall.In_Scope_Question  key=Safety_RedEye_Night_Shuttle
+  Confidence of Key Classification: 0.95
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 38 [GPT4oMini] ---
+  Input: Yes, can I get a ride home from campus late at night?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall.In_Scope_Question  key=Safety_RedEye_Night_Shuttle
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 39 [GPT4oMini] ---
+  Input: What is the SafeZone app?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 40 [GPT4oMini] ---
+  Input: Is there a safety app I can download?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Security_App
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 41 [GPT4oMini] ---
+  Input: Can I request a campus police escort at night?
+  Expected: overall=In_Scope_Question  key=Safety_Campus_Escort
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Campus_Escort
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 42 [GPT4oMini] ---
+  Input: What can I use my Husky Card for?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 43 [GPT4oMini] ---
+  Input: Can I add money to my Husky Card?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 44 [GPT4oMini] ---
+  Input: What are the campus crime statistics?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 45 [GPT4oMini] ---
+  Input: How safe is Northeastern's campus overall?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 46 [GPT4oMini] ---
+  Input: What is the campus emergency phone number?
+  Expected: overall=In_Scope_Question  key=Safety_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 47 [GPT4oMini] ---
+  Input: What Division I sports does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 48 [GPT4oMini] ---
+  Input: Does Northeastern have a women's hockey team?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 49 [GPT4oMini] ---
+  Input: Can I play intramural flag football?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 50 [GPT4oMini] ---
+  Input: What intramural sports are offered?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 51 [GPT4oMini] ---
+  Input: What is the Beanpot tournament?
+  Expected: overall=In_Scope_Question  key=Athletics_Signature_Events
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Signature_Events
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 52 [GPT4oMini] ---
+  Input: How do I contact the athletic department?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 53 [GPT4oMini] ---
+  Input: What is the ticket office phone number?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 54 [GPT4oMini] ---
+  Input: What is Early Decision and how does it work?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 55 [GPT4oMini] ---
+  Input: Am I bound to attend if I apply Early Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 56 [GPT4oMini] ---
+  Input: When is the Early Decision one application deadline?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 57 [GPT4oMini] ---
+  Input: When is the FAFSA deadline for Regular Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 58 [GPT4oMini] ---
+  Input: When do Regular Decision applicants hear back?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 59 [GPT4oMini] ---
+  Input: Does Northeastern accept the Common App?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Portal_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 60 [GPT4oMini] ---
+  Input: What materials do I need to submit with my application?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 61 [GPT4oMini] ---
+  Input: Do I need to send letters of recommendation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 62 [GPT4oMini] ---
+  Input: How much is the application fee?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 63 [GPT4oMini] ---
+  Input: Does Northeastern offer need-based financial aid?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 64 [GPT4oMini] ---
+  Input: How does Northeastern calculate my financial aid award?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 65 [GPT4oMini] ---
+  Input: Are there federal loans available through Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 66 [GPT4oMini] ---
+  Input: How much is tuition for the 2025-2026 year?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 67 [GPT4oMini] ---
+  Input: What is the total estimated cost of attendance?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 68 [GPT4oMini] ---
+  Input: What should I expect on a campus tour?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 69 [GPT4oMini] ---
+  Input: Are there virtual tour options?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 70 [GPT4oMini] ---
+  Input: What SAT score do I need for Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 71 [GPT4oMini] ---
+  Input: What is the middle fifty percent GPA of admitted students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 72 [GPT4oMini] ---
+  Input: What is the admissions office email address?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 73 [GPT4oMini] ---
+  Input: Where do I mail my transcripts?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 74 [GPT4oMini] ---
+  Input: Does Northeastern accept AP credits?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 75 [GPT4oMini] ---
+  Input: What AP score do I need to get credit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 76 [GPT4oMini] ---
+  Input: How do I pay my enrollment deposit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Enrollment
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 77 [GPT4oMini] ---
+  Input: Is there a separate deposit for housing?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 78 [GPT4oMini] ---
+  Input: Can I transfer to Northeastern from another college?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 79 [GPT4oMini] ---
+  Input: What are the requirements for transfer applicants?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 80 [GPT4oMini] ---
+  Input: What happens during new student orientation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 81 [GPT4oMini] ---
+  Input: When is orientation for incoming students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 82 [GPT4oMini] ---
+  Input: What is the Honors Program at Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 83 [GPT4oMini] ---
+  Input: How do I get into the John Martinson Honors Program?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 84 [GPT4oMini] ---
+  Input: What is Northeastern ranked nationally?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 85 [GPT4oMini] ---
+  Input: Where does Northeastern rank for innovation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 86 [GPT4oMini] ---
+  Input: Is Northeastern ranked highly for study abroad?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 87 [GPT4oMini] ---
+  Input: How is Northeastern's co-op program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.95
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 88 [GPT4oMini] ---
+  Input: How is the engineering program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 89 [GPT4oMini] ---
+  Input: What are the global rankings for computer science?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 90 [GPT4oMini] ---
+  Input: How many students attend Northeastern?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 91 [GPT4oMini] ---
+  Input: What percentage of international students are there?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 92 [GPT4oMini] ---
+  Input: What percentage of graduates get jobs within nine months?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 93 [GPT4oMini] ---
+  Input: Do co-op employers hire students after graduation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 94 [GPT4oMini] ---
+  Input: How do I contact the Office of University Equity and Compliance?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 95 [GPT4oMini] ---
+  Input: What is the phone number for counseling services?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 96 [GPT4oMini] ---
+  Input: What does the OUEC office do?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 97 [GPT4oMini] ---
+  Input: Who is the Title IX Coordinator?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 98 [GPT4oMini] ---
+  Input: Where can I find confidential counseling on campus?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 99 [GPT4oMini] ---
+  Input: What is the Sexual Violence Resource Center?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 100 [GPT4oMini] ---
+  Input: Are there national hotlines for domestic violence?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 101 [GPT4oMini] ---
+  Input: What is RAINN?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 102 [GPT4oMini] ---
+  Input: What is Northeastern's nondiscrimination policy?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Policies
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 103 [GPT4oMini] ---
+  Input: Does Northeastern comply with Title IX?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Policies
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 104 [GPT4oMini] ---
+  Input: What is co-op and how does it work?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 105 [GPT4oMini] ---
+  Input: What kinds of companies offer co-ops?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 106 [GPT4oMini] ---
+  Input: How long is a typical co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 107 [GPT4oMini] ---
+  Input: What are the steps to get a co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 108 [GPT4oMini] ---
+  Input: When do students start preparing for co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 109 [GPT4oMini] ---
+  Input: Do co-ops pay?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 110 [GPT4oMini] ---
+  Input: What is the average co-op hourly wage?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 111 [GPT4oMini] ---
+  Input: Can I do undergraduate research at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Research
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 112 [GPT4oMini] ---
+  Input: What research themes does Northeastern focus on?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Research
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 113 [GPT4oMini] ---
+  Input: What is NU VIEW?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_NU_View
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 114 [GPT4oMini] ---
+  Input: Can I get a digital badge from an experiential workshop?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_NoSubgroup
+  Confidence of Key Classification: 0.6
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 115 [GPT4oMini] ---
+  Input: What is Experiential Projects at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 116 [GPT4oMini] ---
+  Input: Can organizations partner with students on course projects?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 117 [GPT4oMini] ---
+  Input: Tell me about something.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 118 [GPT4oMini] ---
+  Input: I have a question about my classes.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more details about your classes, such as whether you're asking about scheduling, requirements, or something else?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 119 [GPT4oMini] ---
+  Input: What can you tell me about the campus?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more specifics about what you're interested in regarding the campus, such as dining options, housing, or student activities?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 120 [GPT4oMini] ---
+  Input: I want to know about student life.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_NoSubgroup
+  Confidence of Key Classification: 0.6
+  Clarification: Can you specify which aspect of student life you're interested in, such as activities, housing, or dining?
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 121 [GPT4oMini] ---
+  Input: How do I get help with something?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 122 [GPT4oMini] ---
+  Input: What are my options?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please specify what options you are referring to? Are you asking about dining options, housing, admissions, or something else?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 123 [GPT4oMini] ---
+  Input: I heard Northeastern has good programs.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 124 [GPT4oMini] ---
+  Input: Can you tell me about costs?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 125 [GPT4oMini] ---
+  Input: I need some information.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: FAIL    Key Classification: FAIL
+
+--- Test 126 [GPT4oMini] ---
+  Input: Is there anything I should know?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you specify what area you are interested in learning more about, such as dining, housing, or admissions?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 127 [GPT4oMini] ---
+  Input: What about money stuff?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: FAIL
+
+--- Test 128 [GPT4oMini] ---
+  Input: Tell me about the experience there.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please specify what aspect of the experience at Northeastern you're referring to? For example, are you interested in dining, housing, student activities, or something else?
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 129 [GPT4oMini] ---
+  Input: What is the best pizza place in Boston?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 130 [GPT4oMini] ---
+  Input: Can you help me with my calculus homework?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 131 [GPT4oMini] ---
+  Input: What is the weather like in Boston today?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 132 [GPT4oMini] ---
+  Input: Who won the Red Sox game last night?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 133 [GPT4oMini] ---
+  Input: Can you write my admissions essay for me?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 134 [GPT4oMini] ---
+  Input: What is the meaning of life?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 135 [GPT4oMini] ---
+  Input: How do I apply to MIT?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 136 [GPT4oMini] ---
+  Input: Tell me a joke.
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 137 [GPT4oMini] ---
+  Input: What is Harvard's acceptance rate?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 138 [GPT4oMini] ---
+  Input: Can you order me food?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 139 [GPT4oMini] ---
+  Input: Goodbye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 140 [GPT4oMini] ---
+  Input: Thanks, that's all I needed.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 141 [GPT4oMini] ---
+  Input: No more questions, bye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 142 [GPT4oMini] ---
+  Input: I'm all set, thank you so much.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 143 [GPT4oMini] ---
+  Input: Nope I'm done.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 144 [GPT4oMini] ---
+  Input: Have a good day.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 145 [GPT4oMini] ---
+  Input: That's everything, thanks for your help.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+--- Test 146 [GPT4oMini] ---
+  Input: Alright I think that covers it.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall Classification: PASS    Key Classification: PASS
+
+
+Test results:
+
+GPT4oMini:
+  (Overall) Classifying Acc.: 96.60%
+  (Groups and SubGroups) Classifying Acc.: 82.31%
+  Num. Exceptions: 0
+  Failed rows:
+    Test: 35 Question: How do I contact University Recreation?
+    Test: 34 Question: Is Snell Library being renovated?
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 38 Question: Yes, can I get a ride home from campus late at night?
+    Test: 39 Question: What is the SafeZone app?
+    Test: 42 Question: What can I use my Husky Card for?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 59 Question: Does Northeastern accept the Common App?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 77 Question: Is there a separate deposit for housing?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 88 Question: How is the engineering program ranked?
+    Test: 89 Question: What are the global rankings for computer science?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 96 Question: What does the OUEC office do?
+    Test: 100 Question: Are there national hotlines for domestic violence?
+    Test: 101 Question: What is RAINN?
+    Test: 114 Question: Can I get a digital badge from an experiential workshop?
+    Test: 117 Question: Tell me about something.
+    Test: 120 Question: I want to know about student life.
+    Test: 121 Question: How do I get help with something?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 125 Question: I need some information.
+    Test: 127 Question: What about money stuff?
+
+Haiku:
+  (Overall) Classifying Acc.: 98.64%
+  (Groups and SubGroups) Classifying Acc.: 85.71%
+  Num. Exceptions: 0
+  Failed rows:
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 38 Question: Yes, can I get a ride home from campus late at night?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 57 Question: When is the FAFSA deadline for Regular Decision?
+    Test: 59 Question: Does Northeastern accept the Common App?
+    Test: 62 Question: How much is the application fee?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 88 Question: How is the engineering program ranked?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 96 Question: What does the OUEC office do?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 117 Question: Tell me about something.
+    Test: 119 Question: What can you tell me about the campus?
+    Test: 120 Question: I want to know about student life.
+    Test: 121 Question: How do I get help with something?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 127 Question: What about money stuff?
+    Test: 128 Question: Tell me about the experience there.
+    Test: 138 Question: Can you order me food?
+
+GeminiFlash:
+  (Overall) Classifying Acc.: 98.64%
+  (Groups and SubGroups) Classifying Acc.: 86.39%
+  Num. Exceptions: 2
+  Failed rows:
+    Test: 36 Question: What is the email for the Center of Student Involvement?
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 38 Question: Yes, can I get a ride home from campus late at night?
+    Test: 42 Question: What can I use my Husky Card for?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 59 Question: Does Northeastern accept the Common App?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 77 Question: Is there a separate deposit for housing?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 88 Question: How is the engineering program ranked?
+    Test: 89 Question: What are the global rankings for computer science?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 120 Question: I want to know about student life.
+    Test: 121 Question: How do I get help with something?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 127 Question: What about money stuff?
+    Test: 46 Question: What is the campus emergency phone number?
+    Test: 134 Question: What is the meaning of life?
+
+Llama8B:
+  (Overall) Classifying Acc.: 88.44%
+  (Groups and SubGroups) Classifying Acc.: 61.22%
+  Num. Exceptions: 16
+  Failed rows:
+    Test: 17 Question: When is move-in day for fall 2025?
+    Test: 16 Question: What support does Northeastern offer for off-campus students?
+    Test: 18 Question: When do I have to move out at the end of spring?
+    Test: 22 Question: How much is the student activities fee?
+    Test: 23 Question: What does the thirty dollar semester fee cover?
+    Test: 28 Question: How can I volunteer through Northeastern?
+    Test: 29 Question: What public transit options are near campus?
+    Test: 30 Question: Does Northeastern offer a discounted MBTA pass?
+    Test: 35 Question: How do I contact University Recreation?
+    Test: 36 Question: What is the email for the Center of Student Involvement?
+    Test: 37 Question: What is the RedEye shuttle service?
+    Test: 33 Question: Where can I study on campus besides the library?
+    Test: 42 Question: What can I use my Husky Card for?
+    Test: 43 Question: Can I add money to my Husky Card?
+    Test: 38 Question: Yes, can I get a ride home from campus late at night?
+    Test: 46 Question: What is the campus emergency phone number?
+    Test: 50 Question: What intramural sports are offered?
+    Test: 49 Question: Can I play intramural flag football?
+    Test: 53 Question: What is the ticket office phone number?
+    Test: 62 Question: How much is the application fee?
+    Test: 69 Question: Are there virtual tour options?
+    Test: 73 Question: Where do I mail my transcripts?
+    Test: 72 Question: What is the admissions office email address?
+    Test: 76 Question: How do I pay my enrollment deposit?
+    Test: 77 Question: Is there a separate deposit for housing?
+    Test: 87 Question: How is Northeastern's co-op program ranked?
+    Test: 88 Question: How is the engineering program ranked?
+    Test: 89 Question: What are the global rankings for computer science?
+    Test: 90 Question: How many students attend Northeastern?
+    Test: 91 Question: What percentage of international students are there?
+    Test: 93 Question: Do co-op employers hire students after graduation?
+    Test: 97 Question: Who is the Title IX Coordinator?
+    Test: 105 Question: What kinds of companies offer co-ops?
+    Test: 111 Question: Can I do undergraduate research at Northeastern?
+    Test: 114 Question: Can I get a digital badge from an experiential workshop?
+    Test: 117 Question: Tell me about something.
+    Test: 118 Question: I have a question about my classes.
+    Test: 119 Question: What can you tell me about the campus?
+    Test: 120 Question: I want to know about student life.
+    Test: 121 Question: How do I get help with something?
+    Test: 122 Question: What are my options?
+    Test: 123 Question: I heard Northeastern has good programs.
+    Test: 124 Question: Can you tell me about costs?
+    Test: 126 Question: Is there anything I should know?
+    Test: 127 Question: What about money stuff?
+    Test: 128 Question: Tell me about the experience there.
+    Test: 131 Question: What is the weather like in Boston today?
+    Test: 132 Question: Who won the Red Sox game last night?
+    Test: 135 Question: How do I apply to MIT?
+    Test: 138 Question: Can you order me food?
+    Test: 139 Question: Goodbye!
+    Test: 140 Question: Thanks, that's all I needed.
+    Test: 142 Question: I'm all set, thank you so much.
+    Test: 143 Question: Nope I'm done.
+    Test: 144 Question: Have a good day.
+    Test: 146 Question: Alright I think that covers it.
+    Test: 125 Question: I need some information.

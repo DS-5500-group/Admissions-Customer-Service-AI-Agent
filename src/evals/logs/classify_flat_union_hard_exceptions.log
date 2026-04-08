@@ -1,0 +1,1576 @@
+--- Test 2 [union] ---
+  Input: Is there a Dunkin on campus?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Are you looking for general dining options on campus?"
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Is there a Dunkin on campus?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Is there a Dunkin on campus?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Are you looking for general dining options on campus?"
+})
+
+--- Test 3 [union] ---
+  Input: What restaurants are in the Curry Student Center?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "Dining_food"
+  },
+  "confidence": 0.8,
+  "clarification": null
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What restaurants are in the Curry Student Center?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What restaurants are in the Curry Student Center?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "Dining_food"
+  },
+  "confidence": 0.8,
+  "clarification": null
+})
+
+--- Test 4 [union] ---
+  Input: Is there a Starbucks at Northeastern?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "Dining_food"
+  },
+  "confidence": 0.9,
+  "clarification": null
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Is there a Starbucks at Northeastern?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"Dining_food\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Is there a Starbucks at Northeastern?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "Dining_food"
+  },
+  "confidence": 0.9,
+  "clarification": null
+})
+
+--- Test 34 [union] ---
+  Input: Is Snell Library being renovated?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you specify if you're asking about study spaces or other resources in Snell Library?"
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Is Snell Library being renovated?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Is Snell Library being renovated?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you specify if you're asking about study spaces or other resources in Snell Library?"
+})
+
+--- Test 119 [union] ---
+  Input: What can you tell me about the campus?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Are you interested in specific amenities or activities on campus, such as recreation options or student organizations?"
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What can you tell me about the campus?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What can you tell me about the campus?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Are you interested in specific amenities or activities on campus, such as recreation options or student organizations?"
+})
+
+--- Test 122 [union] ---
+  Input: What are my options?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Amenities_Activities\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Amenities_Activities", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Admission_Application"], reason: "Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output=```json
+{
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Admission_Application": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you please specify which options you are referring to? Are you asking about application options, financial aid, or something else?"
+}
+```, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What are my options?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Amenities_Activities\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Amenities_Activities", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Admission_Application"], reason: "Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What are my options?
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ```json
+{
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Admission_Application": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you please specify which options you are referring to? Are you asking about application options, financial aid, or something else?"
+}
+```)
+
+--- Test 125 [union] ---
+  Input: I need some information.
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Amenities_Activities\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).\n      - category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Amenities_Activities", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).", causes: [ParsingError { scope: ["category", "Admission_Application"], reason: "Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Admission_Application": "No_Matching_Subgroup"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you please specify what kind of information you are looking for regarding Northeastern University?"
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: I need some information.
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Amenities_Activities\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).\n      - category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Amenities_Activities", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Admission_Application: category.Admission_Application: Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).", causes: [ParsingError { scope: ["category", "Admission_Application"], reason: "Expected AdmissionApplicationSubgroup enum value, got String(\"No_Matching_Subgroup\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: I need some information.
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Admission_Application": "No_Matching_Subgroup"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you please specify what kind of information you are looking for regarding Northeastern University?"
+})
+
+--- Test 128 [union] ---
+  Input: Tell me about the experience there.
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }, raw_output=```json
+{
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you specify if you're asking about academic experiences, campus life, or support services?"
+}
+```, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Tell me about the experience there.
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field category: category: Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Dining_food\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Housing\n  - category: Failed while parsing required fields: missing=0, unparsed=1\n    - category: Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n      - category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Safety\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Athletics\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Admission_Application\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Ranking_GeneralStats\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Student_Support\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: Experiential_Learning\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: No_Matching_Group\n  - category: Failed while parsing required fields: missing=1, unparsed=0\n    - category: Missing required field: NotApplicable", causes: [ParsingError { scope: ["category"], reason: "Failed to find any (DiningFoodQuestion | HousingQuestion | StudentAmenitiesActivitiesQuestion | SafetyQuestion | AthleticsQuestion | AdmissionApplicationQuestion | RankingGeneralStatsQuestion | StudentSupportQuestion | ExperientialLearningQuestion | NoMatchingGroupQuestion | NotApplicableQuestion) in 11 items", causes: [ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Dining_food", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Housing", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: ["category"], reason: "Failed to parse field Student_Amenities_Activities: category.Student_Amenities_Activities: Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [ParsingError { scope: ["category", "Student_Amenities_Activities"], reason: "Expected StudentAmenitiesActivitiesSubgroup enum value, got String(\"No_Matching_Group\", Complete).", causes: [] }] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Safety", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Athletics", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Admission_Application", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Ranking_GeneralStats", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Student_Support", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: Experiential_Learning", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: No_Matching_Group", causes: [] }] }, ParsingError { scope: ["category"], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: ["category"], reason: "Missing required field: NotApplicable", causes: [] }] }] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification
+If In_Scope_Question: classify into exactly one Group and one Subgroup.
+If Out_Of_Scope or End_Call: use NotApplicable.
+If in-scope but no group fits: use No_Matching_Group.
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Tell me about the experience there.
+
+AdmissionApplicationSubgroup
+----
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- Contact_Info
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+
+StudentAmenitiesActivitiesSubgroup
+----
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- Contact_Info
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  category: {
+    Dining_food: 'Dining_Halls' or 'Retail_Dining' or 'Allergy_Info' or 'Plan_Options_And_Cost' or 'Contact_Info',
+  } or {
+    Housing: 'Housing_Cost' or 'Layout_Info' or 'Off_Campus' or 'Moving_Information' or 'Contact_Info',
+  } or {
+    Student_Amenities_Activities: StudentAmenitiesActivitiesSubgroup,
+  } or {
+    Safety: 'RedEye_Night_Shuttle' or 'Security_App' or 'Campus_Escort' or 'Card_Entry' or 'Crime_Statistics' or 'Contact_Info',
+  } or {
+    Athletics: 'Varsity_Sports' or 'Intramural' or 'Signature_Events' or 'Contact_Info',
+  } or {
+    Admission_Application: AdmissionApplicationSubgroup,
+  } or {
+    Ranking_GeneralStats: 'Overall_School_Ranking' or 'Extracurriculars' or 'Majors' or 'Demographics' or 'Career_Outcomes',
+  } or {
+    Student_Support: 'Contact_Info' or 'Resources_Overview' or 'Confidential_Resources' or 'National_Resources' or 'Policies',
+  } or {
+    Experiential_Learning: 'Coop_Process' or 'Coop_Salary' or 'Coop_Overview' or 'Research' or 'NU_View' or 'Experiential_Projects',
+  } or {
+    No_Matching_Group: "NoSubgroup",
+  } or {
+    NotApplicable: "NotApplicable",
+  },
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5.
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ```json
+{
+  "overall_classification": "In_Scope_Question",
+  "category": {
+    "Student_Amenities_Activities": "No_Matching_Group"
+  },
+  "confidence": 0.0,
+  "clarification": "Could you specify if you're asking about academic experiences, campus life, or support services?"
+}
+```)
+

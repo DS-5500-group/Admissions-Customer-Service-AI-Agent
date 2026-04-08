@@ -1,0 +1,3839 @@
+--- Test 16 [Llama8B] ---
+  Input: What support does Northeastern offer for off-campus students?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup enum value, got String(\"Student_Support\", Complete).", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup enum value, got String(\"Student_Support\", Complete).", causes: [] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "group": "Student_Support",
+  "subgroup": "Student_Support",
+  "confidence": 1.0,
+  "clarification": null
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I might not live in the dorms. Agent: Are you interested in off-campus housing resources and support?
+Current User Input: What support does Northeastern offer for off-campus students?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup enum value, got String(\"Student_Support\", Complete).", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup enum value, got String(\"Student_Support\", Complete).", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I might not live in the dorms. Agent: Are you interested in off-campus housing resources and support?
+Current User Input: What support does Northeastern offer for off-campus students?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "group": "Student_Support",
+  "subgroup": "Student_Support",
+  "confidence": 1.0,
+  "clarification": null
+})
+
+--- Test 17 [Llama8B] ---
+  Input: When is move-in day for fall 2025?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup enum value, got String(\"Move_in_Dates\", Complete).", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup enum value, got String(\"Move_in_Dates\", Complete).", causes: [] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "group": "Housing",
+  "subgroup": "Move_in_Dates",
+  "confidence": 1.0,
+  "clarification": null
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I need to plan around the start of the semester. Agent: Are you asking about move-in dates and logistics?
+Current User Input: When is move-in day for fall 2025?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup enum value, got String(\"Move_in_Dates\", Complete).", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup enum value, got String(\"Move_in_Dates\", Complete).", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I need to plan around the start of the semester. Agent: Are you asking about move-in dates and logistics?
+Current User Input: When is move-in day for fall 2025?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "group": "Housing",
+  "subgroup": "Move_in_Dates",
+  "confidence": 1.0,
+  "clarification": null
+})
+
+--- Test 33 [Llama8B] ---
+  Input: Where can I study on campus besides the library?
+  ERROR: BamlClientHttpError(client_name=OpenRouterLlama8B, message=LLM call failed: LLMErrorResponse { client: "OpenRouterLlama8B", model: None, prompt: Chat([RenderedChatMessage { role: "system", allow_duplicate_role: false, parts: [Text("You are a classification component in a voice agent for prospective Northeastern University students.\n\n## Task 1: Overall Classification\nClassify the user's input into one of these categories:\n\n- Out_Of_Scope: Questions not related to Northeastern University admissions or student life\n- In_Scope_Question: A question about Northeastern that can be answered.\n- End_Call: The user is ending the conversation (e.g., \"goodbye\", \"thanks, that's all\", \"I'm done\")\n\n## Task 2: Group/Subgroup Classification (only if In_Scope_Question)\nIf overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.\n\nValid (Group -> Subgroup) mappings:\n- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info\n- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info\n- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info\n- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info\n- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info\n- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program\n- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes\n- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies\n- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects\n- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)\n- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   \n\n## Confidence and Clarification Rules\n- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification\n- Set confidence to 0.0 if Group is No_Matching_Group\n- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group\n  - This should be a follow-up question to narrow down the user's intent\n\n## Input\n\nConversation History: User: I need places to study. Agent: Are you looking for study space options on campus?\nCurrent User Input: Where can I study on campus besides the library?\n\nSubgroup\n----\n- Dining_Halls\n- Retail_Dining\n- Allergy_Info\n- Plan_Options_And_Cost\n- Housing_Cost\n- Layout_Info\n- Off_Campus\n- Moving_Information\n- Gym\n- Student_Activities_Fees\n- Clubs\n- Game_Rooms\n- Volunteering\n- Transportation\n- Greek_Life\n- Study_Space\n- RedEye_Night_Shuttle\n- Security_App\n- Campus_Escort\n- Card_Entry\n- Crime_Statistics\n- Varsity_Sports\n- Intramural\n- Signature_Events\n- Decision_Types_Outcomes\n- Dates_Deadlines\n- Portal_Info\n- Application_Materials\n- Financial_Aid\n- Estimated_Cost\n- Tours\n- Acceptance_Criteria_Stats\n- AP_Credit_Lookup\n- Enrollment\n- Transfer_Applicants\n- Orientation\n- Honors_Program\n- Overall_School_Ranking\n- Extracurriculars\n- Majors\n- Demographics\n- Career_Outcomes\n- Resources_Overview\n- Confidential_Resources\n- National_Resources\n- Policies\n- Coop_Process\n- Coop_Salary\n- Coop_Overview\n- Research\n- NU_View\n- Experiential_Projects\n- Contact_Info\n- NoSubgroup\n- NotApplicable\n\nGroup\n----\n- Dining_food\n- Housing\n- Student_Amenities_Activities\n- Safety\n- Athletics\n- Admission_Application\n- Ranking_GeneralStats\n- Student_Support\n- Experiential_Learning\n- No_Matching_Group\n- NotApplicable\n\nAnswer in JSON using this schema:\n{\n  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',\n  group: Group,\n  subgroup: Subgroup,\n  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.\n  // 0.0 Confidence if Group is 'No_Matching_Group'.\n  confidence: float or null,\n  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. \n  // Field should be a follow up question that would raise confidence. An example is to narrow down\n  // possible the group and subgroup the user is potentially asking about.\n  clarification: string or null,\n}")] }]), request_options: {"model": String("meta-llama/llama-3.1-8b-instruct")}, start_time: SystemTime { intervals: 134200297902139127 }, latency: 6.5805553s, message: "Failed to parse JSON: EOF while parsing a value at line 21 column 0", code: Other(200), raw_response: Some("\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n") }, status_code=200, detailed_message=LLM client "OpenRouterLlama8B" failed with status code: Unspecified error code: 200
+Message: LLM call failed: LLMErrorResponse { client: "OpenRouterLlama8B", model: None, prompt: Chat([RenderedChatMessage { role: "system", allow_duplicate_role: false, parts: [Text("You are a classification component in a voice agent for prospective Northeastern University students.\n\n## Task 1: Overall Classification\nClassify the user's input into one of these categories:\n\n- Out_Of_Scope: Questions not related to Northeastern University admissions or student life\n- In_Scope_Question: A question about Northeastern that can be answered.\n- End_Call: The user is ending the conversation (e.g., \"goodbye\", \"thanks, that's all\", \"I'm done\")\n\n## Task 2: Group/Subgroup Classification (only if In_Scope_Question)\nIf overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.\n\nValid (Group -> Subgroup) mappings:\n- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info\n- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info\n- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info\n- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info\n- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info\n- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program\n- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes\n- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies\n- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects\n- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)\n- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   \n\n## Confidence and Clarification Rules\n- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification\n- Set confidence to 0.0 if Group is No_Matching_Group\n- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group\n  - This should be a follow-up question to narrow down the user's intent\n\n## Input\n\nConversation History: User: I need places to study. Agent: Are you looking for study space options on campus?\nCurrent User Input: Where can I study on campus besides the library?\n\nSubgroup\n----\n- Dining_Halls\n- Retail_Dining\n- Allergy_Info\n- Plan_Options_And_Cost\n- Housing_Cost\n- Layout_Info\n- Off_Campus\n- Moving_Information\n- Gym\n- Student_Activities_Fees\n- Clubs\n- Game_Rooms\n- Volunteering\n- Transportation\n- Greek_Life\n- Study_Space\n- RedEye_Night_Shuttle\n- Security_App\n- Campus_Escort\n- Card_Entry\n- Crime_Statistics\n- Varsity_Sports\n- Intramural\n- Signature_Events\n- Decision_Types_Outcomes\n- Dates_Deadlines\n- Portal_Info\n- Application_Materials\n- Financial_Aid\n- Estimated_Cost\n- Tours\n- Acceptance_Criteria_Stats\n- AP_Credit_Lookup\n- Enrollment\n- Transfer_Applicants\n- Orientation\n- Honors_Program\n- Overall_School_Ranking\n- Extracurriculars\n- Majors\n- Demographics\n- Career_Outcomes\n- Resources_Overview\n- Confidential_Resources\n- National_Resources\n- Policies\n- Coop_Process\n- Coop_Salary\n- Coop_Overview\n- Research\n- NU_View\n- Experiential_Projects\n- Contact_Info\n- NoSubgroup\n- NotApplicable\n\nGroup\n----\n- Dining_food\n- Housing\n- Student_Amenities_Activities\n- Safety\n- Athletics\n- Admission_Application\n- Ranking_GeneralStats\n- Student_Support\n- Experiential_Learning\n- No_Matching_Group\n- NotApplicable\n\nAnswer in JSON using this schema:\n{\n  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',\n  group: Group,\n  subgroup: Subgroup,\n  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.\n  // 0.0 Confidence if Group is 'No_Matching_Group'.\n  confidence: float or null,\n  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. \n  // Field should be a follow up question that would raise confidence. An example is to narrow down\n  // possible the group and subgroup the user is potentially asking about.\n  clarification: string or null,\n}")] }]), request_options: {"model": String("meta-llama/llama-3.1-8b-instruct")}, start_time: SystemTime { intervals: 134200297902139127 }, latency: 6.5805553s, message: "Failed to parse JSON: EOF while parsing a value at line 21 column 0", code: Other(200), raw_response: Some("\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n") })
+
+--- Test 69 [Llama8B] ---
+  Input: Are there virtual tour options?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup enum value, got String(\"Virtual_Tour_Options\", Complete).", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup enum value, got String(\"Virtual_Tour_Options\", Complete).", causes: [] }] }] }, raw_output={
+  "overall_classification": "In_Scope_Question",
+  "group": "Student_Amenities_Activities",
+  "subgroup": "Virtual_Tour_Options", // from 'Virtual_Tour_Options' to conform to Subgroup Mapping
+  "confidence": 0.9,
+  "clarification": null
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I can't visit in person but want to see the campus. Agent: Are you interested in virtual tour or information session options?
+Current User Input: Are there virtual tour options?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=1", causes: [ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup enum value, got String(\"Virtual_Tour_Options\", Complete).", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup enum value, got String(\"Virtual_Tour_Options\", Complete).", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I can't visit in person but want to see the campus. Agent: Are you interested in virtual tour or information session options?
+Current User Input: Are there virtual tour options?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "In_Scope_Question",
+  "group": "Student_Amenities_Activities",
+  "subgroup": "Virtual_Tour_Options", // from 'Virtual_Tour_Options' to conform to Subgroup Mapping
+  "confidence": 0.9,
+  "clarification": null
+})
+
+--- Test 93 [Llama8B] ---
+  Input: Do co-op employers hire students after graduation?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 5 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=2, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=## Classification of User Input
+
+### Overall Classification
+The user's input, "Do co-op employers hire students after graduation?" matches a previous conversation history where the agent replied about post-graduation employment from co-op experience. The user is asking for information related to co-op and employment, which pertains to Northeastern University admissions or student life. Therefore, the overall classification is:
+
+```json
+{
+  "overall_classification": "In_Scope_Question"
+}
+```
+
+### Group/Subgroup Classification
+
+The group/subgroup classification is based on the mapping of "Experiential_Learning" to various subgroups related to co-op. Since the user's input matches the subgroup "Coop_Process" indirectly, the classification is as follows:
+
+```json
+{
+  "group": "Experiential_Learning",
+  "subgroup": "Coop_Process",
+  "confidence": 0.95,
+}
+```
+
+However, upon closer inspection, there's a more suitable subgroup that directly matches the user's input: "Coop_Salary" can be considered but in this scenario the subgroup "Coop_Overview" seems like the best fit because it's an umbrella of all Co-op inquiries in Experiential_Learning which contains information about post-graduation employment opportunities that the user is likely asking about.
+
+```json
+{
+  "group": "Experiential_Learning",
+  "subgroup": "Coop_Overview",
+  "confidence": 0.95,
+}
+```
+
+Since the confidence is high (>0.5), there's no need to clarify the user's query further., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I'm wondering if co-op leads to full-time jobs. Agent: Are you asking about post-graduation employment from co-op experience?
+Current User Input: Do co-op employers hire students after graduation?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 5 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=2, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=1, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: User: I'm wondering if co-op leads to full-time jobs. Agent: Are you asking about post-graduation employment from co-op experience?
+Current User Input: Do co-op employers hire students after graduation?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ## Classification of User Input
+
+### Overall Classification
+The user's input, "Do co-op employers hire students after graduation?" matches a previous conversation history where the agent replied about post-graduation employment from co-op experience. The user is asking for information related to co-op and employment, which pertains to Northeastern University admissions or student life. Therefore, the overall classification is:
+
+```json
+{
+  "overall_classification": "In_Scope_Question"
+}
+```
+
+### Group/Subgroup Classification
+
+The group/subgroup classification is based on the mapping of "Experiential_Learning" to various subgroups related to co-op. Since the user's input matches the subgroup "Coop_Process" indirectly, the classification is as follows:
+
+```json
+{
+  "group": "Experiential_Learning",
+  "subgroup": "Coop_Process",
+  "confidence": 0.95,
+}
+```
+
+However, upon closer inspection, there's a more suitable subgroup that directly matches the user's input: "Coop_Salary" can be considered but in this scenario the subgroup "Coop_Overview" seems like the best fit because it's an umbrella of all Co-op inquiries in Experiential_Learning which contains information about post-graduation employment opportunities that the user is likely asking about.
+
+```json
+{
+  "group": "Experiential_Learning",
+  "subgroup": "Coop_Overview",
+  "confidence": 0.95,
+}
+```
+
+Since the confidence is high (>0.5), there's no need to clarify the user's query further.)
+
+--- Test 125 [Llama8B] ---
+  Input: I need some information.
+  ERROR: BamlTimeoutError(client_name=OpenRouterLlama8B, message=Request timed out)
+
+--- Test 131 [Llama8B] ---
+  Input: What is the weather like in Boston today?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=## Task 1: Overall Classification
+
+Based on the user's input "What is the weather like in Boston today?", this falls under the category of questions not related to Northeastern University admissions or student life. The topic is about the current weather in Boston, which is outside the scope of the voice agent for prospective Northeastern University students.
+
+## Answer
+
+```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+## Task 2: Group/Subgroup Classification (not applicable)
+
+Since the overall classification is "Out_Of_Scope", there is no need to proceed with group and subgroup classification., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What is the weather like in Boston today?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: What is the weather like in Boston today?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ## Task 1: Overall Classification
+
+Based on the user's input "What is the weather like in Boston today?", this falls under the category of questions not related to Northeastern University admissions or student life. The topic is about the current weather in Boston, which is outside the scope of the voice agent for prospective Northeastern University students.
+
+## Answer
+
+```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+## Task 2: Group/Subgroup Classification (not applicable)
+
+Since the overall classification is "Out_Of_Scope", there is no need to proceed with group and subgroup classification.)
+
+--- Test 132 [Llama8B] ---
+  Input: Who won the Red Sox game last night?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+Classification Explanation: 
+- The user's input "Who won the Red Sox game last night?" does not fit any specific category related to Northeastern University admissions or student life. The conversation history does not indicate any prior questions or context about the user's interest in Northeastern University. Hence, the classification falls under Out_Of_Scope., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Who won the Red Sox game last night?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Who won the Red Sox game last night?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+Classification Explanation: 
+- The user's input "Who won the Red Sox game last night?" does not fit any specific category related to Northeastern University admissions or student life. The conversation history does not indicate any prior questions or context about the user's interest in Northeastern University. Hence, the classification falls under Out_Of_Scope.)
+
+--- Test 135 [Llama8B] ---
+  Input: How do I apply to MIT?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=## Classification Result
+
+```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+The user input "How do I apply to MIT?" is classified as "Out_Of_Scope" because it is related to Massachusetts Institute of Technology (MIT) admissions, which is not relevant to Northeastern University admissions or student life.
+
+The conversation history is irrelevant to the classification of this prompt.
+
+To better serve the user, the agent could respond with a gentle clarification to ensure they are interacting with the correct university:
+
+`Agent: I'm not sure I understood your question correctly. Are you looking for information about Northeastern University's admissions process?`
+
+This response acknowledges the user's input, politely asks for clarification, and provides an opportunity to redirect the conversation towards Northeastern University., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: How do I apply to MIT?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: How do I apply to MIT?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ## Classification Result
+
+```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+The user input "How do I apply to MIT?" is classified as "Out_Of_Scope" because it is related to Massachusetts Institute of Technology (MIT) admissions, which is not relevant to Northeastern University admissions or student life.
+
+The conversation history is irrelevant to the classification of this prompt.
+
+To better serve the user, the agent could respond with a gentle clarification to ensure they are interacting with the correct university:
+
+`Agent: I'm not sure I understood your question correctly. Are you looking for information about Northeastern University's admissions process?`
+
+This response acknowledges the user's input, politely asks for clarification, and provides an opportunity to redirect the conversation towards Northeastern University.)
+
+--- Test 138 [Llama8B] ---
+  Input: Can you order me food?
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=2, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "confidence": null,
+  "clarification": null
+}
+```
+
+The conversation history shows that the agent welcomed the user, and the user input was "Can you order me food?". This input does not relate to Northeastern University admissions or student life; it's about ordering food, which falls under the category "Out Of Scope"., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Can you order me food?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=2, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Welcome! What can I help you with today?
+Current User Input: Can you order me food?
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ```json
+{
+  "overall_classification": "Out_Of_Scope",
+  "confidence": null,
+  "clarification": null
+}
+```
+
+The conversation history shows that the agent welcomed the user, and the user input was "Can you order me food?". This input does not relate to Northeastern University admissions or student life; it's about ordering food, which falls under the category "Out Of Scope".)
+
+--- Test 139 [Llama8B] ---
+  Input: Goodbye!
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+Based on the conversation history, the user's input "Goodbye!" is classified as "End_Call". The conversation history indicates that the agent asked if there's anything else they can help the user with, but since the user has said goodbye, there's no need to continue the conversation further., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Goodbye!
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Goodbye!
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+Based on the conversation history, the user's input "Goodbye!" is classified as "End_Call". The conversation history indicates that the agent asked if there's anything else they can help the user with, but since the user has said goodbye, there's no need to continue the conversation further.)
+
+--- Test 140 [Llama8B] ---
+  Input: Thanks, that's all I needed.
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=## Classification Response
+
+```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+This classification response is determined based on the user's input "Thanks, that's all I needed", which clearly indicates the end of the conversation., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Thanks, that's all I needed.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Thanks, that's all I needed.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ## Classification Response
+
+```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+This classification response is determined based on the user's input "Thanks, that's all I needed", which clearly indicates the end of the conversation.)
+
+--- Test 142 [Llama8B] ---
+  Input: I'm all set, thank you so much.
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, raw_output={
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}, prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: I'm all set, thank you so much.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: I'm all set, thank you so much.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: {
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+})
+
+--- Test 143 [Llama8B] ---
+  Input: Nope I'm done.
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, raw_output=## Overall Classification and Classification Response
+The current user's input is 'Nope I'm done.' which we can classify as an End_Call.
+
+Here's the classification response in JSON format:
+```
+{
+  overall_classification: 'End_Call',
+  group: null,
+  subgroup: null,
+  confidence: null,
+  clarification: null
+}
+```
+
+Since the user is ending the conversation, the further classification into Group and Subgroup is unnecessary., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Nope I'm done.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Nope I'm done.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ## Overall Classification and Classification Response
+The current user's input is 'Nope I'm done.' which we can classify as an End_Call.
+
+Here's the classification response in JSON format:
+```
+{
+  overall_classification: 'End_Call',
+  group: null,
+  subgroup: null,
+  confidence: null,
+  clarification: null
+}
+```
+
+Since the user is ending the conversation, the further classification into Group and Subgroup is unnecessary.)
+
+--- Test 144 [Llama8B] ---
+  Input: Have a good day.
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=## Classification Result
+
+```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+## Explanation
+The user input "Have a good day" is a closing phrase, indicating the end of the conversation. Therefore, it does not fit into any of the defined categories (dining_food, housing, etc.) or pose an inquiry that can be answered. As a result, it should be classified as "End_Call" and the corresponding output will populate all fields as null., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Have a good day.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Have a good day.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ## Classification Result
+
+```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+## Explanation
+The user input "Have a good day" is a closing phrase, indicating the end of the conversation. Therefore, it does not fit into any of the defined categories (dining_food, housing, etc.) or pose an inquiry that can be answered. As a result, it should be classified as "End_Call" and the corresponding output will populate all fields as null.)
+
+--- Test 146 [Llama8B] ---
+  Input: Alright I think that covers it.
+  ERROR: BamlValidationError(message=Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }, raw_output=## Output JSON
+### 
+```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+Reasoning:
+
+- The user responds with "Alright I think that covers it." This statement indicates the user is ending the conversation.
+- Therefore, the overall classification is "End_Call".
+- Since the conversation has ended, the group, subgroup, confidence, and clarification are all set to null., prompt=[43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Alright I think that covers it.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+, detailed_message=Parsing error: Failed to parse LLM response: Failed to coerce value: ParsingError { scope: [], reason: "Failed to find any ClassifiedInput @stream.not_null in 3 items", causes: [ParsingError { scope: [], reason: "Failed while parsing required fields: missing=0, unparsed=2", causes: [ParsingError { scope: [], reason: "Failed to parse field group: group: Expected Group, got null", causes: [ParsingError { scope: ["group"], reason: "Expected Group, got null", causes: [] }] }, ParsingError { scope: [], reason: "Failed to parse field subgroup: subgroup: Expected Subgroup, got null", causes: [ParsingError { scope: ["subgroup"], reason: "Expected Subgroup, got null", causes: [] }] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }, ParsingError { scope: [], reason: "Failed while parsing required fields: missing=3, unparsed=0", causes: [ParsingError { scope: [], reason: "Missing required field: overall_classification", causes: [] }, ParsingError { scope: [], reason: "Missing required field: group", causes: [] }, ParsingError { scope: [], reason: "Missing required field: subgroup", causes: [] }] }] }
+Prompt: [43msystem: [0mYou are a classification component in a voice agent for prospective Northeastern University students.
+
+## Task 1: Overall Classification
+Classify the user's input into one of these categories:
+
+- Out_Of_Scope: Questions not related to Northeastern University admissions or student life
+- In_Scope_Question: A question about Northeastern that can be answered.
+- End_Call: The user is ending the conversation (e.g., "goodbye", "thanks, that's all", "I'm done")
+
+## Task 2: Group/Subgroup Classification (only if In_Scope_Question)
+If overall_classification is In_Scope_Question, classify into exactly one Group and one Subgroup.
+
+Valid (Group -> Subgroup) mappings:
+- Dining_food -> Dining_Halls, Retail_Dining, Allergy_Info, Plan_Options_And_Cost, Contact_Info
+- Housing -> Housing_Cost, Layout_Info, Off_Campus, Moving_Information, Contact_Info
+- Student_Amenities_Activities -> Gym, Student_Activities_Fees, Clubs, Game_Rooms, Volunteering, Transportation, Greek_Life, Study_Space, Contact_Info
+- Safety -> RedEye_Night_Shuttle, Security_App, Campus_Escort, Card_Entry, Crime_Statistics, Contact_Info
+- Athletics -> Varsity_Sports, Intramural, Signature_Events, Contact_Info
+- Admission_Application -> Decision_Types_Outcomes, Dates_Deadlines, Portal_Info, Application_Materials, Financial_Aid, Estimated_Cost, Tours, Acceptance_Criteria_Stats, Contact_Info, AP_Credit_Lookup, Enrollment, Transfer_Applicants, Orientation, Honors_Program
+- Ranking_GeneralStats -> Overall_School_Ranking, Extracurriculars, Majors, Demographics, Career_Outcomes
+- Student_Support -> Contact_Info, Resources_Overview, Confidential_Resources, National_Resources, Policies
+- Experiential_Learning -> Coop_Process, Coop_Salary, Coop_Overview, Research, NU_View, Experiential_Projects
+- No_Matching_Group -> NoSubgroup (use when in-scope but no group fits)
+- NotApplicable -> NotApplicable (use when Out_Of_Scope or End_Call Overall classified )   
+
+## Confidence and Clarification Rules
+- confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
+- Set confidence to 0.0 if Group is No_Matching_Group
+- clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
+  - This should be a follow-up question to narrow down the user's intent
+
+## Input
+
+Conversation History: Agent: Is there anything else I can help you with?
+Current User Input: Alright I think that covers it.
+
+Subgroup
+----
+- Dining_Halls
+- Retail_Dining
+- Allergy_Info
+- Plan_Options_And_Cost
+- Housing_Cost
+- Layout_Info
+- Off_Campus
+- Moving_Information
+- Gym
+- Student_Activities_Fees
+- Clubs
+- Game_Rooms
+- Volunteering
+- Transportation
+- Greek_Life
+- Study_Space
+- RedEye_Night_Shuttle
+- Security_App
+- Campus_Escort
+- Card_Entry
+- Crime_Statistics
+- Varsity_Sports
+- Intramural
+- Signature_Events
+- Decision_Types_Outcomes
+- Dates_Deadlines
+- Portal_Info
+- Application_Materials
+- Financial_Aid
+- Estimated_Cost
+- Tours
+- Acceptance_Criteria_Stats
+- AP_Credit_Lookup
+- Enrollment
+- Transfer_Applicants
+- Orientation
+- Honors_Program
+- Overall_School_Ranking
+- Extracurriculars
+- Majors
+- Demographics
+- Career_Outcomes
+- Resources_Overview
+- Confidential_Resources
+- National_Resources
+- Policies
+- Coop_Process
+- Coop_Salary
+- Coop_Overview
+- Research
+- NU_View
+- Experiential_Projects
+- Contact_Info
+- NoSubgroup
+- NotApplicable
+
+Group
+----
+- Dining_food
+- Housing
+- Student_Amenities_Activities
+- Safety
+- Athletics
+- Admission_Application
+- Ranking_GeneralStats
+- Student_Support
+- Experiential_Learning
+- No_Matching_Group
+- NotApplicable
+
+Answer in JSON using this schema:
+{
+  overall_classification: 'Out_Of_Scope' or 'In_Scope_Question' or 'End_Call',
+  group: Group,
+  subgroup: Subgroup,
+  // Range is 0.0 to 1.0 based on the confidence of classifying an In-Scope question into Group and Subgroup.
+  // 0.0 Confidence if Group is 'No_Matching_Group'.
+  confidence: float or null,
+  // Only populated when group is No_Matching_Group or confidence is less or equal to 0.5. 
+  // Field should be a follow up question that would raise confidence. An example is to narrow down
+  // possible the group and subgroup the user is potentially asking about.
+  clarification: string or null,
+}
+
+Raw Response: ## Output JSON
+### 
+```json
+{
+  "overall_classification": "End_Call",
+  "group": null,
+  "subgroup": null,
+  "confidence": null,
+  "clarification": null
+}
+```
+
+Reasoning:
+
+- The user responds with "Alright I think that covers it." This statement indicates the user is ending the conversation.
+- Therefore, the overall classification is "End_Call".
+- Since the conversation has ended, the group, subgroup, confidence, and clarification are all set to null.)
+

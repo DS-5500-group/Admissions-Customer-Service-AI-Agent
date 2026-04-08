@@ -1,0 +1,8 @@
+current_input,transcript,expected_overall,expected_key,expects_clarification
+"Where are the dining halls on campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Dining_Halls,False
+"What is the Eatery at Stetson East?","User: I'm curious about the dining halls. Agent: Sure! Are you asking about a specific dining hall or want an overview of all locations?",In_Scope_Question,Dining_food_Dining_Halls,False
+"Yeah, is there a Dunkin?","User: I was wondering about grab-and-go food spots. Agent: Are you looking for retail dining options like chain restaurants on campus?",In_Scope_Question,Dining_food_Retail_Dining,False
+"What restaurants are in the Curry Student Center?","User: I want to know about places to eat. Agent: Are you asking about dining halls or the retail restaurant options on campus?",In_Scope_Question,Dining_food_Retail_Dining,False
+
+
+

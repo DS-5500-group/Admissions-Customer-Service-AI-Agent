@@ -1,0 +1,2408 @@
+--- Test 0 [flat] ---
+  Input: Where are the dining halls on campus?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Dining_Halls
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 0 [union] ---
+  Input: Where are the dining halls on campus?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall_U.In_Scope_Question  key=Dining_food_Dining_Halls
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 1 [flat] ---
+  Input: What is the Eatery at Stetson East?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Dining_Halls
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 1 [union] ---
+  Input: What is the Eatery at Stetson East?
+  Expected: overall=In_Scope_Question  key=Dining_food_Dining_Halls
+  Got:      overall=Overall_U.In_Scope_Question  key=Dining_food_Contact_Info
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 2 [flat] ---
+  Input: Is there a Dunkin on campus?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 2 [union] ---
+  Input: Is there a Dunkin on campus?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 3 [flat] ---
+  Input: What restaurants are in the Curry Student Center?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 3 [union] ---
+  Input: What restaurants are in the Curry Student Center?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 4 [flat] ---
+  Input: Is there a Starbucks at Northeastern?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Retail_Dining
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 4 [union] ---
+  Input: Is there a Starbucks at Northeastern?
+  Expected: overall=In_Scope_Question  key=Dining_food_Retail_Dining
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 5 [flat] ---
+  Input: I have a severe nut allergy, who do I contact about dining?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Allergy_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 5 [union] ---
+  Input: I have a severe nut allergy, who do I contact about dining?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Dining_food_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 6 [flat] ---
+  Input: How does Northeastern handle food allergies?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Allergy_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 6 [union] ---
+  Input: How does Northeastern handle food allergies?
+  Expected: overall=In_Scope_Question  key=Dining_food_Allergy_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Dining_food_Allergy_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 7 [flat] ---
+  Input: How much does the unlimited meal plan cost?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 7 [union] ---
+  Input: How much does the unlimited meal plan cost?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall_U.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 8 [flat] ---
+  Input: Are first-year students required to have a meal plan?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.95
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 8 [union] ---
+  Input: Are first-year students required to have a meal plan?
+  Expected: overall=In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Got:      overall=Overall_U.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 9 [flat] ---
+  Input: What is the phone number for the Husky Card office?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 9 [union] ---
+  Input: What is the phone number for the Husky Card office?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 10 [flat] ---
+  Input: What is the email for meal plan questions?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 10 [union] ---
+  Input: What is the email for meal plan questions?
+  Expected: overall=In_Scope_Question  key=Dining_food_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Dining_food_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 11 [flat] ---
+  Input: How much does a single dorm room cost per semester?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 11 [union] ---
+  Input: How much does a single dorm room cost per semester?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 12 [flat] ---
+  Input: What is the cheapest housing option for first-years?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 12 [union] ---
+  Input: What is the cheapest housing option for first-years?
+  Expected: overall=In_Scope_Question  key=Housing_Housing_Cost
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 13 [flat] ---
+  Input: What furniture comes with the dorm rooms?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 13 [union] ---
+  Input: What furniture comes with the dorm rooms?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 14 [flat] ---
+  Input: What is the difference between traditional and suite style housing?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 14 [union] ---
+  Input: What is the difference between traditional and suite style housing?
+  Expected: overall=In_Scope_Question  key=Housing_Layout_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Layout_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 15 [flat] ---
+  Input: Does Northeastern help students find off-campus apartments?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Off_Campus
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 15 [union] ---
+  Input: Does Northeastern help students find off-campus apartments?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Off_Campus
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 16 [flat] ---
+  Input: What is OCES?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 16 [union] ---
+  Input: What is OCES?
+  Expected: overall=In_Scope_Question  key=Housing_Off_Campus
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 0.0
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 17 [flat] ---
+  Input: When is move-in day for fall 2025?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 17 [union] ---
+  Input: When is move-in day for fall 2025?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 18 [flat] ---
+  Input: When do I have to move out at the end of spring semester?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 18 [union] ---
+  Input: When do I have to move out at the end of spring semester?
+  Expected: overall=In_Scope_Question  key=Housing_Moving_Information
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Moving_Information
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 19 [flat] ---
+  Input: What is the housing office email?
+  Expected: overall=In_Scope_Question  key=Housing_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 19 [union] ---
+  Input: What is the housing office email?
+  Expected: overall=In_Scope_Question  key=Housing_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 20 [flat] ---
+  Input: What gym facilities does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 20 [union] ---
+  Input: What gym facilities does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 21 [flat] ---
+  Input: Does Northeastern have a swimming pool?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 21 [union] ---
+  Input: Does Northeastern have a swimming pool?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 22 [flat] ---
+  Input: How much is the student activities fee?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 22 [union] ---
+  Input: How much is the student activities fee?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 23 [flat] ---
+  Input: What does the thirty dollar semester fee cover?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 23 [union] ---
+  Input: What does the thirty dollar semester fee cover?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Student_Activities_Fees
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 24 [flat] ---
+  Input: How many student clubs are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 24 [union] ---
+  Input: How many student clubs are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 25 [flat] ---
+  Input: How do I find a list of student organizations?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 25 [union] ---
+  Input: How do I find a list of student organizations?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 26 [flat] ---
+  Input: Where is the game room on campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 26 [union] ---
+  Input: Where is the game room on campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 27 [flat] ---
+  Input: Does the Curry Student Center have pool tables?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 27 [union] ---
+  Input: Does the Curry Student Center have pool tables?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Game_Rooms
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 28 [flat] ---
+  Input: How can I volunteer through Northeastern?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 28 [union] ---
+  Input: How can I volunteer through Northeastern?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Volunteering
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 29 [flat] ---
+  Input: What public transit options are near campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 29 [union] ---
+  Input: What public transit options are near campus?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 30 [flat] ---
+  Input: Does Northeastern offer a discounted MBTA pass?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 30 [union] ---
+  Input: Does Northeastern offer a discounted MBTA pass?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 31 [flat] ---
+  Input: Does Northeastern have fraternities and sororities?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 31 [union] ---
+  Input: Does Northeastern have fraternities and sororities?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 32 [flat] ---
+  Input: How many Greek organizations are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 32 [union] ---
+  Input: How many Greek organizations are there?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Greek_Life
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 33 [flat] ---
+  Input: Where can I study on campus besides the library?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 33 [union] ---
+  Input: Where can I study on campus besides the library?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 34 [flat] ---
+  Input: Is Snell Library being renovated?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more context about your question regarding Snell Library?
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 34 [union] ---
+  Input: Is Snell Library being renovated?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Study_Space
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 35 [flat] ---
+  Input: How do I contact University Recreation?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 35 [union] ---
+  Input: How do I contact University Recreation?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 36 [flat] ---
+  Input: What is the email for the Center of Student Involvement?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 36 [union] ---
+  Input: What is the email for the Center of Student Involvement?
+  Expected: overall=In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 37 [flat] ---
+  Input: What is the RedEye shuttle service?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall.In_Scope_Question  key=Safety_RedEye_Night_Shuttle
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 37 [union] ---
+  Input: What is the RedEye shuttle service?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 38 [flat] ---
+  Input: Can I get a ride home from campus late at night?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 38 [union] ---
+  Input: Can I get a ride home from campus late at night?
+  Expected: overall=In_Scope_Question  key=Safety_Redeye
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Transportation
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 39 [flat] ---
+  Input: What is the SafeZone app?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 39 [union] ---
+  Input: What is the SafeZone app?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 40 [flat] ---
+  Input: Is there a safety app I can download?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Security_App
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 40 [union] ---
+  Input: Is there a safety app I can download?
+  Expected: overall=In_Scope_Question  key=Safety_Security_App
+  Got:      overall=Overall_U.In_Scope_Question  key=Safety_Security_App
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 41 [flat] ---
+  Input: Can I request a campus police escort at night?
+  Expected: overall=In_Scope_Question  key=Safety_Campus_Escort
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Campus_Escort
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 41 [union] ---
+  Input: Can I request a campus police escort at night?
+  Expected: overall=In_Scope_Question  key=Safety_Campus_Escort
+  Got:      overall=Overall_U.In_Scope_Question  key=Safety_Campus_Escort
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 42 [flat] ---
+  Input: What can I use my Husky Card for?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 42 [union] ---
+  Input: What can I use my Husky Card for?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Gym
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 43 [flat] ---
+  Input: Can I add money to my Husky Card?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall.In_Scope_Question  key=Dining_food_Plan_Options_And_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 43 [union] ---
+  Input: Can I add money to my Husky Card?
+  Expected: overall=In_Scope_Question  key=Safety_Card_Entry
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 44 [flat] ---
+  Input: What are the campus crime statistics?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 44 [union] ---
+  Input: What are the campus crime statistics?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall_U.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 45 [flat] ---
+  Input: How safe is Northeastern's campus?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 45 [union] ---
+  Input: How safe is Northeastern's campus?
+  Expected: overall=In_Scope_Question  key=Safety_Crime_Statistics
+  Got:      overall=Overall_U.In_Scope_Question  key=Safety_Crime_Statistics
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 46 [flat] ---
+  Input: What is the campus emergency phone number?
+  Expected: overall=In_Scope_Question  key=Safety_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Safety_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 46 [union] ---
+  Input: What is the campus emergency phone number?
+  Expected: overall=In_Scope_Question  key=Safety_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Safety_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 47 [flat] ---
+  Input: What Division I sports does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 47 [union] ---
+  Input: What Division I sports does Northeastern have?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall_U.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 48 [flat] ---
+  Input: Does Northeastern have a women's hockey team?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 48 [union] ---
+  Input: Does Northeastern have a women's hockey team?
+  Expected: overall=In_Scope_Question  key=Athletics_Varsity_Sports
+  Got:      overall=Overall_U.In_Scope_Question  key=Athletics_Varsity_Sports
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 49 [flat] ---
+  Input: Can I play intramural flag football?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 49 [union] ---
+  Input: Can I play intramural flag football?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall_U.In_Scope_Question  key=Athletics_Intramural
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 50 [flat] ---
+  Input: What intramural sports are offered?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 50 [union] ---
+  Input: What intramural sports are offered?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 51 [flat] ---
+  Input: What is the Beanpot tournament?
+  Expected: overall=In_Scope_Question  key=Athletics_Signature_Events
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 51 [union] ---
+  Input: What is the Beanpot tournament?
+  Expected: overall=In_Scope_Question  key=Athletics_Signature_Events
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 52 [flat] ---
+  Input: How do I contact the athletic department?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 52 [union] ---
+  Input: How do I contact the athletic department?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Athletics_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 53 [flat] ---
+  Input: What is the ticket office phone number?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 53 [union] ---
+  Input: What is the ticket office phone number?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 54 [flat] ---
+  Input: What is Early Decision and how does it work?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 54 [union] ---
+  Input: What is Early Decision and how does it work?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 55 [flat] ---
+  Input: Am I bound to attend if I apply Early Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 55 [union] ---
+  Input: Am I bound to attend if I apply Early Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 56 [flat] ---
+  Input: When is the Early Decision one application deadline?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 56 [union] ---
+  Input: When is the Early Decision one application deadline?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 57 [flat] ---
+  Input: When is the FAFSA deadline for Regular Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 57 [union] ---
+  Input: When is the FAFSA deadline for Regular Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 58 [flat] ---
+  Input: When do Regular Decision applicants hear back?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 58 [union] ---
+  Input: When do Regular Decision applicants hear back?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 59 [flat] ---
+  Input: Does Northeastern accept the Common App?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Portal_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 59 [union] ---
+  Input: Does Northeastern accept the Common App?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Portal_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 60 [flat] ---
+  Input: What materials do I need to submit with my application?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 60 [union] ---
+  Input: What materials do I need to submit with my application?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 61 [flat] ---
+  Input: Do I need to send letters of recommendation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 61 [union] ---
+  Input: Do I need to send letters of recommendation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 62 [flat] ---
+  Input: How much is the application fee?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 62 [union] ---
+  Input: How much is the application fee?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 63 [flat] ---
+  Input: Does Northeastern offer need-based financial aid?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 63 [union] ---
+  Input: Does Northeastern offer need-based financial aid?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 64 [flat] ---
+  Input: How does Northeastern calculate my financial aid award?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 64 [union] ---
+  Input: How does Northeastern calculate my financial aid award?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 65 [flat] ---
+  Input: Are there federal loans available through Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 65 [union] ---
+  Input: Are there federal loans available through Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 66 [flat] ---
+  Input: How much is tuition for the 2025-2026 year?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 66 [union] ---
+  Input: How much is tuition for the 2025-2026 year?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 67 [flat] ---
+  Input: What is the total estimated cost of attendance?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 67 [union] ---
+  Input: What is the total estimated cost of attendance?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 68 [flat] ---
+  Input: What should I expect on a campus tour?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 68 [union] ---
+  Input: What should I expect on a campus tour?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 69 [flat] ---
+  Input: Are there virtual tour options?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 69 [union] ---
+  Input: Are there virtual tour options?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Tours
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 70 [flat] ---
+  Input: What SAT score do I need for Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 70 [union] ---
+  Input: What SAT score do I need for Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 71 [flat] ---
+  Input: What is the middle fifty percent GPA of admitted students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 71 [union] ---
+  Input: What is the middle fifty percent GPA of admitted students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 72 [flat] ---
+  Input: What is the admissions office email address?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 72 [union] ---
+  Input: What is the admissions office email address?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Contact_Info
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 73 [flat] ---
+  Input: Where do I mail my transcripts?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 73 [union] ---
+  Input: Where do I mail my transcripts?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Application_Materials
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 74 [flat] ---
+  Input: Does Northeastern accept AP credits?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 74 [union] ---
+  Input: Does Northeastern accept AP credits?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 75 [flat] ---
+  Input: What AP score do I need to get credit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 75 [union] ---
+  Input: What AP score do I need to get credit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 76 [flat] ---
+  Input: How do I pay my enrollment deposit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Enrollment
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 76 [union] ---
+  Input: How do I pay my enrollment deposit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Enrollment
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 77 [flat] ---
+  Input: Is there a separate deposit for housing?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 77 [union] ---
+  Input: Is there a separate deposit for housing?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall_U.In_Scope_Question  key=Housing_Housing_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 78 [flat] ---
+  Input: Can I transfer to Northeastern from another college?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 78 [union] ---
+  Input: Can I transfer to Northeastern from another college?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 79 [flat] ---
+  Input: What are the requirements for transfer applicants?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 79 [union] ---
+  Input: What are the requirements for transfer applicants?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 80 [flat] ---
+  Input: What happens during new student orientation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 80 [union] ---
+  Input: What happens during new student orientation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 81 [flat] ---
+  Input: When is orientation for incoming students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 81 [union] ---
+  Input: When is orientation for incoming students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Orientation
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 82 [flat] ---
+  Input: What is the Honors Program at Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 82 [union] ---
+  Input: What is the Honors Program at Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 83 [flat] ---
+  Input: How do I get into the John Martinson Honors Program?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 83 [union] ---
+  Input: How do I get into the John Martinson Honors Program?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Honors_Program
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 84 [flat] ---
+  Input: What is Northeastern ranked nationally?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 84 [union] ---
+  Input: What is Northeastern ranked nationally?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 85 [flat] ---
+  Input: Where does Northeastern rank for innovation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 85 [union] ---
+  Input: Where does Northeastern rank for innovation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 86 [flat] ---
+  Input: Is Northeastern ranked highly for study abroad?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 86 [union] ---
+  Input: Is Northeastern ranked highly for study abroad?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 87 [flat] ---
+  Input: How is Northeastern's co-op program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 87 [union] ---
+  Input: How is Northeastern's co-op program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 88 [flat] ---
+  Input: How is the engineering program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 88 [union] ---
+  Input: How is the engineering program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 89 [flat] ---
+  Input: What are the global rankings for computer science?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 89 [union] ---
+  Input: What are the global rankings for computer science?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 90 [flat] ---
+  Input: How many students attend Northeastern?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 90 [union] ---
+  Input: How many students attend Northeastern?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 91 [flat] ---
+  Input: What percentage of international students are there?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 91 [union] ---
+  Input: What percentage of international students are there?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 92 [flat] ---
+  Input: What percentage of graduates get jobs within nine months?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 92 [union] ---
+  Input: What percentage of graduates get jobs within nine months?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 93 [flat] ---
+  Input: Do co-op employers hire students after graduation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 93 [union] ---
+  Input: Do co-op employers hire students after graduation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 94 [flat] ---
+  Input: How do I contact the Office of University Equity and Compliance?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 94 [union] ---
+  Input: How do I contact the Office of University Equity and Compliance?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 95 [flat] ---
+  Input: What is the phone number for counseling services?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 95 [union] ---
+  Input: What is the phone number for counseling services?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 96 [flat] ---
+  Input: What does the OUEC office do?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 96 [union] ---
+  Input: What does the OUEC office do?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall_U.In_Scope_Question  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 0.0
+  Clarification: Could you provide more details about what you're looking to know regarding the OUEC office?
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 97 [flat] ---
+  Input: Who is the Title IX Coordinator?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please clarify what specific information you are looking for regarding the Title IX Coordinator?
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 97 [union] ---
+  Input: Who is the Title IX Coordinator?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Support_Contact_Info
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 98 [flat] ---
+  Input: Where can I find confidential counseling on campus?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 98 [union] ---
+  Input: Where can I find confidential counseling on campus?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 99 [flat] ---
+  Input: What is the Sexual Violence Resource Center?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 99 [union] ---
+  Input: What is the Sexual Violence Resource Center?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 100 [flat] ---
+  Input: Are there national hotlines for domestic violence?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 100 [union] ---
+  Input: Are there national hotlines for domestic violence?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 101 [flat] ---
+  Input: What is RAINN?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 101 [union] ---
+  Input: What is RAINN?
+  Expected: overall=In_Scope_Question  key=Student_Support_National_Resources
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 102 [flat] ---
+  Input: What is Northeastern's nondiscrimination policy?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Policies
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 102 [union] ---
+  Input: What is Northeastern's nondiscrimination policy?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Support_Policies
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 103 [flat] ---
+  Input: Does Northeastern comply with Title IX?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you clarify how Title IX relates to your interests in Northeastern University?
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 103 [union] ---
+  Input: Does Northeastern comply with Title IX?
+  Expected: overall=In_Scope_Question  key=Student_Support_Policies
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Support_Policies
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 104 [flat] ---
+  Input: What is co-op and how does it work?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 104 [union] ---
+  Input: What is co-op and how does it work?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 105 [flat] ---
+  Input: What kinds of companies offer co-ops?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 105 [union] ---
+  Input: What kinds of companies offer co-ops?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 106 [flat] ---
+  Input: How long is a typical co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 106 [union] ---
+  Input: How long is a typical co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 107 [flat] ---
+  Input: What are the steps to get a co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 107 [union] ---
+  Input: What are the steps to get a co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 108 [flat] ---
+  Input: When do students start preparing for co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 108 [union] ---
+  Input: When do students start preparing for co-op?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Process
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 109 [flat] ---
+  Input: Do co-ops pay?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 109 [union] ---
+  Input: Do co-ops pay?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 110 [flat] ---
+  Input: What is the average co-op hourly wage?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 110 [union] ---
+  Input: What is the average co-op hourly wage?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Coop_Salary
+  Confidence of Key Classification: 0.85
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 111 [flat] ---
+  Input: Can I do undergraduate research at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Research
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 111 [union] ---
+  Input: Can I do undergraduate research at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Research
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 112 [flat] ---
+  Input: What research themes does Northeastern focus on?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Research
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 112 [union] ---
+  Input: What research themes does Northeastern focus on?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Research
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Research
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 113 [flat] ---
+  Input: What is NU VIEW?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_NU_View
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 113 [union] ---
+  Input: What is NU VIEW?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_NU_View
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 114 [flat] ---
+  Input: Can I get a digital badge from an experiential workshop?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 114 [union] ---
+  Input: Can I get a digital badge from an experiential workshop?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_NU_View
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 115 [flat] ---
+  Input: What is Experiential Projects at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 115 [union] ---
+  Input: What is Experiential Projects at Northeastern?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 116 [flat] ---
+  Input: Can organizations partner with students on course projects?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 116 [union] ---
+  Input: Can organizations partner with students on course projects?
+  Expected: overall=In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Got:      overall=Overall_U.In_Scope_Question  key=Experiential_Learning_Experiential_Projects
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 117 [flat] ---
+  Input: Tell me about something.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please specify what you would like to know more about regarding Northeastern University?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 117 [union] ---
+  Input: Tell me about something.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 118 [flat] ---
+  Input: I have a question about my classes.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please provide more details about your classes? Are you asking about registration, specific subjects, or something else?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 118 [union] ---
+  Input: I have a question about my classes.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you specify if your question is about class registration, class availability, or something else related to your classes?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 119 [flat] ---
+  Input: What can you tell me about the campus?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Can you specify what information you are looking for about the campus? For example, are you interested in dining facilities, housing options, activities, or something else?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 119 [union] ---
+  Input: What can you tell me about the campus?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 120 [flat] ---
+  Input: I want to know about student life.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_NoSubgroup
+  Confidence of Key Classification: 0.6
+  Clarification: Could you specify which aspects of student life you are interested in, such as clubs, activities, or housing?
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 120 [union] ---
+  Input: I want to know about student life.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.In_Scope_Question  key=Student_Amenities_Activities_Clubs
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 121 [flat] ---
+  Input: How do I get help with something?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please specify what type of help you are looking for? Are you asking about academic support, housing assistance, or something else?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 121 [union] ---
+  Input: How do I get help with something?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: FAIL    Key Classification: FAIL
+
+--- Test 122 [flat] ---
+  Input: What are my options?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Can you please specify what options you are referring to? Are you asking about admissions, housing, dining, or something else?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 122 [union] ---
+  Input: What are my options?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 123 [flat] ---
+  Input: I heard Northeastern has good programs.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 123 [union] ---
+  Input: I heard Northeastern has good programs.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 124 [flat] ---
+  Input: Can you tell me about costs?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 124 [union] ---
+  Input: Can you tell me about costs?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Confidence of Key Classification: 0.9
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 125 [flat] ---
+  Input: I need some information.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: What type of information are you looking for specifically?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 125 [union] ---
+  Input: I need some information.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 126 [flat] ---
+  Input: Is there anything I should know?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you specify what area you would like more information about, such as admissions, housing, or campus activities?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 126 [union] ---
+  Input: Is there anything I should know?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Confidence of Key Classification: 0.0
+  Clarification: Could you please specify what particular information you are looking for about Northeastern University?
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 127 [flat] ---
+  Input: What about money stuff?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.7
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 127 [union] ---
+  Input: What about money stuff?
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall_U.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 128 [flat] ---
+  Input: Tell me about the experience there.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Confidence of Key Classification: 0.8
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: FAIL
+
+--- Test 128 [union] ---
+  Input: Tell me about the experience there.
+  Expected: overall=In_Scope_Question  key=No_Matching_Group_NoSubgroup
+  Got:      ERROR (see the exceptions log file)
+  Overall CLassification: FAIL(ERROR)    Key Classification: FAIL(ERROR)
+--- Test 129 [flat] ---
+  Input: What is the best pizza place in Boston?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 129 [union] ---
+  Input: What is the best pizza place in Boston?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 130 [flat] ---
+  Input: Can you help me with my calculus homework?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 130 [union] ---
+  Input: Can you help me with my calculus homework?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 131 [flat] ---
+  Input: What is the weather like in Boston today?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 131 [union] ---
+  Input: What is the weather like in Boston today?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 0.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 132 [flat] ---
+  Input: Who won the Red Sox game last night?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 132 [union] ---
+  Input: Who won the Red Sox game last night?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 133 [flat] ---
+  Input: Can you write my admissions essay for me?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 133 [union] ---
+  Input: Can you write my admissions essay for me?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 134 [flat] ---
+  Input: What is the meaning of life?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 134 [union] ---
+  Input: What is the meaning of life?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 135 [flat] ---
+  Input: How do I apply to MIT?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 135 [union] ---
+  Input: How do I apply to MIT?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 136 [flat] ---
+  Input: Tell me a joke.
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 136 [union] ---
+  Input: Tell me a joke.
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 137 [flat] ---
+  Input: What is Harvard's acceptance rate?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 137 [union] ---
+  Input: What is Harvard's acceptance rate?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 0.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 138 [flat] ---
+  Input: Can you order me food?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 138 [union] ---
+  Input: Can you order me food?
+  Expected: overall=Out_Of_Scope  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.Out_Of_Scope  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: 1.0
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 139 [flat] ---
+  Input: Goodbye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 139 [union] ---
+  Input: Goodbye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 140 [flat] ---
+  Input: Thanks, that's all I needed.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 140 [union] ---
+  Input: Thanks, that's all I needed.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 141 [flat] ---
+  Input: No more questions, bye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 141 [union] ---
+  Input: No more questions, bye!
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 142 [flat] ---
+  Input: I'm all set, thank you so much.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 142 [union] ---
+  Input: I'm all set, thank you so much.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 143 [flat] ---
+  Input: Nope I'm done.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 143 [union] ---
+  Input: Nope I'm done.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 144 [flat] ---
+  Input: Have a good day.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 144 [union] ---
+  Input: Have a good day.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 145 [flat] ---
+  Input: That's everything, thanks for your help.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 145 [union] ---
+  Input: That's everything, thanks for your help.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 146 [flat] ---
+  Input: Alright I think that covers it.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+--- Test 146 [union] ---
+  Input: Alright I think that covers it.
+  Expected: overall=End_Call  key=NotApplicable_NotApplicable
+  Got:      overall=Overall_U.End_Call  key=NotApplicable_NotApplicable
+  Confidence of Key Classification: None
+  Clarification: Not Needed
+  Overall CLassification: PASS    Key Classification: PASS
+
+Test results:
+flat:
+ (Overall) Classifying Acc. :97.28%
+  (Groups and SubGroups) Classifying Acc. :78.23%
+  Num. Exceptions:0
+Test: 9 Question: What is the phone number for the Husky Card office?
+Test: 16 Question: What is OCES?
+Test: 23 Question: What does the thirty dollar semester fee cover?
+Test: 34 Question: Is Snell Library being renovated?
+Test: 36 Question: What is the email for the Center of Student Involvement?
+Test: 37 Question: What is the RedEye shuttle service?
+Test: 38 Question: Can I get a ride home from campus late at night?
+Test: 39 Question: What is the SafeZone app?
+Test: 42 Question: What can I use my Husky Card for?
+Test: 43 Question: Can I add money to my Husky Card?
+Test: 51 Question: What is the Beanpot tournament?
+Test: 53 Question: What is the ticket office phone number?
+Test: 59 Question: Does Northeastern accept the Common App?
+Test: 72 Question: What is the admissions office email address?
+Test: 77 Question: Is there a separate deposit for housing?
+Test: 87 Question: How is Northeastern's co-op program ranked?
+Test: 86 Question: Is Northeastern ranked highly for study abroad?
+Test: 88 Question: How is the engineering program ranked?
+Test: 89 Question: What are the global rankings for computer science?
+Test: 93 Question: Do co-op employers hire students after graduation?
+Test: 96 Question: What does the OUEC office do?
+Test: 97 Question: Who is the Title IX Coordinator?
+Test: 100 Question: Are there national hotlines for domestic violence?
+Test: 101 Question: What is RAINN?
+Test: 103 Question: Does Northeastern comply with Title IX?
+Test: 114 Question: Can I get a digital badge from an experiential workshop?
+Test: 116 Question: Can organizations partner with students on course projects?
+Test: 120 Question: I want to know about student life.
+Test: 123 Question: I heard Northeastern has good programs.
+Test: 124 Question: Can you tell me about costs?
+Test: 127 Question: What about money stuff?
+Test: 128 Question: Tell me about the experience there.
+
+union:
+ (Overall) Classifying Acc. :89.12%
+  (Groups and SubGroups) Classifying Acc. :74.15%
+  Num. Exceptions:8
+Test: 4 Question: Is there a Starbucks at Northeastern?
+Test: 3 Question: What restaurants are in the Curry Student Center?
+Test: 1 Question: What is the Eatery at Stetson East?
+Test: 2 Question: Is there a Dunkin on campus?
+Test: 9 Question: What is the phone number for the Husky Card office?
+Test: 5 Question: I have a severe nut allergy, who do I contact about dining?
+Test: 16 Question: What is OCES?
+Test: 34 Question: Is Snell Library being renovated?
+Test: 37 Question: What is the RedEye shuttle service?
+Test: 38 Question: Can I get a ride home from campus late at night?
+Test: 39 Question: What is the SafeZone app?
+Test: 42 Question: What can I use my Husky Card for?
+Test: 43 Question: Can I add money to my Husky Card?
+Test: 50 Question: What intramural sports are offered?
+Test: 51 Question: What is the Beanpot tournament?
+Test: 53 Question: What is the ticket office phone number?
+Test: 59 Question: Does Northeastern accept the Common App?
+Test: 73 Question: Where do I mail my transcripts?
+Test: 77 Question: Is there a separate deposit for housing?
+Test: 87 Question: How is Northeastern's co-op program ranked?
+Test: 86 Question: Is Northeastern ranked highly for study abroad?
+Test: 89 Question: What are the global rankings for computer science?
+Test: 93 Question: Do co-op employers hire students after graduation?
+Test: 97 Question: Who is the Title IX Coordinator?
+Test: 96 Question: What does the OUEC office do?
+Test: 100 Question: Are there national hotlines for domestic violence?
+Test: 101 Question: What is RAINN?
+Test: 114 Question: Can I get a digital badge from an experiential workshop?
+Test: 117 Question: Tell me about something.
+Test: 121 Question: How do I get help with something?
+Test: 120 Question: I want to know about student life.
+Test: 119 Question: What can you tell me about the campus?
+Test: 122 Question: What are my options?
+Test: 124 Question: Can you tell me about costs?
+Test: 123 Question: I heard Northeastern has good programs.
+Test: 125 Question: I need some information.
+Test: 127 Question: What about money stuff?
+Test: 128 Question: Tell me about the experience there.

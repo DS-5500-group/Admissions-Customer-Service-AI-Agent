@@ -1,0 +1,148 @@
+current_input,transcript,expected_overall,expected_key,expects_clarification
+"Where are the dining halls on campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Dining_Halls,False
+"What is the Eatery at Stetson East?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Dining_Halls,False
+"Is there a Dunkin on campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Retail_Dining,False
+"What restaurants are in the Curry Student Center?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Retail_Dining,False
+"Is there a Starbucks at Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Retail_Dining,False
+"I have a severe nut allergy, who do I contact about dining?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Allergy_Info,False
+"How does Northeastern handle food allergies?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Allergy_Info,False
+"How much does the unlimited meal plan cost?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Plan_Options_And_Cost,False
+"Are first-year students required to have a meal plan?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Plan_Options_And_Cost,False
+"What is the phone number for the Husky Card office?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Contact_Info,False
+"What is the email for meal plan questions?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Dining_food_Contact_Info,False
+"How much does a single dorm room cost per semester?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Housing_Cost,False
+"What is the cheapest housing option for first-years?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Housing_Cost,False
+"What furniture comes with the dorm rooms?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Layout_Info,False
+"What is the difference between traditional and suite style housing?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Layout_Info,False
+"Does Northeastern help students find off-campus apartments?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Off_Campus,False
+"What is OCES?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Off_Campus,False
+"When is move-in day for fall 2025?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Moving_Information,False
+"When do I have to move out at the end of spring semester?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Moving_Information,False
+"What is the housing office email?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Housing_Contact_Info,False
+"What gym facilities does Northeastern have?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Gym,False
+"Does Northeastern have a swimming pool?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Gym,False
+"How much is the student activities fee?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Student_Activities_Fees,False
+"What does the thirty dollar semester fee cover?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Student_Activities_Fees,False
+"How many student clubs are there?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Clubs,False
+"How do I find a list of student organizations?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Clubs,False
+"Where is the game room on campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Game_Rooms,False
+"Does the Curry Student Center have pool tables?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Game_Rooms,False
+"How can I volunteer through Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Volunteering,False
+"What public transit options are near campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Transportation,False
+"Does Northeastern offer a discounted MBTA pass?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Transportation,False
+"Does Northeastern have fraternities and sororities?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Greek_Life,False
+"How many Greek organizations are there?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Greek_Life,False
+"Where can I study on campus besides the library?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Study_Space,False
+"Is Snell Library being renovated?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Study_Space,False
+"How do I contact University Recreation?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Contact_Info,False
+"What is the email for the Center of Student Involvement?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Amenities_Activities_Contact_Info,False
+"What is the RedEye shuttle service?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Redeye,False
+"Can I get a ride home from campus late at night?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Redeye,False
+"What is the SafeZone app?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Security_App,False
+"Is there a safety app I can download?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Security_App,False
+"Can I request a campus police escort at night?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Campus_Escort,False
+"What can I use my Husky Card for?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Card_Entry,False
+"Can I add money to my Husky Card?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Card_Entry,False
+"What are the campus crime statistics?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Crime_Statistics,False
+"How safe is Northeastern's campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Crime_Statistics,False
+"What is the campus emergency phone number?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Safety_Contact_Info,False
+"What Division I sports does Northeastern have?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Athletics_Varsity_Sports,False
+"Does Northeastern have a women's hockey team?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Athletics_Varsity_Sports,False
+"Can I play intramural flag football?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Athletics_Intramural,False
+"What intramural sports are offered?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Athletics_Intramural,False
+"What is the Beanpot tournament?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Athletics_Signature_Events,False
+"How do I contact the athletic department?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Athletics_Contact_Info,False
+"What is the ticket office phone number?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Athletics_Contact_Info,False
+"What is Early Decision and how does it work?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Decision_Types_Outcomes,False
+"Am I bound to attend if I apply Early Decision?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Decision_Types_Outcomes,False
+"When is the Early Decision one application deadline?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Dates_Deadlines,False
+"When is the FAFSA deadline for Regular Decision?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Dates_Deadlines,False
+"When do Regular Decision applicants hear back?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Dates_Deadlines,False
+"Does Northeastern accept the Common App?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Portal_Info,False
+"What materials do I need to submit with my application?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Application_Materials,False
+"Do I need to send letters of recommendation?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Application_Materials,False
+"How much is the application fee?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Application_Materials,False
+"Does Northeastern offer need-based financial aid?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Financial_Aid,False
+"How does Northeastern calculate my financial aid award?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Financial_Aid,False
+"Are there federal loans available through Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Financial_Aid,False
+"How much is tuition for the 2025-2026 year?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Estimated_Cost,False
+"What is the total estimated cost of attendance?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Estimated_Cost,False
+"What should I expect on a campus tour?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Tours,False
+"Are there virtual tour options?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Tours,False
+"What SAT score do I need for Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Acceptance_Criteria_Stats,False
+"What is the middle fifty percent GPA of admitted students?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Acceptance_Criteria_Stats,False
+"What is the admissions office email address?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Contact_Info,False
+"Where do I mail my transcripts?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Contact_Info,False
+"Does Northeastern accept AP credits?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_AP_Credit_Lookup,False
+"What AP score do I need to get credit?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_AP_Credit_Lookup,False
+"How do I pay my enrollment deposit?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Enrollment,False
+"Is there a separate deposit for housing?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Enrollment,False
+"Can I transfer to Northeastern from another college?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Transfer_Applicants,False
+"What are the requirements for transfer applicants?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Transfer_Applicants,False
+"What happens during new student orientation?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Orientation,False
+"When is orientation for incoming students?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Orientation,False
+"What is the Honors Program at Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Honors_Program,False
+"How do I get into the John Martinson Honors Program?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Admission_Application_Honors_Program,False
+"What is Northeastern ranked nationally?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Overall_School_Ranking,False
+"Where does Northeastern rank for innovation?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Overall_School_Ranking,False
+"Is Northeastern ranked highly for study abroad?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Extracurriculars,False
+"How is Northeastern's co-op program ranked?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Extracurriculars,False
+"How is the engineering program ranked?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Majors,False
+"What are the global rankings for computer science?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Majors,False
+"How many students attend Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Demographics,False
+"What percentage of international students are there?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Demographics,False
+"What percentage of graduates get jobs within nine months?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Career_Outcomes,False
+"Do co-op employers hire students after graduation?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Ranking_GeneralStats_Career_Outcomes,False
+"How do I contact the Office of University Equity and Compliance?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Contact_Info,False
+"What is the phone number for counseling services?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Contact_Info,False
+"What does the OUEC office do?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Resources_Overview,False
+"Who is the Title IX Coordinator?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Resources_Overview,False
+"Where can I find confidential counseling on campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Confidential_Resources,False
+"What is the Sexual Violence Resource Center?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Confidential_Resources,False
+"Are there national hotlines for domestic violence?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_National_Resources,False
+"What is RAINN?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_National_Resources,False
+"What is Northeastern's nondiscrimination policy?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Policies,False
+"Does Northeastern comply with Title IX?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Student_Support_Policies,False
+"What is co-op and how does it work?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Coop_Overview,False
+"What kinds of companies offer co-ops?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Coop_Overview,False
+"How long is a typical co-op?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Coop_Overview,False
+"What are the steps to get a co-op?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Coop_Process,False
+"When do students start preparing for co-op?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Coop_Process,False
+"Do co-ops pay?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Coop_Salary,False
+"What is the average co-op hourly wage?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Coop_Salary,False
+"Can I do undergraduate research at Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Research,False
+"What research themes does Northeastern focus on?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Research,False
+"What is NU VIEW?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_NU_View,False
+"Can I get a digital badge from an experiential workshop?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_NU_View,False
+"What is Experiential Projects at Northeastern?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Experiential_Projects,False
+"Can organizations partner with students on course projects?","Agent: Welcome! What can I help you with today?",In_Scope_Question,Experiential_Learning_Experiential_Projects,False
+"Tell me about something.","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"I have a question about my classes.","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"What can you tell me about the campus?","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"I want to know about student life.","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"How do I get help with something?","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"What are my options?","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"I heard Northeastern has good programs.","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"Can you tell me about costs?","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"I need some information.","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"Is there anything I should know?","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"What about money stuff?","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"Tell me about the experience there.","Agent: Welcome! What can I help you with today?",In_Scope_Question,No_Matching_Group_NoSubgroup,True
+"What is the best pizza place in Boston?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"Can you help me with my calculus homework?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"What is the weather like in Boston today?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"Who won the Red Sox game last night?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"Can you write my admissions essay for me?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"What is the meaning of life?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"How do I apply to MIT?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"Tell me a joke.","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"What is Harvard's acceptance rate?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"Can you order me food?","Agent: Welcome! What can I help you with today?",Out_Of_Scope,NotApplicable_NotApplicable,False
+"Goodbye!","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False
+"Thanks, that's all I needed.","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False
+"No more questions, bye!","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False
+"I'm all set, thank you so much.","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False
+"Nope I'm done.","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False
+"Have a good day.","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False
+"That's everything, thanks for your help.","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False
+"Alright I think that covers it.","Agent: Is there anything else I can help you with?",End_Call,NotApplicable_NotApplicable,False

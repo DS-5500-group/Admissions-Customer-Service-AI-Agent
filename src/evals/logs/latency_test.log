@@ -1,0 +1,619 @@
+START OF SYNCHRONOUS TESTS
+--- SYNC Test 50 ---
+  Input: What intramural sports are offered?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Agent Response: Northeastern University offers a variety of intramural sports, including flag football, softball, soccer, broomball, badminton, floor hockey, and volleyball. There are different leagues available to accommodate various play styles and skill levels. You can choose between Open Leagues for more competitive play or All Gender Leagues with specific gender ratios.
+  Time elapsed for test: 3.4
+--- SYNC Test 51 ---
+  Input: What is the Beanpot tournament?
+  Expected: overall=In_Scope_Question  key=Athletics_Signature_Events
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Signature_Events
+  Agent Response: The Beanpot tournament is a prestigious ice hockey event featuring Northeastern's men’s and women’s teams alongside other local colleges. It is one of the biggest collegiate events and showcases some of the best ice hockey talent in New England.
+  Time elapsed for test: 2.8
+--- SYNC Test 52 ---
+  Input: How do I contact the athletic department?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Contact_Info
+  Agent Response: To contact the athletic department, you can call them at six hundred seventeen three hundred seventy-three twenty-six seventy-two.
+  Time elapsed for test: 2.4
+--- SYNC Test 53 ---
+  Input: What is the ticket office phone number?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Amenities_Activities_Contact_Info
+  Agent Response: I do not have the ticket office phone number, but you can reach out to the Center of Student Involvement at six one seven three seven three two six four two for help. They might be able to assist you with your inquiry about games or tickets.
+  Time elapsed for test: 3.5
+--- SYNC Test 54 ---
+  Input: What is Early Decision and how does it work?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Agent Response: Early Decision is for students who know Northeastern is their top choice and are committed to enroll if admitted. You can apply through Early Decision I by November first or Early Decision II by January first. If admitted, you are bound to your first-choice program unless it is not your first preference.
+  Time elapsed for test: 3.3
+--- SYNC Test 55 ---
+  Input: Am I bound to attend if I apply Early Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Agent Response: Yes, if you apply for Early Decision at Northeastern and are admitted, you are committed to attending. This program is designed for students who are certain that Northeastern is their top choice. If you do not get your first choice program, however, you will not be bound to attend.
+  Time elapsed for test: 4.3
+--- SYNC Test 56 ---
+  Input: When is the Early Decision one application deadline?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Agent Response: The Early Decision I application deadline is November first. You will receive a decision notification by January first.
+  Time elapsed for test: 2.0
+--- SYNC Test 57 ---
+  Input: When is the FAFSA deadline for Regular Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Agent Response: The FAFSA deadline for Regular Decision is February fifteenth. Be sure to submit your forms by that date.
+  Time elapsed for test: 2.4
+--- SYNC Test 58 ---
+  Input: When do Regular Decision applicants hear back?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Agent Response: Regular Decision applicants will hear back by April first. If you submitted your application by January first, you can expect a decision around that date.
+  Time elapsed for test: 2.7
+--- SYNC Test 59 ---
+  Input: Does Northeastern accept the Common App?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Portal_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: Yes, Northeastern University accepts the Common Application as well as the Coalition Application. You will need to submit your application by the deadline along with the application fee or a fee waiver request.
+  Time elapsed for test: 2.5
+--- SYNC Test 60 ---
+  Input: What materials do I need to submit with my application?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: To complete your application to Northeastern University, you will need to submit either the Common Application or Coalition Application, along with the non-refundable application fee or a fee waiver request. Additionally, your official high school transcript, a School Report, one teacher recommendation, and one school counselor recommendation are required. Lastly, if applicable, you will need to demonstrate English language proficiency and submit any necessary standardized test results if you choose to do so.
+  Time elapsed for test: 3.9
+--- SYNC Test 61 ---
+  Input: Do I need to send letters of recommendation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: Yes, you need to send one teacher recommendation and one school counselor recommendation for your application to be complete. You can also submit one or two additional recommendations if you wish, but keep in mind that we may not be able to consider all of them.
+  Time elapsed for test: 2.7
+--- SYNC Test 62 ---
+  Input: How much is the application fee?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: The application fee is seventy-five dollars, and it is non-refundable. You can also request a fee waiver if needed.
+  Time elapsed for test: 2.6
+--- SYNC Test 63 ---
+  Input: Does Northeastern offer need-based financial aid?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Agent Response: Yes, Northeastern University does offer need-based financial aid. They are dedicated to meeting the full demonstrated need for each incoming domestic financial aid applicant based on the information from your FAFSA and CSS Profile. Your financial aid offer will be released with your admission offer, provided all required materials are submitted.
+  Time elapsed for test: 2.9
+--- SYNC Test 64 ---
+  Input: How does Northeastern calculate my financial aid award?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Agent Response: Northeastern University calculates your financial aid award by starting with the estimated cost of education and subtracting your Expected Family Contribution, which is derived from your FAFSA and CSS Profile information. Your demonstrated financial need is then used to determine the financial aid offer, and we are committed to meeting the full demonstrated need for each incoming domestic applicant. Additionally, financial aid offers for first-year students are released along with their admission decision, assuming all necessary application materials have been submitted.
+  Time elapsed for test: 3.8
+--- SYNC Test 65 ---
+  Input: Are there federal loans available through Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Agent Response: Yes, federal loans are available through Northeastern University, including Federal Direct Subsidized and Unsubsidized Loans. Additionally, if you qualify for a Federal Pell Grant, you will receive a Northeastern University Access Grant instead of Federal Direct Loans. You can also explore supplemental financing options for any additional expenses.
+  Time elapsed for test: 4.4
+--- SYNC Test 66 ---
+  Input: How much is tuition for the 2025-2026 year?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Agent Response: For the 2025-2026 academic year, tuition is $67,990. The estimated annual costs for first-year students are approximately $94,137 for Boston and $94,582 for Oakland, which includes fees, housing, food, and other expenses. Would you like more information about financial aid options?
+  Time elapsed for test: 3.6
+--- SYNC Test 67 ---
+  Input: What is the total estimated cost of attendance?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Agent Response: The total estimated cost of attendance for first-year students is approximately $94,137 for the Boston campus and $94,582 for the Oakland campus. This includes tuition, fees, housing, food, and estimated personal expenses. You can find more detailed information and use financial calculators to plan your budget at our student finance website.
+  Time elapsed for test: 3.6
+--- SYNC Test 68 ---
+  Input: What should I expect on a campus tour?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Agent Response: On a campus tour, you can expect an information session that highlights Northeastern's education approach and admissions process, followed by a guided tour led by a Husky Ambassador. The tour lasts about sixty minutes and showcases our academic facilities, housing, and beautiful green spaces.
+  Time elapsed for test: 3.9
+--- SYNC Test 69 ---
+  Input: Are there virtual tour options?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Agent Response: Yes, we offer several virtual tour options. You can explore our Boston campus through an interactive virtual tour guided by a Husky Ambassador. Additionally, we have a campus tour video collection that showcases student experiences and facilities.
+  Time elapsed for test: 3.3
+--- SYNC Test 70 ---
+  Input: What SAT score do I need for Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Agent Response: The middle fifty percent range for SAT scores of admitted students at Northeastern is between one thousand four hundred eighty and one thousand five hundred forty. Aim for a score within that range to enhance your chances of admission.
+  Time elapsed for test: 2.9
+--- SYNC Test 71 ---
+  Input: What is the middle fifty percent GPA of admitted students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Agent Response: The middle fifty percent GPA of admitted students at Northeastern University is between 4.2 and 4.5. This range reflects the competitive nature of our admissions process.
+  Time elapsed for test: 2.4
+--- SYNC Test 72 ---
+  Input: What is the admissions office email address?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Contact_Info
+  Agent Response: The email address for the admissions office at Northeastern University is admissions@northeastern.edu.
+  Time elapsed for test: 2.2
+--- SYNC Test 73 ---
+  Input: Where do I mail my transcripts?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: You should have your official high school transcript submitted directly to Northeastern by your counselor or another school official. Make sure it includes any final grades from grades nine, ten, and eleven, along with any current grades if available.
+  Time elapsed for test: 2.9
+--- SYNC Test 74 ---
+  Input: Does Northeastern accept AP credits?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Agent Response: Yes, Northeastern University does accept Advanced Placement credits for scores of 4 or 5. A maximum of 32 semester hours of advanced credit may count toward your total program hours. I can send you a PDF that shows the credit information for each AP course.
+  Time elapsed for test: 3.5
+--- SYNC Test 75 ---
+  Input: What AP score do I need to get credit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Agent Response: You will need to earn a score of 4 or 5 on your Advanced Placement exams to receive credit at Northeastern University. I can send you a PDF file that provides details on each AP course and its corresponding credit.
+  Time elapsed for test: 3.3
+--- SYNC Test 76 ---
+  Input: How do I pay my enrollment deposit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Enrollment
+  Agent Response: You can pay your nonrefundable enrollment deposit as stated in your Terms of Admission to reserve your place at Northeastern. This payment will secure your enrollment and allow you to participate in transition activities. Once your deposit is received, you will receive further information about the next steps.
+  Time elapsed for test: 3.2
+--- SYNC Test 77 ---
+  Input: Is there a separate deposit for housing?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Agent Response: Yes, there is a separate deposit for housing. The enrollment deposit does not cover the housing costs, which vary depending on the type of room and building you choose.
+  Time elapsed for test: 2.8
+--- SYNC Test 78 ---
+  Input: Can I transfer to Northeastern from another college?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Agent Response: Yes, you can transfer to Northeastern from another college if you have completed at least 12 semester hours of college-level coursework after high school graduation. You will need to submit the Transfer Common Application along with the required materials. Applications are accepted for the Fall and Spring semesters, so you will want to check the deadlines.
+  Time elapsed for test: 3.3
+--- SYNC Test 79 ---
+  Input: What are the requirements for transfer applicants?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Agent Response: To be considered as a transfer applicant at Northeastern, you must have completed at least 12 semester hours of college-level coursework after high school graduation or have attempted a full-time semester and maintained enrollment. You will also need to submit a completed Transfer Common Application or Coalition Application, along with several documents including official college transcripts, a college report, and an academic evaluation. If you have more questions about the specific materials required, feel free to ask!
+  Time elapsed for test: 3.0
+--- SYNC Test 80 ---
+  Input: What happens during new student orientation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Agent Response: During new student orientation, you will connect with your classmates and academic advising team, explore student clubs and organizations, and access essential resources. The experience includes online modules during the summer and in-person events before or as you move to campus. You will also receive important communications from the university throughout the summer.
+  Time elapsed for test: 3.8
+--- SYNC Test 81 ---
+  Input: When is orientation for incoming students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Agent Response: Orientation for incoming undergraduate students at Northeastern includes online modules during the summer and in-person events before or as you move to campus. You'll receive email communications throughout the summer with important details and next steps.
+  Time elapsed for test: 3.3
+--- SYNC Test 82 ---
+  Input: What is the Honors Program at Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Agent Response: The John Martinson Honors Program at Northeastern University offers students a chance to engage in meaningful experiences that reflect the values of challenge, curiosity, and community. It includes innovative programming and support to help students create lasting change in the world. The program provides distinct learning experiences and has specific requirements based on whether students were directly admitted or joined after enrolling.
+  Time elapsed for test: 3.2
+--- SYNC Test 83 ---
+  Input: How do I get into the John Martinson Honors Program?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Agent Response: To get into the John Martinson Honors Program, you can be a Direct Admit, meaning you would apply and be accepted into the program before your first year at Northeastern. Alternatively, as an Internal Admit, you can apply after you have already enrolled at Northeastern.
+  Time elapsed for test: 3.0
+--- SYNC Test 84 ---
+  Input: What is Northeastern ranked nationally?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: Northeastern University is ranked 46th among national universities according to U.S. News, and it is also recognized as the fifth most innovative school. Additionally, it ranks 102nd in best value schools.
+  Time elapsed for test: 2.9
+--- SYNC Test 85 ---
+  Input: Where does Northeastern rank for innovation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: Northeastern University is ranked fifth in the Most Innovative Schools category, according to U.S. News. This reflects our commitment to groundbreaking educational practices and programs.
+  Time elapsed for test: 2.7
+--- SYNC Test 86 ---
+  Input: Is Northeastern ranked highly for study abroad?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Agent Response: Yes, Northeastern University is ranked twenty-first in study abroad programs, which reflects our strong commitment to providing students with valuable global experiences.
+  Time elapsed for test: 2.3
+--- SYNC Test 87 ---
+  Input: How is Northeastern's co-op program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Agent Response: Northeastern's co-op program is ranked number one by U.S. News & World Report. It offers students a unique opportunity to gain meaningful work experience while alternating between academic study and full-time employment. With over 2,000 employer partners, the program provides diverse job opportunities in various fields.
+  Time elapsed for test: 2.7
+--- SYNC Test 88 ---
+  Input: How is the engineering program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: The engineering program at Northeastern University is highly regarded, with an overall ranking of number 46 among national universities. Additionally, we are recognized as one of the most innovative schools, ranking fifth in that category.
+  Time elapsed for test: 3.5
+--- SYNC Test 89 ---
+  Input: What are the global rankings for computer science?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: Northeastern University is ranked between 201 and 250 globally for computer science according to Times Higher Education. If you have any other questions about the program, feel free to ask!
+  Time elapsed for test: 4.2
+--- SYNC Test 90 ---
+  Input: How many students attend Northeastern?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Agent Response: Northeastern University has a total student enrollment of 29,623. This includes a significant population of international students, numbering 11,732.
+  Time elapsed for test: 2.1
+--- SYNC Test 91 ---
+  Input: What percentage of international students are there?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Agent Response: Approximately forty percent of the student body at Northeastern University consists of international students.
+  Time elapsed for test: 2.2
+--- SYNC Test 92 ---
+  Input: What percentage of graduates get jobs within nine months?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Agent Response: Ninety-six percent of our graduates are employed or enrolled in graduate school within nine months of graduation. Of those, about eighty-two point eight percent are employed, while thirteen point three percent continue their education. Only three point eight percent are still seeking employment.
+  Time elapsed for test: 4.0
+--- SYNC Test 93 ---
+  Input: Do co-op employers hire students after graduation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Agent Response: Co-op employers often look to hire students after graduation since the program provides valuable experience and skills. Many students have successfully transitioned into full-time roles with their co-op employers. Overall, co-op is a great way to build connections and enhance employability after completing your degree.
+  Time elapsed for test: 3.9
+--- SYNC Test 94 ---
+  Input: How do I contact the Office of University Equity and Compliance?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Agent Response: You can contact the Office of University Equity and Compliance by emailing ouec@northeastern.edu or by calling 617-373-4644.
+  Time elapsed for test: 2.4
+--- SYNC Test 95 ---
+  Input: What is the phone number for counseling services?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Agent Response: The phone number for University Health and Counseling Services is six one seven three seven three two seven seven two.
+  Time elapsed for test: 3.8
+--- SYNC Test 96 ---
+  Input: What does the OUEC office do?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Agent Response: The Office of University Equity and Compliance addresses issues related to equity, compliance, and discrimination. They are responsible for ensuring a safe and supportive environment for all students. If you have specific questions or need assistance, you can contact them at their email or phone number.
+  Time elapsed for test: 2.9
+--- SYNC Test 97 ---
+  Input: Who is the Title IX Coordinator?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=NotApplicable_NotApplicable
+  Agent Response: Could you please clarify if you want to know about the Title IX Coordinator's contact information or their role at Northeastern University?
+  Time elapsed for test: 2.7
+--- SYNC Test 98 ---
+  Input: Where can I find confidential counseling on campus?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Agent Response: You can find confidential counseling at the University Health and Counseling Services, the Office of Prevention and Education, and the Center for Spirituality, Dialogue and Service. Each of these offers unique support options. If you need more details, I recommend visiting the Support for Students page.
+  Time elapsed for test: 3.5
+--- SYNC Test 99 ---
+  Input: What is the Sexual Violence Resource Center?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Agent Response: The Sexual Violence Resource Center is part of the Office of Prevention and Education at Northeastern University. It provides confidential support and resources for individuals affected by sexual violence. This center aims to create a safe environment and offers various services, including advising and educational programs.
+  Time elapsed for test: 3.0
+
+
+START OF ASYNC TESTS
+--- asynchronous Test 50 ---
+  Input: What intramural sports are offered?
+  Expected: overall=In_Scope_Question  key=Athletics_Intramural
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Intramural
+  Agent Response: Northeastern University offers a variety of intramural sports including flag football, softball, soccer, broomball, badminton, floor hockey, and volleyball. The leagues are designed to accommodate different playstyles and skill levels. There are Open Leagues for competitive play and All Gender Leagues with specific gender ratios. Each sport has its own handbook for rules and registration details.
+  Time elapsed for test: 4.54
+--- asynchronous Test 51 ---
+  Input: What is the Beanpot tournament?
+  Expected: overall=In_Scope_Question  key=Athletics_Signature_Events
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Signature_Events
+  Agent Response: The Beanpot tournament is a college hockey event where Northeastern's men's and women's ice hockey teams compete against other schools. It is one of the biggest and most celebrated athletic events in New England.
+  Time elapsed for test: 2.90
+--- asynchronous Test 52 ---
+  Input: How do I contact the athletic department?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Contact_Info
+  Agent Response: You can contact the athletic department by calling them at six hundred seventeen, three seven three, two six seven two. If you need to send a fax, their fax number is six hundred seventeen, three seven three, eight nine eight eight.
+  Time elapsed for test: 2.80
+--- asynchronous Test 53 ---
+  Input: What is the ticket office phone number?
+  Expected: overall=In_Scope_Question  key=Athletics_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Athletics_Contact_Info
+  Agent Response: The ticket office phone number is six one seven, three seven three, six seven eight five.
+  Time elapsed for test: 2.69
+--- asynchronous Test 54 ---
+  Input: What is Early Decision and how does it work?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Agent Response: Early Decision is an admissions program for students who are sure that Northeastern is their top choice and are committed to attending if admitted. There are two rounds, Early Decision I by November first and Early Decision II by January first, allowing you to show your interest later in the process if needed. If accepted into your first-choice program, you are bound to attend, but if accepted into a different program, the decision is non-binding.
+  Time elapsed for test: 4.04
+--- asynchronous Test 55 ---
+  Input: Am I bound to attend if I apply Early Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Decision_Types_Outcomes
+  Agent Response: Yes, if you apply Early Decision and are admitted, you are required to attend Northeastern, since it is your top choice. This commitment is for students who are confident that Northeastern is the right fit for them.
+  Time elapsed for test: 2.96
+--- asynchronous Test 56 ---
+  Input: When is the Early Decision one application deadline?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Agent Response: The Early Decision I application deadline is November first, and you will receive a decision by January first.
+  Time elapsed for test: 2.39
+--- asynchronous Test 57 ---
+  Input: When is the FAFSA deadline for Regular Decision?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Agent Response: The FAFSA deadline for Regular Decision is February fifteenth. Make sure to submit all your forms by that date!
+  Time elapsed for test: 2.84
+--- asynchronous Test 58 ---
+  Input: When do Regular Decision applicants hear back?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Dates_Deadlines
+  Agent Response: Regular Decision applicants will hear back by April first.
+  Time elapsed for test: 2.31
+--- asynchronous Test 59 ---
+  Input: Does Northeastern accept the Common App?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Portal_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: Yes, Northeastern University accepts the Common Application as one of the application platforms. You can also choose to submit the Coalition Application. Just remember to submit your application by the deadline, along with the application fee or a fee waiver request.
+  Time elapsed for test: 3.31
+--- asynchronous Test 60 ---
+  Input: What materials do I need to submit with my application?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: To complete your application, you will need to submit either the Common Application or Coalition Application, along with a non-refundable application fee or a fee waiver request. Additionally, your official high school transcript, a School Report from your counselor, one teacher recommendation, and one school counselor recommendation are required. If necessary, you may also need to demonstrate English language proficiency based on your circumstances.
+  Time elapsed for test: 4.74
+--- asynchronous Test 61 ---
+  Input: Do I need to send letters of recommendation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: Yes, you need to send one teacher recommendation and one school counselor recommendation. If you wish to include additional recommendations, you can submit one to two more, but we may not be able to consider all of them.
+  Time elapsed for test: 4.16
+--- asynchronous Test 62 ---
+  Input: How much is the application fee?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Application_Materials
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: The application fee for Northeastern University is seventy-five dollars. You can also request a fee waiver if you need assistance.
+  Time elapsed for test: 2.29
+--- asynchronous Test 63 ---
+  Input: Does Northeastern offer need-based financial aid?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Agent Response: Yes, Northeastern University offers need-based financial aid. They are dedicated to meeting the full demonstrated need for each incoming domestic financial aid applicant, based on the information you provide in your financial aid application.
+  Time elapsed for test: 2.83
+--- asynchronous Test 64 ---
+  Input: How does Northeastern calculate my financial aid award?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Agent Response: Northeastern University calculates your financial aid award by starting with the estimated cost of education and subtracting your Expected Family Contribution, which is based on the information you provide in your FAFSA and CSS Profile. They are committed to meeting your full demonstrated financial need and provide various forms of financial assistance, including grants, scholarships, and work-study programs. If any additional documents are needed, the university may request them to ensure an accurate assessment of your eligibility.
+  Time elapsed for test: 4.65
+--- asynchronous Test 65 ---
+  Input: Are there federal loans available through Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Financial_Aid
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Financial_Aid
+  Agent Response: Yes, Northeastern University participates in federal loan programs, including Federal Direct Subsidized and Unsubsidized Loans. Additionally, undergraduate students may also qualify for Federal Pell Grants and other financial aid options based on their financial need. You can reach out to Student Financial Services for more details on these options and how to apply.
+  Time elapsed for test: 3.76
+--- asynchronous Test 66 ---
+  Input: How much is tuition for the 2025-2026 year?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Agent Response: For the 2025-2026 academic year, tuition is $67,990. For first-year students, the estimated total costs are approximately $94,137 for the Boston campus and $94,582 for the Oakland campus. Would you like more information on financial aid options?
+  Time elapsed for test: 2.94
+--- asynchronous Test 67 ---
+  Input: What is the total estimated cost of attendance?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Estimated_Cost
+  Agent Response: The total estimated cost of attendance for the 2025-2026 academic year is approximately $94,137 for Boston and $94,582 for Oakland. This includes tuition, fees, housing, food, and estimated personal expenses. Would you like more information on financial aid options?
+  Time elapsed for test: 2.85
+--- asynchronous Test 68 ---
+  Input: What should I expect on a campus tour?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Agent Response: On a campus tour, you can expect an information session that provides an overview of Northeastern's education approach, student experience, and the admissions process. This is followed by a tour led by a Husky Ambassador, showcasing our academic facilities, university housing, and beautiful green spaces.
+  Time elapsed for test: 5.35
+--- asynchronous Test 69 ---
+  Input: Are there virtual tour options?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Tours
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Tours
+  Agent Response: Yes, we offer an interactive virtual tour of our Boston campus, where you can explore academic facilities, student housing, and our beautiful green spaces. Additionally, there are campus tour videos hosted by our Husky Ambassadors that provide insights into student life and opportunities at Northeastern.
+  Time elapsed for test: 4.61
+--- asynchronous Test 70 ---
+  Input: What SAT score do I need for Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Agent Response: For Northeastern University, the middle fifty percent range of SAT scores for admitted students is between one thousand four hundred eighty and one thousand five hundred forty. Aiming for a score within that range would be advisable for a competitive application.
+  Time elapsed for test: 2.46
+--- asynchronous Test 71 ---
+  Input: What is the middle fifty percent GPA of admitted students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Acceptance_Criteria_Stats
+  Agent Response: The middle fifty percent GPA of admitted students is between 4.2 and 4.5. This range indicates the competitiveness of applicants at Northeastern University.
+  Time elapsed for test: 2.53
+--- asynchronous Test 72 ---
+  Input: What is the admissions office email address?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Contact_Info
+  Agent Response: The email address for the admissions office is admissions@northeastern.edu. If you have any further questions, feel free to ask!
+  Time elapsed for test: 3.24
+--- asynchronous Test 73 ---
+  Input: Where do I mail my transcripts?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Application_Materials
+  Agent Response: Your official high school transcript should be submitted directly by your school counselor or another school official. It needs to include your final grades through the eleventh grade and any available grades from your twelfth grade.
+  Time elapsed for test: 4.66
+--- asynchronous Test 74 ---
+  Input: Does Northeastern accept AP credits?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Agent Response: Yes, Northeastern University accepts Advanced Placement scores of 4 or 5 for credit. You can earn up to 32 semester hours of advanced credit towards your program. I will send you a PDF file that provides information on each AP course.
+  Time elapsed for test: 2.68
+--- asynchronous Test 75 ---
+  Input: What AP score do I need to get credit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_AP_Credit_Lookup
+  Agent Response: You need to earn a score of 4 or 5 to receive credit for your Advanced Placement courses at Northeastern. I can send you a PDF that provides more detailed information on each AP course.
+  Time elapsed for test: 3.00
+--- asynchronous Test 76 ---
+  Input: How do I pay my enrollment deposit?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Enrollment
+  Agent Response: You can pay your nonrefundable enrollment deposit as stated in your Terms of Admission to reserve your place at Northeastern. After you submit your deposit, you will receive further instructions regarding your next steps, including the housing application process.
+  Time elapsed for test: 4.81
+--- asynchronous Test 77 ---
+  Input: Is there a separate deposit for housing?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Enrollment
+  Got:      overall=Overall.In_Scope_Question  key=Housing_Housing_Cost
+  Agent Response: Yes, there is a separate deposit for housing. The enrollment deposit is different from any housing deposit you may need to pay.
+  Time elapsed for test: 3.79
+--- asynchronous Test 78 ---
+  Input: Can I transfer to Northeastern from another college?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Agent Response: Yes, you can transfer to Northeastern from another college if you have completed at least 12 semester hours of college-level coursework after high school. Admissions happen for both the Fall and Spring semesters, and you will need to submit a transfer application along with your official transcripts and other required materials.
+  Time elapsed for test: 4.13
+--- asynchronous Test 79 ---
+  Input: What are the requirements for transfer applicants?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Transfer_Applicants
+  Agent Response: Transfer applicants to Northeastern must have completed at least 12 semester hours of college-level coursework or attempted one full-time semester while maintaining enrollment. You also need to submit the Transfer Common Application or Coalition Application with a fee, as well as your transcripts and additional materials. If you are applying for specific programs, please be aware of restrictions, like the Bachelor of Science in Nursing not accepting transfer applications.
+  Time elapsed for test: 3.05
+--- asynchronous Test 80 ---
+  Input: What happens during new student orientation?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Agent Response: During new student orientation, you will connect with classmates and your academic advising team. You will also learn about student clubs and organizations, access essential resources, and complete online modules in the summer, along with in-person events before you move to campus.
+  Time elapsed for test: 3.53
+--- asynchronous Test 81 ---
+  Input: When is orientation for incoming students?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Orientation
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Orientation
+  Agent Response: Orientation for incoming undergraduate students on the Boston campus includes online modules during the summer and in-person events before or as you move to campus. You will receive email communications throughout the summer with important information and next steps.
+  Time elapsed for test: 2.93
+--- asynchronous Test 82 ---
+  Input: What is the Honors Program at Northeastern?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Agent Response: The John Martinson Honors Program at Northeastern offers students a chance to engage deeply with values like challenge, curiosity, and community. It provides innovative programming, funding, and support to help students make a meaningful impact. There are two pathways to join: Direct Admits, who apply before enrolling, and Internal Admits, who join after starting their studies at Northeastern.
+  Time elapsed for test: 2.54
+--- asynchronous Test 83 ---
+  Input: How do I get into the John Martinson Honors Program?
+  Expected: overall=In_Scope_Question  key=Admission_Application_Honors_Program
+  Got:      overall=Overall.In_Scope_Question  key=Admission_Application_Honors_Program
+  Agent Response: To get into the John Martinson Honors Program, you can be a Direct Admit or an Internal Admit. Direct Admits are students accepted into the program before starting at Northeastern, while Internal Admits join the program after they have enrolled. Depending on your entry term, there may be different requirements to qualify.
+  Time elapsed for test: 4.26
+--- asynchronous Test 84 ---
+  Input: What is Northeastern ranked nationally?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: Northeastern University is ranked forty-six out of four hundred thirty-six in National Universities according to U.S. News. It is also fifth in Most Innovative Schools and ranks one hundred two in Best Value Schools.
+  Time elapsed for test: 2.69
+--- asynchronous Test 85 ---
+  Input: Where does Northeastern rank for innovation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: Northeastern University ranks fifth in the category of Most Innovative Schools, according to U.S. News. This highlights our commitment to advancing education and integrating new ideas into our programs.
+  Time elapsed for test: 2.63
+--- asynchronous Test 86 ---
+  Input: Is Northeastern ranked highly for study abroad?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Agent Response: Yes, Northeastern University is ranked twenty-first for study abroad programs, which reflects our strong commitment to global learning experiences. Additionally, we are ranked first in co-ops and internships, enhancing your overall educational experience.
+  Time elapsed for test: 2.60
+--- asynchronous Test 87 ---
+  Input: How is Northeastern's co-op program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Extracurriculars
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Agent Response: Northeastern's co-op program is ranked number one by U.S. News & World Report. It offers students immersive professional work experiences across a variety of fields and has been successfully pairing students with employers for over 115 years. With over 2,000 employer partners, the opportunities available are extensive.
+  Time elapsed for test: 2.99
+--- asynchronous Test 88 ---
+  Input: How is the engineering program ranked?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: The engineering program at Northeastern University is highly regarded, with the university ranked 46th among national universities. It also ranks 5th among the most innovative schools, reflecting our commitment to forward-thinking education.
+  Time elapsed for test: 2.21
+--- asynchronous Test 89 ---
+  Input: What are the global rankings for computer science?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Majors
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Overall_School_Ranking
+  Agent Response: Northeastern University is ranked between 201 and 250 in global rankings according to Times Higher Education. In the United States, we are ranked 46th among national universities.
+  Time elapsed for test: 2.39
+--- asynchronous Test 90 ---
+  Input: How many students attend Northeastern?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Agent Response: Northeastern University has a total enrollment of approximately 29,623 students. Of these, around 11,732 are international students.
+  Time elapsed for test: 2.23
+--- asynchronous Test 91 ---
+  Input: What percentage of international students are there?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Demographics
+  Agent Response: Currently, international students make up about forty percent of the student body at Northeastern University. This reflects a diverse and vibrant community.
+  Time elapsed for test: 2.26
+--- asynchronous Test 92 ---
+  Input: What percentage of graduates get jobs within nine months?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Agent Response: Ninety-six percent of our graduates are employed or enrolled in graduate school within nine months of graduation. Of that group, about eighty-two point eight percent are employed.
+  Time elapsed for test: 2.52
+--- asynchronous Test 93 ---
+  Input: Do co-op employers hire students after graduation?
+  Expected: overall=In_Scope_Question  key=Ranking_GeneralStats_Career_Outcomes
+  Got:      overall=Overall.In_Scope_Question  key=Experiential_Learning_Coop_Overview
+  Agent Response: Yes, many co-op employers do hire students after graduation. The co-op experience not only provides valuable skills but also helps build connections in the industry. As you gain experience through your co-op, employers often see your potential for full-time roles.
+  Time elapsed for test: 4.52
+--- asynchronous Test 94 ---
+  Input: How do I contact the Office of University Equity and Compliance?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Agent Response: To contact the Office of University Equity and Compliance, you can email them at ouec@northeastern.edu or call them at 617-373-4644.
+  Time elapsed for test: 2.70
+--- asynchronous Test 95 ---
+  Input: What is the phone number for counseling services?
+  Expected: overall=In_Scope_Question  key=Student_Support_Contact_Info
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Agent Response: The phone number for University Health and Counseling Services is 617-373-2772.
+  Time elapsed for test: 2.46
+--- asynchronous Test 96 ---
+  Input: What does the OUEC office do?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Agent Response: The Office of University Equity and Compliance focuses on promoting a fair and inclusive environment, addressing concerns related to equity, policy compliance, and discrimination. They aim to ensure that all members of the university community feel safe and supported. If you have specific inquiries, you can reach them at their email or phone number.
+  Time elapsed for test: 4.50
+--- asynchronous Test 97 ---
+  Input: Who is the Title IX Coordinator?
+  Expected: overall=In_Scope_Question  key=Student_Support_Resources_Overview
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Contact_Info
+  Agent Response: The Title IX Coordinator is part of the Office of University Equity and Compliance. If you need more specific contact information, you can email them at ouec@northeastern.edu or call 617-373-4644.
+  Time elapsed for test: 2.87
+--- asynchronous Test 98 ---
+  Input: Where can I find confidential counseling on campus?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Agent Response: You can find confidential counseling at the University Health and Counseling Services, the Office of Prevention and Education, and the Center for Spirituality, Dialogue and Service for spiritual advising. Each of these resources offers support in a confidential setting.
+  Time elapsed for test: 4.93
+--- asynchronous Test 99 ---
+  Input: What is the Sexual Violence Resource Center?
+  Expected: overall=In_Scope_Question  key=Student_Support_Confidential_Resources
+  Got:      overall=Overall.In_Scope_Question  key=Student_Support_Confidential_Resources
+  Agent Response: The Sexual Violence Resource Center at Northeastern provides confidential support and resources for individuals affected by sexual violence. It is part of the Office of Prevention and Education, which focuses on education and prevention efforts on campus.
+  Time elapsed for test: 3.29
+
+
+--- SUMMARY STATS FOR SYNC TESTS ---
+Sync Tests Total Runtime: 155.44
+Average Time of Single Test: 3.11
+MIN Time: 2.02, MAX Time: 4.36
+Time Range: 2.34
+
+--- SUMMARY STATS FOR Asynchronous TESTS ---
+ASYNC Tests Total Runtime: 19.04
+Average Time of Single Test: 3.29
+MIN Time: 2.21, MAX Time: 5.35
+Time Range: 3.14
+
+Speedup Factor of ASYNC version: 8.17

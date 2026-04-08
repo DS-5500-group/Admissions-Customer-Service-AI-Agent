@@ -1,0 +1,500 @@
+Input: What intramural sports are offered?
+Output: Northeastern University offers a variety of intramural sports, including flag football, softball, soccer, broomball, badminton, floor hockey, and volleyball. There are both team and individual sports available, with leagues accommodating different play styles and skill levels. Additionally, leagues are categorized into Open Leagues and All Gender Leagues to provide a range of competitive experiences.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0086
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about intramural sports without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0054
+
+Input: What is the Beanpot tournament?
+Output: The Beanpot tournament is a prestigious ice hockey event featuring teams from Northeastern, Boston University, Boston College, and Harvard. It showcases some of the best collegiate competition and is a highlight for hockey fans in the area.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0070
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the Beanpot tournament without any irrelevant information. Great job on staying focused and informative!
+  Cost: $0.0044
+
+Input: How do I contact the athletic department?
+Output: You can contact the athletic department by calling six hundred seventeen three seven three two six seven two. Their office is located at two hundred nineteen Cabot Center, three hundred sixty Huntington Avenue, Boston, Massachusetts.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0065
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question about contacting the athletic department without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0045
+
+Input: What is the ticket office phone number?
+Output: The ticket office phone number is six hundred seventeen three seven three six seven eight five.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0060
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question without any irrelevant information. Great job on staying focused and providing exactly what was needed!
+  Cost: $0.0034
+
+Input: What is Early Decision and how does it work?
+Output: Early Decision is an admissions program for students who are certain that Northeastern is their top choice and are committed to attending if admitted. You can apply through Early Decision I by November first or Early Decision II by January first. If admitted through Early Decision, you will be bound to your first-choice program, but if you apply to a different program and are admitted, that decision will not be binding.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0094
+  Metric: Answer Relevancy  Score: 0.8333333333333334  Pass: True
+  Reason: The score is 0.83 because the response effectively explains Early Decision and its workings, but includes a statement about applying to a different program, which is not directly relevant to the question.
+  Cost: $0.0057
+
+Input: Am I bound to attend if I apply Early Decision?
+Output: Yes, if you apply Early Decision and are admitted, you are bound to attend Northeastern University. This program is for students who are confident that Northeastern is the right fit for them academically, socially, and financially.
+Pass: False
+  Metric: Faithfulness  Score: 0.5  Pass: False
+  Reason: The score is 0.50 because the actual output incorrectly states that Early Decision applicants are always bound to their admission, whereas they are only bound if admitted into their top preference program, according to the retrieval context.
+  Cost: $0.0091
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response directly and accurately addresses the question about the binding nature of Early Decision applications, with no irrelevant information included. Great job on staying focused and relevant!
+  Cost: $0.0053
+
+Input: When is the Early Decision one application deadline?
+Output: The Early Decision I application deadline is November first, and you will receive a decision notification by January first.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0076
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response directly and accurately addressed the question about the Early Decision application deadline without any irrelevant information. Great job on staying focused and precise!
+  Cost: $0.0039
+
+Input: When is the FAFSA deadline for Regular Decision?
+Output: The FAFSA deadline for Regular Decision is February fifteenth. Make sure to submit your forms by that date to be considered for financial aid.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0076
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the FAFSA deadline for Regular Decision without any irrelevant information. Great job on staying focused and providing a clear answer!
+  Cost: $0.0039
+
+Input: When do Regular Decision applicants hear back?
+Output: Regular Decision applicants will hear back by April first. If you submitted your application, you can expect your notification around that time.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0076
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about when Regular Decision applicants hear back, with no irrelevant information included. Great job!
+  Cost: $0.0039
+
+Input: Does Northeastern accept the Common App?
+Output: Yes, Northeastern University accepts the Common Application. You can create your application through that platform and select Northeastern to submit it directly to us.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0058
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response directly and accurately addresses the question about Northeastern's acceptance of the Common App, with no irrelevant information included. Great job on staying focused and relevant!
+  Cost: $0.0044
+
+Input: What materials do I need to submit with my application?
+Output: To complete your application to Northeastern University, you will need to submit either the Common Application or the Coalition Application along with a non-refundable application fee of seventy-five dollars or a fee waiver request. Additionally, your official high school transcript, a school report, one teacher recommendation, and one school counselor recommendation are required. If applicable, you will also need to demonstrate English language proficiency.
+Pass: True
+  Metric: Faithfulness  Score: 0.8571428571428571  Pass: True
+  Reason: The score is 0.86 because the actual output incorrectly suggests that demonstrating English proficiency is conditional, whereas the retrieval context clearly states it is a requirement for all applicants.
+  Cost: $0.0137
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the materials needed for the application, with no irrelevant information included. Great job on staying focused and relevant!
+  Cost: $0.0053
+
+Input: Do I need to send letters of recommendation?
+Output: Yes, you need to send one teacher recommendation and one school counselor recommendation. You may also submit 1 to 2 additional recommendations if you wish, but they may not all be considered.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0110
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about sending letters of recommendation without any irrelevant information. Great job on staying focused and concise!
+  Cost: $0.0043
+
+Input: How much is the application fee?
+Output: The application fee for Northeastern University is seventy-five dollars. You can also request a fee waiver if needed.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0106
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question about the application fee without any irrelevant information. Great job on staying focused and concise!
+  Cost: $0.0038
+
+Input: Does Northeastern offer need-based financial aid?
+Output: Yes, Northeastern University does offer need-based financial aid. They are committed to meeting the full demonstrated financial need for each incoming domestic financial aid applicant. Your financial aid eligibility will be determined based on the information you submit through the FAFSA and CSS Profile.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0110
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question about Northeastern offering need-based financial aid without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0046
+
+Input: How does Northeastern calculate my financial aid award?
+Output: Northeastern University calculates financial aid awards based on the estimated cost of education, subtracting your Expected Family Contribution from this amount to determine your financial need. Your eligibility for financial assistance is determined by the information you provide in your FAFSA and CSS Profile. The university is dedicated to meeting the full demonstrated need for incoming domestic applicants. Financial aid offers for first-year students are usually sent with their admission offer, once all required documents are received.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0121
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about how Northeastern calculates financial aid awards, with no irrelevant information included. Great job!
+  Cost: $0.0056
+
+Input: Are there federal loans available through Northeastern?
+Output: Yes, Northeastern University does offer federal loans, specifically Federal Direct Subsidized and Unsubsidized Loans. These loans may help cover your education costs based on your financial need. You can also explore additional educational loan programs for extra support.
+Pass: False
+  Metric: Faithfulness  Score: 0.6666666666666666  Pass: False
+  Reason: The score is 0.67 because the actual output incorrectly states that Federal Direct Unsubsidized Loans are need-based, contradicting the retrieval context which specifies that only Federal Direct Subsidized Loans are based on financial need.
+  Cost: $0.0110
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about federal loans available through Northeastern without any irrelevant information. Great job on staying focused and providing a clear answer!
+  Cost: $0.0044
+
+Input: How much is tuition for the 2025-2026 year?
+Output: Tuition for the 2025-2026 academic year is $67,990 for both the Boston and Oakland campuses. The estimated total costs, including tuition, fees, housing, and other expenses, are approximately $94,137 for Boston and $94,582 for Oakland. If you want to estimate your costs further, I recommend using our financial calculators available on the student finance website.
+Pass: False
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0098
+  Metric: Answer Relevancy  Score: 0.6  Pass: False
+  Reason: The score is 0.60 because while the response partially addresses the question about tuition costs, it includes irrelevant statements that do not provide specific information about the tuition for the 2025-2026 year. This lack of direct information prevents a higher score.
+  Cost: $0.0058
+
+Input: What is the total estimated cost of attendance?
+Output: The total estimated cost of attendance for first-year students is approximately $94,137 for the Boston campus and $94,582 for the Oakland campus. This includes tuition, fees, housing, food, and estimated costs for books, personal expenses, and transportation. Many students also receive financial aid, which can significantly help with expenses.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0096
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the total estimated cost of attendance without any irrelevant information. Great job on staying focused and precise!
+  Cost: $0.0052
+
+Input: What should I expect on a campus tour?
+Output: On a campus tour at Northeastern, you can expect to start with an information session that gives an overview of our education approach and student life. This is followed by a sixty-minute guided tour led by a Husky Ambassador, showcasing our academic facilities, university housing, and beautiful green spaces. You will also learn about student experiences and opportunities available, including clubs and dining options.
+Pass: True
+  Metric: Faithfulness  Score: 0.8  Pass: True
+  Reason: The score is 0.80 because the actual output inaccurately combines the information session and campus tour as a single event, whereas the retrieval context specifies them as separate offerings.
+  Cost: $0.0097
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about what to expect on a campus tour, with no irrelevant statements present. Great job!
+  Cost: $0.0053
+
+Input: Are there virtual tour options?
+Output: Yes, we have an interactive virtual tour of our Boston campus where you can explore our facilities and green spaces, guided by a Husky Ambassador. Additionally, we offer a campus tour video collection that highlights student experiences and opportunities at Northeastern.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0091
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about virtual tour options without any irrelevant information. Great job!
+  Cost: $0.0048
+
+Input: What SAT score do I need for Northeastern?
+Output: The middle fifty percent range for the SAT score of admitted students at Northeastern University is between one thousand four hundred eighty and one thousand five hundred forty. Therefore, aiming for a score within that range would be beneficial for your application.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0087
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the SAT score needed for Northeastern without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0040
+
+Input: What is the middle fifty percent GPA of admitted students?
+Output: The middle fifty percent GPA of admitted students is between 4.2 and 4.5. This range indicates that we look for very strong academic performance in applicants.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0077
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the middle fifty percent GPA of admitted students without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0041
+
+Input: What is the admissions office email address?
+Output: The admissions office email address is admissions@northeastern.edu. If you have any specific questions regarding your application, feel free to reach out to them.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0069
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response directly and accurately provided the admissions office email address without any irrelevant information. Great job on staying focused and concise!
+  Cost: $0.0040
+
+Input: Where do I mail my transcripts?
+Output: You should mail your transcripts to Northeastern University, Application Processing Center, P.O. Box 8210, Portsmouth, New Hampshire, 03802.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0067
+  Metric: Answer Relevancy  Score: 0.8  Pass: True
+  Reason: The score is 0.80 because the response mostly addresses the question about where to mail transcripts. However, it includes an irrelevant geographical location without context, which slightly detracts from its overall relevance.
+  Cost: $0.0052
+
+Input: Does Northeastern accept AP credits?
+Output: Yes, Northeastern University accepts Advanced Placement credits if you have scores of 4 or 5. You can earn up to 32 semester hours of advanced credit. I will send you a PDF that provides details for each AP course.
+Pass: False
+  Metric: Faithfulness  Score: 0.6666666666666666  Pass: False
+  Reason: The score is 0.67 because the actual output incorrectly claims that a PDF will be sent, whereas the retrieval context only indicates that a PDF lookup is available, not that it will be sent.
+  Cost: $0.0066
+  Metric: Answer Relevancy  Score: 0.6666666666666666  Pass: False
+  Reason: The score is 0.67 because while the response partially addresses the question about AP credits, it includes irrelevant information about receiving a PDF, which does not directly relate to the acceptance of AP credits. However, the relevant parts of the answer still provide some useful information, maintaining a moderate score.
+  Cost: $0.0048
+
+Input: What AP score do I need to get credit?
+Output: Northeastern accepts AP scores of 4 or 5 for credit. You can potentially earn up to 32 semester hours of advanced credit. I will send you a PDF file that provides detailed information for each AP course.
+Pass: False
+  Metric: Faithfulness  Score: 0.6666666666666666  Pass: False
+  Reason: The score is 0.67 because the actual output incorrectly claims that a PDF file will be sent, whereas the retrieval context only mentions the availability of a PDF lookup for each AP course, without specifying any distribution method.
+  Cost: $0.0066
+  Metric: Answer Relevancy  Score: 0.6666666666666666  Pass: False
+  Reason: The score is 0.67 because while the response partially addresses the question about the AP score needed for credit, it includes an irrelevant statement about sending a PDF file, which detracts from the overall relevance.
+  Cost: $0.0047
+
+Input: How do I pay my enrollment deposit?
+Output: You can pay your nonrefundable enrollment deposit through your Application Status Check. Once you submit your deposit, you will receive information about the next steps for housing and enrollment activities.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0112
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question about paying the enrollment deposit without any irrelevant information. Great job on staying focused and providing a clear answer!
+  Cost: $0.0045
+
+Input: Is there a separate deposit for housing?
+Output: No, there is not a separate deposit for housing. Your nonrefundable enrollment deposit secures your enrollment and also covers housing application steps later on.
+Pass: False
+  Metric: Faithfulness  Score: 0.6666666666666666  Pass: False
+  Reason: The score is 0.67 because the actual output incorrectly implies that the enrollment deposit covers housing application steps, whereas the retrieval context only mentions that students receive information about the housing application process after paying the deposit.
+  Cost: $0.0092
+  Metric: Answer Relevancy  Score: 0.5  Pass: False
+  Reason: The score is 0.50 because while the output provides information about the enrollment deposit, it fails to directly address the specific question about a separate deposit for housing. The inclusion of unrelated details about the refund policy and the general purpose of the enrollment deposit detracts from the relevance.
+  Cost: $0.0048
+
+Input: Can I transfer to Northeastern from another college?
+Output: Yes, you can transfer to Northeastern University from another college if you have completed at least 12 semester hours of college-level coursework after high school graduation. You will need to submit the Transfer Common Application along with the required materials. Applications are accepted for both the Fall and Spring semesters, so you can plan accordingly.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0137
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about transferring to Northeastern from another college without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0049
+
+Input: What are the requirements for transfer applicants?
+Output: To be considered a transfer applicant at Northeastern, you need to have completed at least 12 semester hours of college-level coursework after high school or attempted one full-time semester while maintaining enrollment. You will also need to submit a completed Transfer Common Application or Coalition Application, along with the application fee and official transcripts from all institutions attended. Would you like to know more about the specific materials required?
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0140
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the requirements for transfer applicants without any irrelevant information. Great job on staying focused and providing a clear, concise answer!
+  Cost: $0.0053
+
+Input: What happens during new student orientation?
+Output: New student orientation at Northeastern is designed to connect you with classmates and your academic advising team. You will learn about student clubs and organizations, and access important resources to help you start your journey. The experience includes online modules completed during the summer and in-person events before or as you move to campus.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0080
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about new student orientation without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0046
+
+Input: When is orientation for incoming students?
+Output: Orientation for incoming undergraduate students takes place in the summer and includes both online modules and in-person events before or as you move to campus. You will receive emails throughout the summer with important information and next steps.
+Pass: False
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0075
+  Metric: Answer Relevancy  Score: 0.6  Pass: False
+  Reason: The score is 0.60 because while the answer provides some relevant information, it includes statements about communication and email content that do not directly address the timing of orientation for incoming students. These irrelevant details dilute the focus on the main question, preventing a higher score.
+  Cost: $0.0051
+
+Input: What is the Honors Program at Northeastern?
+Output: The John Martinson Honors Program at Northeastern offers students a chance to engage with values like challenge, curiosity, and community. It provides innovative programming and support, allowing students to make meaningful change during their undergraduate career. The program includes varied requirements for Direct Admits and Internal Admits, ensuring a tailored experience for all participants.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0077
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the Honors Program at Northeastern without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0048
+
+Input: How do I get into the John Martinson Honors Program?
+Output: To get into the John Martinson Honors Program, you must either be a Direct Admit, meaning you are admitted before enrolling at Northeastern, or an Internal Admit, which happens after you have started your studies at the university. It is important to check the specific criteria and requirements for each admission pathway.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0077
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question about getting into the John Martinson Honors Program without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0049
+
+Input: What is Northeastern ranked nationally?
+Output: Northeastern University is ranked 46th among national universities according to U.S. News. It also holds the 5th position for most innovative schools.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0061
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question about Northeastern's national ranking without any irrelevant information. Great job on staying focused and concise!
+  Cost: $0.0040
+
+Input: Where does Northeastern rank for innovation?
+Output: Northeastern University is ranked fifth among the most innovative schools in the United States. This recognition highlights our commitment to new ideas and approaches in education.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0066
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response is perfectly relevant, directly addressing the question about Northeastern's innovation ranking without any irrelevant information. Great job!
+  Cost: $0.0042
+
+Input: Is Northeastern ranked highly for study abroad?
+Output: Northeastern University is ranked twenty-first in study abroad programs according to U.S. News. In addition, we are recognized for our outstanding co-op and internship opportunities, ranking first in that area.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0063
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about Northeastern's study abroad ranking without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0045
+
+Input: How is Northeastern's co-op program ranked?
+Output: Northeastern's co-op program is ranked first in the nation for co-ops and internships. This strong ranking reflects our commitment to providing students with hands-on experience in their fields.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0062
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about Northeastern's co-op program ranking without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0041
+
+Input: How is the engineering program ranked?
+Output: The engineering program at Northeastern University is ranked thirty-fifth in the Best Undergraduate Engineering Programs by US News. However, in the global rankings by Times Higher Education, it falls between two hundred and two hundred fifty.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0094
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response directly addresses the question about the engineering program's ranking without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0042
+
+Input: What are the global rankings for computer science?
+Output: Northeastern University's computer science program is ranked 98th globally according to Times Higher Education. If you have more questions about the program or anything else, feel free to ask!
+Pass: False
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0089
+  Metric: Answer Relevancy  Score: 0.5  Pass: False
+  Reason: The score is 0.50 because while the output encourages engagement, it lacks specific information about global rankings for computer science, which was the main focus of the input.
+  Cost: $0.0045
+
+Input: How many students attend Northeastern?
+Output: Northeastern University has a total enrollment of about twenty-nine thousand six hundred twenty-three students. Of those, approximately eleven thousand seven hundred thirty-two are international students.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0068
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response directly and accurately addresses the question about the number of students attending Northeastern, with no irrelevant information included. Great job on staying focused and relevant!
+  Cost: $0.0040
+
+Input: What percentage of international students are there?
+Output: Approximately forty percent of Northeastern University's student body consists of international students. This reflects a diverse and global community on campus.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0067
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the percentage of international students without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0039
+
+Input: What percentage of graduates get jobs within nine months?
+Output: Ninety-six percent of our graduates are either employed or enrolled in graduate school within nine months of graduation. Of those, about eighty-two point eight percent are employed, and thirteen point three percent continue their education.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0070
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about the percentage of graduates getting jobs within nine months, with no irrelevant information included. Great job on staying focused and relevant!
+  Cost: $0.0044
+
+Input: Do co-op employers hire students after graduation?
+Output: Yes, many co-op employers do hire students after graduation. In fact, fifty-eight percent of Northeastern graduates receive job offers from their previous co-op employers. This experience greatly enhances employment opportunities after completing their degree.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0071
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addressed the question about co-op employers hiring students after graduation without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0042
+
+Input: How do I contact the Office of University Equity and Compliance?
+Output: You can contact the Office of University Equity and Compliance by emailing them at ouec@northeastern.edu or by calling 617-373-4644.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0100
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question without any irrelevant information, providing a clear and direct answer.
+  Cost: $0.0038
+
+Input: What is the phone number for counseling services?
+Output: The phone number for University Health and Counseling Services is six one seven three seven three two seven seven two.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0096
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the input without any irrelevant information. Great job on providing a focused and accurate answer!
+  Cost: $0.0035
+
+Input: What does the OUEC office do?
+Output: The Office for University Equity and Compliance, or OUEC, leads efforts to ensure Northeastern University's compliance with laws on anti-discrimination, the Americans with Disabilities Act, and Title IX. They handle reports regarding Prohibited Conduct and work to assess, investigate, and resolve these incidents. However, it is important to note that they are not a confidential resource.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0124
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response perfectly addresses the question about the OUEC office without any irrelevant information. Great job on staying focused and relevant!
+  Cost: $0.0065
+
+Input: Who is the Title IX Coordinator?
+Output: The Title IX Coordinator at Northeastern University is Mark Jannoni. He is responsible for coordinating compliance with Title IX policies and overseeing responses to reports of prohibited conduct.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0126
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response directly and accurately identifies the Title IX Coordinator without any irrelevant information, demonstrating a perfect alignment with the input query.
+  Cost: $0.0044
+
+Input: Where can I find confidential counseling on campus?
+Output: You can find confidential counseling at the University Health and Counseling Services, as well as the Office of Prevention and Education, which includes the Sexual Violence Resource Center and Confidential Resource Advising Services. Additionally, the Center for Spirituality, Dialogue and Service offers spiritual advising. If you need more details about these resources, please check the Support for Students page.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions, indicating that the actual output is perfectly aligned with the retrieval context. Great job maintaining accuracy and consistency!
+  Cost: $0.0072
+  Metric: Answer Relevancy  Score: 0.8333333333333334  Pass: True
+  Reason: The score is 0.83 because the response primarily addresses the query about finding confidential counseling on campus. However, the mention of 'spiritual advising' introduces an irrelevant element that slightly detracts from the focus on confidential counseling, preventing a higher score.
+  Cost: $0.0057
+
+Input: What is the Sexual Violence Resource Center?
+Output: The Sexual Violence Resource Center is part of the Office of Prevention and Education at Northeastern University. It provides confidential support and resources for individuals affected by sexual violence. You can find more information about this and other support services on the university's Support for Students page.
+Pass: True
+  Metric: Faithfulness  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!
+  Cost: $0.0071
+  Metric: Answer Relevancy  Score: 1.0  Pass: True
+  Reason: The score is 1.00 because the response is perfectly relevant and directly addresses the question about the Sexual Violence Resource Center without any irrelevant information. Great job on staying focused and providing a clear answer!
+  Cost: $0.0050
+

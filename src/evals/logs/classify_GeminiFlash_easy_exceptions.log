@@ -1,0 +1,8 @@
+--- Test 46 [GeminiFlash] ---
+  Input: What is the campus emergency phone number?
+  ERROR: BamlTimeoutError(client_name=OpenRouterGeminiFlash, message=Request timed out)
+
+--- Test 134 [GeminiFlash] ---
+  Input: What is the meaning of life?
+  ERROR: BamlTimeoutError(client_name=OpenRouterGeminiFlash, message=Request timed out)
+
