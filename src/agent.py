@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import requests
 import asyncio
 from dataclasses import dataclass, field
+import time
 
 
 import pandas as pd
@@ -28,6 +29,7 @@ web_app = FastAPI(title="Admissions Agent")
 class CallState:
     transcript: list = field(default_factory=list)
     ending_state: bool = False
+    grab_email_state: str = ""
     language: str = "English"
     email : str = ""
     caller_number: str = ""
@@ -97,20 +99,64 @@ async def transfer_to_human(user_input: str, call: CallState, websocket: WebSock
     call.ending_state = True
 
 
-async def end_call(user_input: str , call: CallState, websocket: WebSocket):
-    print(f"End_Call intention has been found.")
-    # Maybe better to actually include transcript to have a more personalized end message?
+async def end_call(call: CallState, websocket: WebSocket):
+    print(f"Reached Final End Call message...Call ending")
     # Maybe better to have specialized end call BAML function. 
-    goodbye_message = await b.AnswerQuery(question="Say a goodbye message to end the call", context="", transcript=call.transcript, language=call.language)
+    transcript_str = "\n".join(f"{entry['speaker']}: {entry['text']}" for entry in call.transcript)
+    goodbye_message = await b.AnswerQuery(question="Say a goodbye message to end the call", context="", transcript=transcript_str, language=call.language)
 
     await websocket.send_json({"type": "text", "token": goodbye_message, "last": True})
-    call.transcript.append({"speaker": "User", "text":user_input})
     call.transcript.append({"speaker": "Agent", "text":goodbye_message})
-    await asyncio.sleep(2)
+    await asyncio.sleep(10)
     await websocket.send_json({"type": "end"})
-    call.ending_state = True
+
+async def handle_email_end_state(user_input: str, call: CallState, websocket: WebSocket):
+    if call.grab_email_state == "Initial":
+        if "yes" in user_input.lower():
+            await websocket.send_json({"type": "text", "token": language_email_confirmation_prompt.get(call.language, language_email_confirmation_prompt["English"]), "last": True})
+            call.grab_email_state = "ParseEmail"
+        else:
+            await websocket.send_json({"type": "text", "token": "No problem! Email will not be sent", "last": True})
+            await end_call(call, websocket)
+    elif call.grab_email_state == "ParseEmail":
+        parsed_email = (await b.EmailRetrieval(user_input)).lower()
+        if parsed_email == "unable to parse email":
+            await websocket.send_json({"type": "text", "token": "Sorry, I couldn't get the email address. Please try again.", "last": True})
+        else:
+            call.email = parsed_email
+            await websocket.send_json({"type": "language", "transcriptionLanguage": language_code_mapping[call.language], "ttsLanguage": language_code_mapping[call.language]})
+            try:
+                await email_transcript(call, call.language, websocket)
+                await websocket.send_json({"type": "text", "token": "Ok, I sent you an email of this call transcript!", "last": True})
+            except Exception as e:
+                print(f"Email send error: {type(e).__name__}: {e}")
+                await websocket.send_json({"type": "text", "token": "Sorry, there was an error sending the email.", "last": True})
+
+            await end_call(call, websocket)
+    
 
 async def end_call_set_condition(user_input: str, call: CallState, websocket: WebSocket):
+    await websocket.send_json({"type": "config", "interruptible": False})
+    call.ending_state = True
+    call.transcript.append({"speaker": "User", "text":user_input})
+
+    if call.email:
+        try:
+            await email_transcript(call, call.language, websocket)
+            await websocket.send_json({"type": "text", "token": "Ok, I sent you an email of this call transcript!", "last": True})
+        except Exception as e:
+            print(f"Email send error: {type(e).__name__}: {e}")
+            await websocket.send_json({"type": "text", "token": "Sorry, there was an error sending the email.", "last": True})
+
+        await end_call(call, websocket)
+    else:
+        call.grab_email_state = "Initial"
+        await websocket.send_json({"type": "language", "transcriptionLanguage": "en-US", "ttsLanguage": language_code_mapping[call.language]})
+        # ask if they want to receive email, handle in main loop
+        await websocket.send_json({"type": "text", "token": language_email_prompt.get(call.language, language_email_prompt["English"]), "last": True})
+
+'''
+async def end_call_set_condition_old(user_input: str, call: CallState, websocket: WebSocket):
     await websocket.send_json({"type": "config", "interruptible": False})
     print("\nEnd_Call intention has been found (SET CONDITION VERSION).")
     call.ending_state = True
@@ -144,7 +190,7 @@ async def end_call_set_condition(user_input: str, call: CallState, websocket: We
                 await websocket.send_json({"type": "language", "transcriptionLanguage": language_code_mapping[call.language], "ttsLanguage": language_code_mapping[call.language]})
 
             else:
-                await websocket.send_json({"type": "text", "token": "No problem! Email will not be set", "last": True})
+                await websocket.send_json({"type": "text", "token": "No problem! Email will not be sent", "last": True})
             break
 
     if email: #Notification of email being sent.
@@ -160,7 +206,7 @@ async def end_call_set_condition(user_input: str, call: CallState, websocket: We
     await websocket.send_json({"type": "text", "token": goodbye_message, "last": True})
     await asyncio.sleep(10)
     await websocket.send_json({"type": "end"})
-
+'''
 async def email_transcript(call: CallState, language: str, websocket: WebSocket):
     if call.transcript is None or len(call.transcript) == 0:
         print("No conversation history to email.")
@@ -179,6 +225,38 @@ async def email_transcript(call: CallState, language: str, websocket: WebSocket)
             "subject": f"Conversation Transcript for Caller {call.email}",
             "text": email_content
         })
+
+
+async def stream_answer_to_twilio(question, context, transcript, language, websocket):
+    print("INSIDE STREAMING SECTION")
+    #start = time.perf_counter()
+    stream = b.stream.AnswerQuery(question, context, transcript, language)
+    
+    previous = ""
+    async for partial in stream: # partial builds cummulative response
+        if partial is None:
+            continue
+        new_text = partial[len(previous):]  # extract only the new text
+        if new_text:
+            
+            await websocket.send_json({
+                "type": "text",
+                "token": new_text,
+                "last": False
+            })
+        previous = partial
+    
+    # need to get final because the last partial is not guranteed to be the last part of response
+    final = await stream.get_final_response()
+    remaining = final[len(previous):]
+    
+    await websocket.send_json({
+        "type": "text",
+        "token": remaining,  # could be "", that's fine
+        "last": True
+    })
+    #print(f"Time (seconds) to respond fully: {time.perf_counter() - start}")
+    return final  
 
 async def process_input_states(user_input: str, call: CallState, websocket: WebSocket):
     
@@ -223,9 +301,10 @@ async def process_input_states(user_input: str, call: CallState, websocket: WebS
                 # should never happen, understand how this happens. 
                 answer =  "Unable to process question since I failed to retrieve context. Please clarify or ask a different question" 
             else:
-                answer = await b.AnswerQuery(user_input, context, transcript_str, language=call.language)
+                answer = await stream_answer_to_twilio(user_input, context, transcript_str, language=call.language, websocket=websocket)
+                #answer = await b.AnswerQuery(user_input, context, transcript_str, language=call.language)
             
-            await websocket.send_json({"type": "text", "token": answer, "last": True})
+            # await websocket.send_json({"type": "text", "token": answer, "last": True})
             call.transcript.append({"speaker": "User", "text":user_input})
             call.transcript.append({"speaker": "Agent", "text":answer})
     
@@ -233,10 +312,14 @@ async def process_input_states(user_input: str, call: CallState, websocket: WebS
         print("Either interrupt or somehow second task created")
         raise # raise caught when "await task" after doing "task.cancel()"" 
 
-# async def interruptible_process(question,l, websocket): 
-#     answer =  await asyncio.to_thread(process_question, question, l)
-#     print(f"LLM answer w/ context: {answer}")
-#     await websocket.send_json({"type": "text", "token": answer, "last": True}) 
+    except Exception as e:
+        # some needed protection 
+        print(f"Error processing input: {e}")
+        await websocket.send_json({
+            "type": "text",
+            "token": "I'm sorry, I had trouble with that. Could you try again?",
+            "last": True
+        })
 
 async def cancel_task_if_running(task: asyncio.Task | None) -> None:
     if task and not task.done():
@@ -262,7 +345,7 @@ async def twillio_webhook(request: Request):
     response.say("Welcome to the Northeastern University AI Admission Chat Service.")
 
     connect = Connect()
-    base_url = os.getenv("BASE_URL", "https://uncriticisably-quavery-louvenia.ngrok-free.dev")
+    base_url = os.getenv("BASE_URL", "https://prominently-acidimetrical-season.ngrok-free.dev") #"https://uncriticisably-quavery-louvenia.ngrok-free.dev"
     websocket_url = f"{base_url.replace('https://', 'wss://')}/ws/{caller_number}/{callSid}"
     conversation_relay = ConversationRelay(url = websocket_url, language = "en-US", interruptible = True)
     conversation_relay.language(
@@ -346,7 +429,7 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
                     await websocket.send_json({"type": "text", "token": "Email has been set.", "last": True})
                     break
             else:
-                await websocket.send_json({"type": "text", "token": "No problem! Email will not be set", "last": True})
+                await websocket.send_json({"type": "text", "token": "No problem! Email will not be sent", "last": True})
                 break
             await websocket.send_json({"type": "text", "token": "I have the email address set as " + callSession.email + ". Please confirm using 'yes' or 'no'.", "last": True})
             while True:
@@ -398,16 +481,14 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
     try:
         current_task = None
         while True: # main call loop
-            # if not callSession.ending_state:
-            if callSession.ending_state:
-                break
 
             msg = await websocket.receive_json()
 
             if msg.get("type") == "interrupt": # ignore interrupt in ending state
-                # cancel created Current task (should only ever be one)
-                if callSession.ending_state:
+                
+                if callSession.ending_state: # maybe change this 
                     continue
+                # cancel created Current task (should only ever be one)
                 await cancel_task_if_running(current_task)
                 current_task = None 
                 # maybe update state here 
@@ -418,16 +499,15 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
                     continue  # ignore partials
 
                 full_input = msg.get("voicePrompt", "") # only adding to transcript after get response to avoid double passing user questions   
-                print(f"The current user input is '{full_input}'. (Before passing to parse function")
+                print(f"The current user input is '{full_input}'. (Before passing to parse function or Handling End-State)")
 
-                
-                await cancel_task_if_running(current_task) # do not want second task already running before creating another
-
-                current_task = asyncio.create_task(process_input_states(full_input, callSession, websocket))
-                await current_task
                 if callSession.ending_state:
-                    break
+                    await handle_email_end_state(full_input, callSession, websocket)
+                else:
 
+                    await cancel_task_if_running(current_task) # do not want second task already running before creating another
+                    current_task = asyncio.create_task(process_input_states(full_input, callSession, websocket))
+                    # await current_task # this is blocking event loop 
 
     except WebSocketDisconnect:
         print("Caller hung up — WebSocket closed")

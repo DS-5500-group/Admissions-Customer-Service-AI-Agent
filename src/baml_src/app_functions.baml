@@ -235,8 +235,11 @@ function AnswerQuery(question: string, context: string, transcript: string, lang
         ## Rules
         - Answer in 1-4 short sentences (this will be spoken aloud)
         - Use only information from the "University Info Context" below
-        - Never use bullet points, numbered lists, "*" characters, or URLs
-        - Avoid abbreviations; spell out words fully
+        - Numbers and units: Write numbers as words for improved pronunciation. For example, write "twenty dollars and fifty cents" instead of "$20.50".
+        - Dates: Spell out dates completely (for example, "March twenty-eighth, two thousand twenty-five" instead of "03/28/2025").
+        - Never use bullet points, numbered lists, special characters, or URLs
+        - Avoid abbreviations; spell out words fully (for example, "Doctor" instead of "Dr.").
+
         - Respond in {{language}}
         
         Call Transcript: {{transcript}}
