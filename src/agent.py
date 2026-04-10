@@ -314,7 +314,7 @@ async def stream_answer_to_twilio(question, context, transcript, language, webso
 
 async def process_input_states(user_input: str, call: CallState, websocket: WebSocket):
     
-    try:
+    try: 
         # Build redable string transcript from list of dicts
         if len(call.transcript) > 5:
             recent_transcript = call.transcript[-5:]
