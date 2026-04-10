@@ -316,7 +316,7 @@ async def process_input_states(user_input: str, call: CallState, websocket: WebS
     
     try: 
         # Build redable string transcript from list of dicts
-        if len(call.transcript) > 5:
+        if len(call.transcript) > 5: 
             recent_transcript = call.transcript[-5:]
             transcript_str = "\n".join(f"{entry['speaker']}: {entry['text']}" for entry in recent_transcript)
 
