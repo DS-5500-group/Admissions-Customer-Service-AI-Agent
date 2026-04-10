@@ -11,7 +11,6 @@ enum Overall{
 
 // ─── Group enum ───
 enum Group {
-    CoOp
     Dining_food
     Housing
     Student_Amenities_Activities
@@ -30,10 +29,6 @@ enum Group {
 
 // ─── Subgroup enum (flat; Group field disambiguates shared values like Contact_Info) ───
 enum Subgroup {
-    // CoOp
-    CoOp_Process
-    CoOp_Salary
-    CoOp_Overview
 
     // Dining_food
     Dining_Halls
@@ -116,20 +111,20 @@ enum Subgroup {
 
 }
 
-// ─── Output class ───
-class ClassifiedQuestion {
-    group Group
-    subgroup Subgroup
-    confidence float? @description(#"
-        Range is 0.0 to 1.0 based on the confidence of classifying the input into Group and Subgroup.
-        0.0 Confidence if Group is 'UnAnswerable'. 
-    "#)
-    clarification string?  @description(#"
-        Only populated when group is UnAnswerable or confidence is less or equal to 0.5. 
-        Field should be a follow up question that would raise confidence. An example is to narrow down
-        possible the group and subgroup the user is potentially asking about.  
-    "#)
-}
+// // ─── Output class ───
+// class ClassifiedQuestion {
+//     group Group
+//     subgroup Subgroup
+//     confidence float? @description(#"
+//         Range is 0.0 to 1.0 based on the confidence of classifying the input into Group and Subgroup.
+//         0.0 Confidence if Group is 'UnAnswerable'. 
+//     "#)
+//     clarification string?  @description(#"
+//         Only populated when group is UnAnswerable or confidence is less or equal to 0.5. 
+//         Field should be a follow up question that would raise confidence. An example is to narrow down
+//         possible the group and subgroup the user is potentially asking about.  
+//     "#)
+// }
 
 class ClassifiedInput {
     overall_classification Overall
@@ -149,7 +144,7 @@ class ClassifiedInput {
 
 
 function ClassifyInput(current_input: string, transcript: string) -> ClassifiedInput{
-    client CustomGPT
+    client OpenRouterGeminiFlash
     prompt #"
         You are a classification component in a voice agent for prospective Northeastern University students.
 
@@ -178,8 +173,8 @@ function ClassifyInput(current_input: string, transcript: string) -> ClassifiedI
         - NotApplicable -> NotApplicable (use when Out_Of_Scope, End_Call Overall, Transfer_To_Human classified )
 
         ## Confidence and Clarification Rules
-        - confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification
-        - Set confidence to 0.0 if Group is No_Matching_Group
+        - confidence: 0.0 to 1.0 indicating certainty of Group/Subgroup classification, give less than 0.5 if you could easily classify input into multiple Group/Subgroups.
+        - Set confidence to 0.0 if Group is No_Matching_Group.
         - clarification: Only populate if confidence <= 0.5 OR Group is No_Matching_Group
           - This should be a follow-up question to narrow down the user's intent
 
@@ -192,8 +187,9 @@ function ClassifyInput(current_input: string, transcript: string) -> ClassifiedI
     "#
 }
 function LanguageDetection(response: string) -> string {
-    client CustomGPT
+    client OpenRouterGeminiFlash
     prompt #"
+        You are a classification component in a voice agent. Do not provide special chracters or formatting, just raw text. 
         Extract the language name from user's response. If no language is mentioned, default to English.
 
         User response: {{response}}
@@ -201,7 +197,7 @@ function LanguageDetection(response: string) -> string {
 }
 
 function EmailRetrieval(spoken: string) -> string {
-    client CustomGPT
+    client OpenRouterGeminiFlash
     prompt #"
         Please extract the email address from the user's spoken input.
         You must follow these steps to parse the email accuractely:
@@ -221,7 +217,7 @@ function EmailRetrieval(spoken: string) -> string {
         Example of conversion is: "tom dot brady at gmail dot com" -> "tom.brady@gmail.com"
         
         However, if no email can be obtained please respond with "Unable to parse email".
-        The final output is the email address with no additional text and punctuation.
+        The final output is the email address with no additional text, punctuation, or formatting.
 
         Spoken email: {{spoken}}
     "#
@@ -229,7 +225,7 @@ function EmailRetrieval(spoken: string) -> string {
 
 
 function AnswerQuery(question: string, context: string, transcript: string, language: string) -> string {
-    client CustomGPT
+    client OpenRouterGeminiFlash
     prompt #"
         You are a friendly admissions assistant for Northeastern University, speaking with a prospective student over the phone.
         ## Rules

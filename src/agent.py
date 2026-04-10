@@ -4,6 +4,7 @@ import requests
 import asyncio
 from dataclasses import dataclass, field
 import time
+from typing import Set, Dict
 
 
 import pandas as pd
@@ -21,9 +22,7 @@ resend.api_key = os.getenv("RESEND_API_KEY")
 #print(f"Resend API: Key is: {resend.api_key}.")
 
 web_app = FastAPI(title="Admissions Agent")
-# callSid = ""
-# caller_phone = ""
-# stream_sid = "" # probably not needed now
+
 
 @dataclass
 class CallState:
@@ -34,6 +33,50 @@ class CallState:
     email : str = ""
     caller_number: str = ""
     call_sid: str = ""
+
+# Valid Group -> Subgroup mappings based on BAML definition
+VALID_GROUP_SUBGROUPS: Dict[str, Set[str]] = {
+    "Dining_food": {
+        "Dining_Halls", "Retail_Dining", "Allergy_Info", 
+        "Plan_Options_And_Cost", "Contact_Info"
+    },
+    "Housing": {
+        "Housing_Cost", "Layout_Info", "Off_Campus", 
+        "Moving_Information", "Contact_Info"
+    },
+    "Student_Amenities_Activities": {
+        "Gym", "Student_Activities_Fees", "Clubs", "Game_Rooms", 
+        "Volunteering", "Transportation", "Greek_Life", "Study_Space", "Contact_Info"
+    },
+    "Safety": {
+        "RedEye_Night_Shuttle", "Security_App", "Campus_Escort", 
+        "Card_Entry", "Crime_Statistics", "Contact_Info"
+    },
+    "Athletics": {
+        "Varsity_Sports", "Intramural", "Signature_Events", "Contact_Info"
+    },
+    "Admission_Application": {
+        "Decision_Types_Outcomes", "Dates_Deadlines", "Portal_Info", 
+        "Application_Materials", "Financial_Aid", "Estimated_Cost", 
+        "Tours", "Acceptance_Criteria_Stats", "Contact_Info", 
+        "AP_Credit_Lookup", "Enrollment", "Transfer_Applicants", 
+        "Orientation", "Honors_Program"
+    },
+    "Ranking_GeneralStats": {
+        "Overall_School_Ranking", "Extracurriculars", "Majors", 
+        "Demographics", "Career_Outcomes"
+    },
+    "Student_Support": {
+        "Contact_Info", "Resources_Overview", "Confidential_Resources", 
+        "National_Resources", "Policies"
+    },
+    "Experiential_Learning": {
+        "Coop_Process", "Coop_Salary", "Coop_Overview", 
+        "Research", "NU_View", "Experiential_Projects"
+    },
+    "No_Matching_Group": {"NoSubgroup"},
+    "NotApplicable": {"NotApplicable"},
+}
 
 # latest DB (on our Teams EXCEL)
 db = pd.read_csv("DB.csv") 
@@ -67,6 +110,11 @@ agent_line = {
     "Spanish": "Te transferiré a un agente humano. Por favor, mantente en la línea.",
     "Chinese": "我将把你转接给人工客服。请保持通话。"
 }
+
+def is_valid_pairing(group: str, subgroup: str) -> bool:
+    if group not in VALID_GROUP_SUBGROUPS:
+        return False
+    return subgroup in VALID_GROUP_SUBGROUPS[group]
 
 def query_university_context(parsed: ClassifiedInput) -> str:
     
@@ -119,7 +167,7 @@ async def handle_email_end_state(user_input: str, call: CallState, websocket: We
             await websocket.send_json({"type": "text", "token": "No problem! Email will not be sent", "last": True})
             await end_call(call, websocket)
     elif call.grab_email_state == "ParseEmail":
-        parsed_email = (await b.EmailRetrieval(user_input)).lower()
+        parsed_email = (await b.EmailRetrieval(user_input)).strip().lower()
         if parsed_email == "unable to parse email":
             await websocket.send_json({"type": "text", "token": "Sorry, I couldn't get the email address. Please try again.", "last": True})
         else:
@@ -229,13 +277,19 @@ async def email_transcript(call: CallState, language: str, websocket: WebSocket)
 
 async def stream_answer_to_twilio(question, context, transcript, language, websocket):
     print("INSIDE STREAMING SECTION")
-    #start = time.perf_counter()
+    start = time.perf_counter()
     stream = b.stream.AnswerQuery(question, context, transcript, language)
     
+    First = True 
     previous = ""
     async for partial in stream: # partial builds cummulative response
         if partial is None:
             continue
+        if partial and First:
+            time_first_token = time.perf_counter() - start
+            print(f"\nTIME TO FIRST TOKEN: {time_first_token}")
+            First = False
+            
         new_text = partial[len(previous):]  # extract only the new text
         if new_text:
             
@@ -270,6 +324,7 @@ async def process_input_states(user_input: str, call: CallState, websocket: WebS
             transcript_str = "\n".join(f"{entry['speaker']}: {entry['text']}" for entry in call.transcript)
         
         # START state, will decide next action/state
+        start = time.perf_counter()
         parsed = await b.ClassifyInput(user_input, transcript_str) #can't just pass transcript 
         
         if parsed.overall_classification == "Out_Of_Scope":
@@ -285,8 +340,27 @@ async def process_input_states(user_input: str, call: CallState, websocket: WebS
         elif parsed.overall_classification == "End_Call":  
             #### Want to change back later: ask email and store it at some other part of the program, maybe begining or maybe anytime.         
             #await end_call(user_input, call, websocket) 
-            await end_call_set_condition(user_input, call, websocket) 
-        elif parsed.confidence <= 0.5 or parsed.group == "UnAnswerable": # agent initiates clarification
+            await end_call_set_condition(user_input, call, websocket)
+        elif not is_valid_pairing(parsed.group.value, parsed.subgroup.value):
+            # assumes that the Group will always be valid
+            if parsed.group == "NotApplicable" or parsed.group == "No_Matching_Group":
+                response = "I didn't hear, try asking again or a differnet question."
+            else:
+                # should be a string where if "_" in parsed.group is replaced with an "or" string
+                clean_group = parsed.group.value.replace("_", " or ")
+                if parsed.group.value == "Student_Amenities_Activities":
+                    clean_group = "Student Amenities or Activities"
+                # should be a string where the set of strings are converted to a single string: comma seperating subgroups and "_" replaced with " "
+                clean_subgroup_list = ", ".join(sub.replace("_", " ") for sub in VALID_GROUP_SUBGROUPS[parsed.group.value])
+            
+            response = (
+                f"It seems you are asking about {clean_group}. "
+                f"I can respond to questions related to {clean_subgroup_list}."
+            )
+            await websocket.send_json({"type": "text", "token": response, "last": True})
+            call.transcript.append({"speaker": "User", "text":user_input})
+            call.transcript.append({"speaker": "Agent", "text":response})
+        elif parsed.confidence <= 0.5 or parsed.clarification: # agent initiates clarification
             
             await websocket.send_json({"type": "text", "token": parsed.clarification, "last": True})
             call.transcript.append({"speaker": "User", "text":user_input})
@@ -301,9 +375,11 @@ async def process_input_states(user_input: str, call: CallState, websocket: WebS
                 # should never happen, understand how this happens. 
                 answer =  "Unable to process question since I failed to retrieve context. Please clarify or ask a different question" 
             else:
+                
                 answer = await stream_answer_to_twilio(user_input, context, transcript_str, language=call.language, websocket=websocket)
                 #answer = await b.AnswerQuery(user_input, context, transcript_str, language=call.language)
-            
+                response_time = time.perf_counter() - start
+                print(f"\nRESPONSE TIME TOTAL FROM IN-OUT (STREAM) IS: {response_time}")
             # await websocket.send_json({"type": "text", "token": answer, "last": True})
             call.transcript.append({"speaker": "User", "text":user_input})
             call.transcript.append({"speaker": "Agent", "text":answer})
@@ -395,7 +471,7 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
             
             userResponse = msg.get("voicePrompt","English")
             callSession.transcript.append({"speaker": "User", "text": userResponse})
-            callSession.language = await b.LanguageDetection(userResponse)
+            callSession.language = (await b.LanguageDetection(userResponse)).strip()
             
             if callSession.language not in language_code_mapping:
                 await websocket.send_json({"type": "text", "token": "Sorry, I didn't detect a supported language. Defaulting to English.", "last": True})
@@ -421,7 +497,8 @@ async def websocket_endpoint(websocket: WebSocket, caller_number: str, callSid: 
                         continue
                     if not emailAddress.get('last', False):
                         continue
-                    parsed_email = (await b.EmailRetrieval(emailAddress.get("voicePrompt", ""))).lower()
+                    #parsed_email = (await b.EmailRetrieval(emailAddress.get("voicePrompt", ""))).lower()
+                    parsed_email = (await b.EmailRetrieval(emailAddress.get("voicePrompt", ""))).strip().lower()
                     if parsed_email == "unable to parse email":
                         await websocket.send_json({"type": "text", "token": "Sorry, I couldn't get the email address. Please try again.", "last": True})
                         continue
